@@ -1,0 +1,29 @@
+{
+  "name": "1ultrex",
+  "version": "1.0.0",
+  "description": "UltrextGold Intl site afresh",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js",
+    "client": "nodemon client/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Victor Okoye (VeeCee)",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.0",
+    "mailgen": "^2.0.27",
+    "mongoose": "^7.1.0",
+    "nodemailer": "^6.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
