@@ -1,4 +1,4 @@
-// const path = require('path');
+const path = require('path');
 const express = require('express');
 const dotenv = require('dotenv').config();
 const colors = require('colors');
@@ -35,16 +35,16 @@ app.use('/api/users', userRoutes);
  This part is for deployment (in this case using Heroku)
  */
 
-// //  Serve client/frontend
-// if (process.env.NODE_ENV === 'production') {
-//     // static folder access (ie. the build folder)
-//     app.use(express.static(path.join(__dirname, '../client/build')))
+//  Serve client/frontend
+if (process.env.NODE_ENV === 'production') {
+    // static folder access (ie. the build folder)
+    app.use(express.static(path.join(__dirname, '../client/build')))
 
-//     // for routing
-//     app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../', 'client', 'build', 'index.html')));
-// } else {
-//     app.get('/', (req, res) => res.send('Please set to production'));
-// }
+    // for routing
+    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../', 'client', 'build', 'index.html')));
+} else {
+    app.get('/', (req, res) => res.send('Please set to production'));
+}
 
 /*
     After this, go to the command line and run 'npm run build'
