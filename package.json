@@ -1,10 +1,6 @@
 {
   "name": "1ultrex",
   "version": "1.0.0",
-  "engines": {
-    "node": "14.20.0",
-    "npm": "9.2.0"
-  },
   "description": "UltrextGold Intl site afresh",
   "main": "server.js",
   "scripts": {
