@@ -35,7 +35,7 @@ app.use('/api/users', userRoutes);
  This part is for deployment (in this case using Heroku)
  */
 
-//  Serve client/frontend
+//  Serve client/frontend 
 if (process.env.NODE_ENV === 'production') {
     // static folder access (ie. the build folder)
     app.use(express.static(path.join(__dirname, '../client/build')))
