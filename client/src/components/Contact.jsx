@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <>
         <section className='heading'>
-            <h1>Support Form</h1>
+            <h1 style={{color: 'white'}}>Support Form</h1>
         </section>
 
         <section className='form'>

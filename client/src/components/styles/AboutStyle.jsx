@@ -3,19 +3,17 @@ import styled from "styled-components";
 const AboutStyle = styled.div`
     color: white;
     background-color: rgb(36, 35, 35);
-    // height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 
     .container {
-        padding: 200px 100px;
+        padding: 50px;
     }
     
     .about {
         margin-top: 50px;
-        margin-left: 100px;
         text-align: center;
     }
 

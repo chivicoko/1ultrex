@@ -5,14 +5,14 @@ const Footer = () => {
     <footer className='footer'>
         <div className='foot'>            
             <div className='h'>
-                <h1><span style={{color: 'white'}}>U</span>G</h1>
-                <h2><span style={{color: 'white'}}>Ultrex</span>Gold</h2>
+                <h1><span style={{color: 'white'}}>U</span><span style={{color: 'orange'}}>G</span></h1>
+                <h2><span style={{color: 'white'}}>Ultrex</span><span style={{color: 'orange'}}>Gold</span></h2>
                 <p className='footer-p'>
                     Choose Us, choose your future. Please read carefully and understand who we are and what we provide. It could be your chance; it could be time to change something in your financial life.
                 </p>
             </div>
+            <h1 className='cta'>Contact Us</h1>
             <div className='footTabs'>
-                <h1 className='cta'>Contact Us</h1>
                 <div className='footItem'>
                     <h2>Address</h2>
                     <p>British Columbia</p>
@@ -28,8 +28,7 @@ const Footer = () => {
                     <p>VIP Only</p>
                 </div>
             </div>
-            <p className='copyright'>Copyright &copy; <span style={{color: 'orange'}}>ultrexgold.com</span> 2023</p>
-            <p>All Rights reserved</p>
+            <p className='copyright'>Copyright &copy; <span style={{color: 'orange'}}>ultrexgold.com</span> 2023 <br />All Rights reserved</p>
         </div>
     </footer>
   )

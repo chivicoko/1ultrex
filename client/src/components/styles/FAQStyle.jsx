@@ -10,8 +10,8 @@ const FAQStyle = styled.div`
 
 
     .general-container {
-        padding-top: 120px;
-        padding-bottom: 150px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .general-container h2 {
@@ -24,8 +24,6 @@ const FAQStyle = styled.div`
         text-align: start;
         padding: 10px 20px;
         margin-top: 20px;
-        margin-right: 40px;
-        margin-left: 40px;
     }
 
     .general-container .container-1 h2 {
@@ -42,8 +40,8 @@ const FAQStyle = styled.div`
 const MobileFAQStyle = styled.div`
 
     .general-container {
-        padding-top: 50px;
-        padding-bottom: 150px;
+        padding-top: 30px;
+        padding-bottom: 30px;
         color: white;
     }
 

@@ -29,8 +29,8 @@ const About = () => {
         (
           <MobileAboutStyle>
               <div className='container'>
-            <div className='about'>
-                    <h2 style={{marginBottom: '-35px'}}>About Us</h2>
+                    <h2 style={{marginBottom: '-75px'}}>About Us</h2>
+                <div className='about'>
                     <div className='video'>
                         <ReactPlayer width={'100%'} url={ultrexVid} controls={true} />
                     </div>
@@ -45,8 +45,8 @@ const About = () => {
         (
           <AboutStyle>
             <div className='container'>
-            <div className='about'>
                     <h2>About Us</h2>
+            <div className='about'>
                     <div className='video'>
                         <ReactPlayer width={'100%'} url={ultrexVid} controls={true} />
                     </div>

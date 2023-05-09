@@ -7,40 +7,38 @@ const Wrapper = styled.main`
 
 const HomeStyle = styled.main`
     color: white;
-    // background-color: rgb(36, 35, 35);
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
 
-    .container {
-        margin: 0 100px;
-    }
+    // .container {
+    //     margin: 0;
+    // }
 
     .welcome-h1 {
         margin: 0;
-        font-size: 80px;
-        padding-top: 160px;
+        font-size: 50px;
+        padding-top: 60px;
     }
 
     .welcome-h2 {
         margin: 0;
-        font-size: 50px;
-        padding: 20px 0 30px 0;
+        font-size: 32px;
+        padding: 5px 0 15px;
     }
 
     .welcome-p {
         margin: 0;
-        font-size: 25px;
-        // font-weight: 400;
+        font-size: 21px;
         padding: 20px 0 50px 0;
     }
 
     .we-section {
         display: grid;
         grid-template-columns: auto auto auto auto;
-        // grid-column-gap: 10px;
-        padding: 180px 0;
+        grid-column-gap: 15px;
+        padding: 120px 0;
     }
 
     .we-section .div-1 {
@@ -48,15 +46,15 @@ const HomeStyle = styled.main`
     }
 
     .div-1-1 {
-        margin-left: 95px;
-        width: 100px;
-        height: 100px;
+        margin-left: 30px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
-        border: 10px solid orange;
+        border: 20px solid orange;
     }
 
     .div-1 .div-1-1 .div-1-p-1 {
-        margin: 35px 0 180px 0;
+        margin: 45px 0 180px;
     }
 
     .div-1-p-2 {
@@ -65,7 +63,6 @@ const HomeStyle = styled.main`
     }
 
     .div-1 .pp {
-        width: 300px;
         line-height: 23px;
     }
 
@@ -76,12 +73,12 @@ const HomeStyle = styled.main`
     .ourAct {
         margin-top: 140px;
         text-align: start;
-        margin: 150px 90px;
+        margin: 150px 0px;
     }
     
     .ourAct h2 {
         font-size: 40px;
-        text-align: start;
+        text-align: center;
         color: orange;
         margin: 0;
         font-weight: 400;
@@ -91,7 +88,6 @@ const HomeStyle = styled.main`
     .ourAct p {
         margin: 10px 0 0 0;
         padding-bottom: 40px;
-        
         font-size: 18px;
         word-spacing: 5px;
         letter-spacing: 1px;
@@ -99,13 +95,13 @@ const HomeStyle = styled.main`
     }
     
     .about {
-        margin: 100px 100px 40px 100px;
-        text-align: center;
+        margin-bottom: 40px;
+        text-align: start;
     }
 
     .about h2 {
         font-size: 40px;
-        text-align: start;
+        text-align: center;
         color: orange;
         margin: 0;
         font-weight: 400;
@@ -125,19 +121,19 @@ const HomeStyle = styled.main`
     
     .plans {
         margin-top: 80px;
-        margin-left: 120px;
     }
     
     .planSection {
         display: grid;
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto;
         grid-column-gap: 50px;
         padding: 50px 0;
+        width: 100%;
     }
 
     .plans .plansH2-1 {
         font-size: 40px;
-        text-align: start;
+        text-align: center;
         color: orange;
         margin: 0;
         font-weight: 400;
@@ -150,19 +146,9 @@ const HomeStyle = styled.main`
         padding-top: 20px;
     }
 
-    // .plan .buyGoldBtn {
-    //     padding: 20px 45px;
-    //     margin-top: 30px;
-    //     border-radius: 40px;
-    //     font-size: 20px;
-    //     background-color: orange;
-    //     border: 2px solid rgb(36, 35, 35);
-    //     color: rgb(36, 35, 35);
-    // }
-
     .col {
         width: 100%;
-        height: 350px;
+        height: 410px;
         background-color: orange;
         border-radius: 20px;
     }
@@ -191,22 +177,21 @@ const HomeStyle = styled.main`
     .coin-section {
         padding: 100px 0;
     }
+    
+    .coin-section h2 {
+        font-size: 40px;
+        text-align: center;
+        color: orange;
+        margin: 0;
+        font-weight: 400;
+        padding-bottom: 20px;
+    }
 
     .coin-section .coin-div {
         display: grid;
         grid-template-columns: auto auto auto auto auto;
         grid-column-gap: 30px;
         padding-bottom: 50px;
-    }
-
-    .coin-section h2 {
-        font-size: 40px;
-        text-align: start;
-        color: orange;
-        margin: 0;
-        font-weight: 400;
-        padding-bottom: 20px;
-        margin-left: 100px;
     }
 
 `;

@@ -18,8 +18,8 @@ const Header = () => {
   return (
     <header className='header'>
         <div className='logo'>
-            <Link to='/' className='uG' style={{color: 'white'}}><h5>U<span style={{color: 'orange'}}>G</span></h5></Link>
-            <Link to='/' className='ultrexGold'>Ultrex<span style={{color: 'orange'}}>Gold</span> </Link>
+            <Link to='/' className='uG' style={{color: 'white'}}><h5> <span>U</span><span style={{color: 'orange'}}>G</span></h5></Link>
+            <Link to='/' className='ultrexGold'> <span style={{color: 'white'}}>Ultrex</span> <span style={{color: 'orange'}}>Gold</span> </Link>
         </div>
         <ul style={{color: 'white'}}>
             {user
