@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Wrapper } from '../styles/HomeStyle';
 import { MobileSidebarStyle, SidebarStyle } from '../styles/SidebarStyle';
-import { LogOut , Settings, User, Edit, Edit3, DollarSign, Database, Award, Tool } from "react-feather";
+import { Settings, User, Edit3, DollarSign, Database, Award, Tool } from "react-feather";
 import { Link } from 'react-router-dom';
 
 
@@ -30,15 +30,14 @@ const Sidebar = () => {
             (
                 <MobileSidebarStyle>
                     <div className='container'>
-                        
-                        <div className='container1'><Link style={{textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/user'}>Account</Link></div>
-                        <div className='container1'><Link style={{textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/deposit'}>Invest Now</Link></div>
-                        <div className='container1'><Link style={{textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/my-investment'}>My Investments</Link></div>
-                        <div className='container1'><Link style={{textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/promo'}>Promo Tools</Link></div>
-                        <div className='container1'><Link style={{textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/my-earning'}>Withdraw Earnings</Link></div>
-                        <div className='container1'><Link style={{textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/referrals'}>My Referrals</Link></div>
-                        <div className='container1'><Link style={{textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/settings'}>Settings</Link></div>
-                        <div className='container1'><Link style={{textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} onClick={''}>Logout</Link></div>
+                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/user'}>Account</Link></div>
+                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/deposit'}>Invest Now</Link></div>
+                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={''}>My Investments</Link></div>
+                        {/* <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/my-investment'}>My Investments</Link></div> */}
+                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/promo'}>Promo Tools</Link></div>
+                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/my-earning'}>Withdraw Earnings</Link></div>
+                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/referrals'}>My Referrals</Link></div>
+                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/settings'}>Settings</Link></div>
                     </div>
                 </MobileSidebarStyle>
             )
@@ -63,13 +62,21 @@ const Sidebar = () => {
                             </Link>
                         </div>
                         <div className='container1'>
-                            <Link style={{textDecoration: 'none', color: 'black'}} to={'/my-investment'}>
+                            <Link style={{textDecoration: 'none', color: 'black'}} to={''}>
                                 <span className='icon'>
                                     <Database size={16} />
                                 </span>
                                 &nbsp;&nbsp; MY INVESTMENTS
                             </Link>
                         </div>
+                        {/* <div className='container1'>
+                            <Link style={{textDecoration: 'none', color: 'black'}} to={'/my-investment'}>
+                                <span className='icon'>
+                                    <Database size={16} />
+                                </span>
+                                &nbsp;&nbsp; MY INVESTMENTS
+                            </Link>
+                        </div> */}
                         <div className='container1'>
                             <Link style={{textDecoration: 'none', color: 'black'}} to={'/promo'}>
                                 <span className='icon'>
@@ -97,27 +104,11 @@ const Sidebar = () => {
                             </Link>
                         </div>
                         <div className='container1'>
-                            <Link style={{textDecoration: 'none', color: 'black'}} to={'/edit-profile'}>
-                                <span className='icon'>
-                                    <Edit size={16} />
-                                </span>
-                                &nbsp;&nbsp; EDIT PROFILE
-                            </Link>
-                        </div>
-                        <div className='container1'>
                             <Link style={{textDecoration: 'none', color: 'black'}} to={'/settings'}>
                                 <span className='icon'>
                                     <Settings size={16} />
                                 </span>
                                 &nbsp;&nbsp; SETTINGS
-                            </Link>
-                        </div>
-                        <div className='container1'>
-                            <Link style={{textDecoration: 'none', color: 'black'}} to={'/ultrexgoldintl'}>
-                                <span className='icon'>
-                                    <LogOut size={16} />
-                                </span>
-                                &nbsp;&nbsp; LOGOUT
                             </Link>
                         </div>
                     </div>

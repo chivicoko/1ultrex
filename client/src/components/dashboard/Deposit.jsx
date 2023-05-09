@@ -189,13 +189,15 @@ const Deposit = () => {
         :
         (
             <DepositStyle>
+                <Sidebar/>
                 <div className='container'>
                     <section>
-                        <Sidebar/>
                         <div className='depositeContainer'>
-                            <div>
+                            <div className="head">
                                 <h1>Make A Deposit</h1>
                                 <small>Select A Package</small>
+                            </div>
+                            <div>
                                 <div className='depo'>
                                     <div className='depo-proposal' style={{color: 'white'}}>
                                         <h4 className='p'>First Proposal</h4>
@@ -275,7 +277,7 @@ const Deposit = () => {
                             <div className='depo'>
                                 <div className='depositeContainer-item1-' >
                                     <p>Amount to Spend</p>
-                                    <input type="number" name='amount' style={{height: '30px', width: '105px'}} defaultValue={amount} onChange={(e) => setMainAmount(e.target.value)}/>
+                                    <input type="number" name='amount' style={{height: '30px', width: '180px'}} defaultValue={amount} onChange={(e) => setMainAmount(e.target.value)}/>
                                 </div>
                                 
                                 <h3 style={{texAlign: 'start', marginTop: '25px'}}>Spend Funds From:</h3>
@@ -283,11 +285,11 @@ const Deposit = () => {
                                 <form className='currencies' onSubmit={onSubmit}>
                                     <p className='currency'>
                                         <input type="radio" id="Bitcoin" name="currency" value="Bitcoin" onClick={(() => setCurrency('bc1q3xa4cst9w27f0we4lqsgy957t254fz8tckcrxh'))} />
-                                        <label htmlFor='Bitcoin'>Bitcoin</label><br/>
+                                        <label htmlFor='Bitcoin'>Bitcoin</label>
                                     </p>
                                     <p className='currency'>
                                         <input type="radio" id="Ethereum" name="currency" value="Ethereum" onClick={(() => setCurrency('0xDEd35CcC8226d4BcBdD25DDA0473E7C965365196'))} />
-                                        <label htmlFor="Ethereum">Ethereum</label><br/>
+                                        <label htmlFor="Ethereum">Ethereum</label>
                                     </p>
                                     <p className='currency'>
                                         <input type="radio" id="Litecoin" name="currency" value="Litecoin" onClick={(() => setCurrency('ltc1qzgqdvdwsm5awfwtn8cu834fpa7as3d2wewper4'))} />

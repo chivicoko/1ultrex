@@ -122,9 +122,9 @@ const Deposit = () => {
         :
         (
             <UserStyle>
+                <Sidebar/>
                 <div className='container'>
                     <section>
-                        <Sidebar/>
                         <div className='userContainer'>
                             <h1>Your Account</h1>
                             

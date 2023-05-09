@@ -108,9 +108,9 @@ const UserInvestment = () => {
         :
         (
             <UserInvestmentStyle>
+                <Sidebar/>
                 <div className='container'>
                     <section>
-                        <Sidebar/>
                         <div className='depositeContainer'>
                             <h1>Your Deposit</h1>
                             <div className='depo'>

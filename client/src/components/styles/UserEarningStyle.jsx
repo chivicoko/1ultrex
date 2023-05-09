@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 const UserEarningStyle = styled.div`
-    margin: 70px 50px 50px 50px;
-    text-align: center;
-    
+    margin: 40px 0 50px;
+    display: flex;
+    justify-content: space-between;
+
+    .container {
+        margin: 0;
+        padding: 0;
+    }
+
     .container section {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-column-gap: 20px;
+        display: flex;
+        justify-content: space-between;    
     }
     
     .depositeContainer {
@@ -29,8 +34,9 @@ const UserEarningStyle = styled.div`
     .depo {
         border-radius: 15px;
         border : 1px solid white;
-        padding: 10px;
+        padding: 20px;
         margin-bottom: 50px;
+        width: 650px;
     }
 
     .depo p {
@@ -42,15 +48,13 @@ const UserEarningStyle = styled.div`
         padding: 15px 10px;
         margin: 5px;
         color: orange;
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-column-gap: 200px;
+        display: flex;
+        justify-content: space-between;    
     }
 
     .depositeContainer-item2 {
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-column-gap: 150px;
+        display: flex;
+        justify-content: space-between;    
         padding: 20px 0 0;
         text-align: start;
     }
@@ -78,6 +82,7 @@ const UserEarningStyle = styled.div`
 const MobileUserEarningStyle = styled.div`
     margin: 0;
     text-align: center;
+    font-size: 11px;
 
     .container section {
         color: white;
@@ -87,7 +92,6 @@ const MobileUserEarningStyle = styled.div`
     .depositeContainer h1 {
         color: orange;
         margin: 10px 0 20px 0;
-        font-size: 17px;
     }
 
     .depositeContainer .p {

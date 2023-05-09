@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 const UserInvestmentStyle = styled.div`
-    margin: 70px 50px 50px 50px;
-    text-align: center;
+    margin: 40px 0 50px;
+    display: flex;
+    justify-content: space-between;
     
+    .container {
+        margin: 0;
+        padding: 0;
+    }
+
     .container section {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-column-gap: 20px;
+        display: flex;
+        justify-content: space-between;
     }
     
     .depositeContainer {

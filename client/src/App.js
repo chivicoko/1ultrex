@@ -17,7 +17,6 @@ import Referrals from "./components/dashboard/Referrals";
 import Promo from "./components/dashboard/Promo";
 import UserEarning from "./components/dashboard/UserEarning";
 import UserInvestment from "./components/dashboard/UserInvestment";
-import Withdraw from "./components/dashboard/Withdraw";
 import ConfirmDeposit from "./components/dashboard/ConfirmDeposit";
 import User from "./components/dashboard/User";
 import EditProfile from "./components/dashboard/EditProfile";
@@ -45,7 +44,6 @@ function App() {
             <Route exact path='/settings' element={ <Settings/>}> {Settings} </Route>
             <Route exact path='/edit-profile' element={ <EditProfile/>}> {EditProfile} </Route>
             <Route exact path='/referrals' element={ <Referrals/>}> {Referrals} </Route>
-            <Route exact path='/withdraw' element={ <Withdraw/>}> {Withdraw} </Route>
             <Route exact path='/user' element={ <User/>}> {User} </Route>
             <Route exact path='/my-investment' element={ <UserInvestment/>}> {UserInvestment} </Route>
             <Route exact path='/my-earning' element={ <UserEarning/>}> {UserEarning} </Route>

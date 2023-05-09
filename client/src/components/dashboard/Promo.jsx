@@ -28,7 +28,7 @@ const Promo = () => {
         {isMobile ?
         (
             <MobilePromoStyle>
-                    <Sidebar/>
+                <Sidebar/>
                 <div className='container'>
                     <section>
                         <div className='depositeContainer'>
@@ -45,12 +45,15 @@ const Promo = () => {
         :
         (
             <PromoStyle>
+                <Sidebar/>
                 <div className='container'>
                     <section>
-                        <Sidebar/>
                         <div className='depositeContainer'>
-                            <h1>Make A Deposit</h1>
-                            Promo page
+                            <h1>Referral Links</h1>
+                            <p className='p'>The best internet investment</p>
+                            <div className='userSection'>
+                                <div><p style={{marginLeft: '20px'}}>https://ultrexgoldintl.com/?ref=Happiness</p></div>
+                            </div>
                         </div>
                     </section>
                 </div>

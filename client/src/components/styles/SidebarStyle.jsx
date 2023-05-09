@@ -2,14 +2,17 @@ import styled from "styled-components";
 
 const SidebarStyle = styled.aside`
     background-color: orange;
-    padding: 20px;
-    margin: 70px 40px 20px 40px;
+    padding: 5px 20px 20px;
+    margin: 120px 40px 20px 0;
     border-radius: 15px;
-    height: 620px;
+    height: 480px;
+    width: 210px;
 
     .container1 {
-        margin: 40px 20px;
+        margin: 40px 0;
         text-align: start;
+        font-size: 13px;
+        // padding: 0 10px;
     }
 
     .container1 .pa {

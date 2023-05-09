@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const DepositStyle = styled.div`
-    margin: 70px 50px 50px 50px;
-    text-align: center;
+    margin: 40px 0 50px;
+    display: flex;
+    justify-content: space-between;
     
-    .container section {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-column-gap: 20px;
+    .container {
+        margin: 0;
+        padding: 0;
     }
     
     .depositeContainer {
@@ -16,9 +16,13 @@ const DepositStyle = styled.div`
         border-radius: 15px;
     }
     
+    .depositeContainer .head {
+        margin: 0 0 20px;
+    }
+    
     .depositeContainer h1 {
         color: orange;
-        margin: 10px 15px 20px 15px;
+        margin: 10px 15px 7px 15px;
         font-size: 40px;
     }
     
@@ -32,6 +36,15 @@ const DepositStyle = styled.div`
         padding: 10px;
         margin-bottom: 50px;
     }
+    
+    .depo .depo-proposal {
+        padding: 10px 15px 0;
+        margin-bottom: 20px;
+        font-weight: 400;
+        font-size: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
 
     .depo p {
         text-align: center;
@@ -42,16 +55,14 @@ const DepositStyle = styled.div`
         padding: 15px 10px;
         margin: 5px;
         color: orange;
-        display: grid;
-        grid-template-columns: auto auto auto;
-        grid-column-gap: 300px;
+        display: flex;
+        justify-content: space-between;
     }
 
     .depositeContainer-item2 {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        grid-column-gap: 300px;
-        padding: 20px 0 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 17px 10px;
     }
     
     .depositeContainer-item1- {
@@ -75,6 +86,29 @@ const DepositStyle = styled.div`
         padding: 5px;
     }
 
+    .currencies {
+        border-bottom: 1px solid orange;
+        border-top: 1px solid orange;
+        margin: 5px;
+        padding: 10px 0;
+        color: orange;
+    }
+
+    .currency {
+        // box-shadow: 0 2px 5px 0 rgb(0, 0, 0), 0 2px 5px 0 rgb(197, 196, 196);
+        margin: 20px 120px;
+        text-align: start;
+        border-bottom: 1px solid grey;
+        padding-bottom: 15px;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .currency input {
+        margin-right: 50px;
+    }
+
     .spendBtn {
         text-align: start;
     }
@@ -85,6 +119,14 @@ const DepositStyle = styled.div`
         margin-top: 0;
         border-radius: 30px;
         font-size: 25px;
+    }
+    
+    .btn {
+        margin: 25px 0 10px;
+        font-size: 20px;
+        border-radius: 5px;
+        padding: 10px 20px;
+        width: 760px;
     }
 
 `;

@@ -1,23 +1,30 @@
 import styled from "styled-components";
 
 const UserStyle = styled.div`
-    margin: 70px 50px 50px;
-    text-align: center;
-    
+    margin: 40px 0 50px;
+    display: flex;
+    justify-content: space-between;
+
     section {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-column-gap: 20px;
+        display: flex;
+        justify-content: space-between;    
     }
         
+    .container {
+        margin: 0;
+        padding: 0;
+    }
+    
     .userContainer {
+        color: white;
         margin: 0 20px 20px;
-        // border: 1px solid orange;
+        border-radius: 15px;
     }
         
     .userContainer h1 {
         color: orange;
         font-size: 40px;
+        margin-top: 15px;
     }
     
     .userSection {
@@ -25,15 +32,13 @@ const UserStyle = styled.div`
         margin-top: 20px;
         text-align: start;
         border-radius: 15px;
-        padding: 35px 15px 15px;
+        padding: 15px 0;
     }
 
     .userSection p {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-column-gap: 200px;
-        margin: 20px 200px 70px;
-        border-bottom: 1px solid black;
+        display: flex;
+        justify-content: space-between;
+        margin: 25px;
         padding-bottom: 10px;
         width: 550px;
     }
@@ -41,21 +46,6 @@ const UserStyle = styled.div`
     .userSection p div {
         text-align: start;
     }
-    
-    // .userSection p div {
-    //     border-bottom: 1px solid white;
-    //     // border-radius: 15px;
-    //     padding: 20px 10px 15px 10px;
-    //     margin: 10px 200px 10px 200px;
-    //     width: 450px;
-    //     // height: 55px;
-    //     text-align: center;
-    // }
-
-    // .userSection p {
-    //     margin-bottom: 15px;
-    //     margin-top: 45px;
-    // }
     
 `;
 

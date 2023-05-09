@@ -150,12 +150,55 @@ const ConfirmDeposit = () => {
         :
         (
             <ConfirmDepositStyle>
+                <Sidebar/>
                 <div className='container'>
-                    <section>
-                        <Sidebar/>
+                <section>
                         <div className='depositeContainer'>
-                            <h1>Make A Deposit</h1>
-                            Referral page
+                            <h1>Please Confirm your deposit</h1>
+                            <p className='p'>Kindly copy the address below to make a deposit</p>
+                            <div className='userSection'>
+                                <div>
+                                    <p>Plan:</p>
+                                    <p>{proposal}</p>
+                                </div> <hr />
+                                <div>
+                                    <p>Profit:</p>
+                                    <p>3.00% daily for 5 days</p>
+                                </div> <hr />
+                                <div>
+                                    <p>Principal Return:</p>
+                                    <p>Yes</p>
+                                </div> <hr />
+                                <div>
+                                    <p>Principal Withdraw:</p>
+                                    <p>Not available</p>
+                                </div> <hr />
+                                <div>
+                                    <p>Credit Amount:</p>
+                                    <p>${location.state.amount}</p>
+                                </div> <hr />
+                                <div>
+                                    <p>Deposit Fee:</p>
+                                    <p>0.00% + $0.00 (min. $0.00 max. $0.00)</p>
+                                </div> <hr />
+                                <div>
+                                    <p>Debit Amount:</p>
+                                    <p>${location.state.amount}</p>
+                                </div> <hr />
+                                <div>
+                                    <p>Debit Amount:</p>
+                                    <p>{location.state.amount}</p>
+                                </div>
+                            </div>
+                            <p style={{marginTop: '20px', marginBottom: '20px' , color: 'orange'}}>
+                                <span style={{color: 'white'}}>Address:</span> <br />
+                                <small style={{fontSize: '12px'}}>{location.state.currency}</small>
+                            </p>
+                            <div className='saveCancel'>
+                                <Link><Button className='btn' onClick={onClick}>Save</Button></Link>
+                                <Link to={'/deposit'}><Button primary className='btn'>Cancel</Button></Link>
+                            </div>
+                            <small>If you click 'save', the deposit will be saved. It will become active when the administrator checks statistics.</small>
                         </div>
                     </section>
                 </div>

@@ -98,9 +98,9 @@ const UserEarning = () => {
         :
         (
             <UserEarningStyle>
+                <Sidebar/>
                 <div className='container'>
                     <section>
-                        <Sidebar/>
                         <div className='depositeContainer'>
                             <h1>Request for Withdrawal</h1>
                             <div className='depo'>

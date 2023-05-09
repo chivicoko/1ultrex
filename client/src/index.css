@@ -255,6 +255,17 @@ h3 {
   font-size: small;
 }
 
+.settings-container {
+  margin: 40px 0 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings-container .head {
+  width: 600px;
+  margin: 0;
+  padding: 0;
+}
 
 @keyframes spin {
   0% {
@@ -374,5 +385,17 @@ h3 {
     margin-top: 40px;
     font-size: small;
   }
+
+  
+  .settings-container {
+    display: inline-block;
+  }
+
+  .settings-container .head {
+    width: 350px;
+    margin: 0;
+    padding: 0;
+  }
+
 
 }
