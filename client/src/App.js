@@ -23,7 +23,7 @@ import EditProfile from "./components/dashboard/EditProfile";
 import DepositForm from "./components/DepositForm";
 
 function App() {
-  axios.defaults.baseURL = 'http://localhost:5000';
+  // axios.defaults.baseURL = 'http://localhost:5000';
   axios.defaults.withCredentials = true;
 
   return (

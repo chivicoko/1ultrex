@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FaUser } from 'react-icons/fa';
 import { register, reset } from '../features/auth/authSlice';
@@ -104,6 +104,7 @@ const Register = () => {
                     <button type='submit' className='btn btn-block'>Submit</button>
                 </div>
             </form>
+            <small>Signed Up? <Link to={'/login'}><span style={{color: 'orange'}}><em>Log in</em></span></Link></small>
         </section>
     </>
   )
