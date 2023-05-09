@@ -34,12 +34,11 @@ const ReferralStyle = styled.div`
         background: grey;
         border-radius: 10px;
     }
+
     .userSection div {
-        padding: 15px;
-        text-align: start;
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-column-gap: 10px;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
     }
 `;
 

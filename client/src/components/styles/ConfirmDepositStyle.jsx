@@ -5,6 +5,7 @@ const ConfirmDepositStyle = styled.div`
     display: flex;
     justify-content: space-between;
     font-size: 20px;
+    color: white;
     
     .container {
         margin: 0;
@@ -58,6 +59,7 @@ const ConfirmDepositStyle = styled.div`
 
 const MobileConfirmDepositStyle = styled.div`
     margin: 0;
+    color: white;
     text-align: center;
 
     section {

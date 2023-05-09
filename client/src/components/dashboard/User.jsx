@@ -126,26 +126,49 @@ const Deposit = () => {
                 <div className='container'>
                     <section>
                         <div className='userContainer'>
-                            <h1>Your Account</h1>
-                            
-                            <div className='userSection'>
-                                <p><span>Username</span><span>Happiness</span></p>
-                                
-                                <p><span>Registration Date</span><span>Apr-18-2023</span></p>
+                            <section>
+                                {deposits.length > 0 ? (
+                                    <>
+                                        <h1 style={{textAlign: 'center', marginTop: '20px'}}>Your Account</h1>
+                                        <div className='userSection' >
+                                            <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Username:</p><p>{user.username}</p></div>
+                                            <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Registration Date:</p><p>{new Date(user.createdAt).toLocaleString('en-US')}</p></div>
+                                            <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Last Access:</p><p>Apr-18-2023 04:26:20 PM </p></div>
+                                            <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Account Balance:</p><p>$0.00</p></div>
+                                            <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Earned Total:</p><p>$0.00</p></div>
+                                            <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Pending Withdrawal:</p><p>$0.00</p></div>
+                                            <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Withdrew Total:</p><p>$0.00</p></div>
+                                            <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Active Deposite:</p><p>$0.00</p></div>
+                                        </div>
 
-                                <p><span>Last Access</span><span>Apr-18-2023 04:26:20 PM </span></p>
+                                        <h1 style={{textAlign: 'center', marginTop: '70px'}}>Your Deposits</h1>
+                                        <div className="userDepositSection" style={{ backgroundColor: 'grey', borderRadius: '10px', marginTop: '20px', padding: '.25px 15px'}}>
+                                            {deposits.map((deposit) => (
+                                                <div key={deposit._id} >
+                                                    <hr />
+                                                    <div className="deposit" style={{margin: '30px 0'}} >
+                                                        <div style={{margin: '0 35px 15px', display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}>
+                                                            <p style={{fontWeight: 'bold', color: 'black'}}>Transaction time : </p> <p style={{color: 'white'}}>{new Date(deposit.createdAt).toLocaleString('en-US')}</p>
+                                                        </div>
+                                                        <div style={{margin: '0 35px 15px', display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}>
+                                                            <p style={{fontWeight: 'bold', color: 'black'}}>Transaction Currency : </p><p style={{color: 'white'}}>{deposit.cryptoCurrency}</p>
+                                                        </div>
+                                                        <div style={{margin: '0 35px 15px', display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}>
+                                                            <p style={{fontWeight: 'bold', color: 'black'}}>Transaction Amount : </p><p style={{color: 'white'}}>{deposit.depositeAmount}</p>
+                                                        </div>
+                                                        <div style={{margin: '0 35px 15px', display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}>
+                                                            <p style={{fontWeight: 'bold', color: 'black'}}>Transaction Status : </p><p style={{color: 'white'}}>{deposit.pending === 'pending' ? 'Pending' : 'Invested'}</p>
+                                                        </div>
+                                                        <Button style={{padding: '10px 20px', fontSize: '12px', margin: '0', color: 'red', letterSpacing: '4px', backgroundColor: 'orange', border: '1px solid orange', marginTop: '10px', marginBottom: '0'}} onClick={() => dispatch(deleteDeposit(deposit._id))}>Delete</Button>
+                                                    </div>
+                                                    <hr />
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </>
+                                ) : (<h3 style={{marginTop: '250px', marginLeft: '150px', fontSize: '30px'}}>You have not made any deposits</h3>)}
+                            </section>
 
-                                <p><span>Account Balance</span><span>$0.00</span></p>
-
-                                <p><span>Earned Total</span><span>$0.00</span></p>
-
-                                <p><span>Pending Withdrawal</span><span>$0.00</span></p>
-
-                                <p><span>Withdrew Total</span><span>$0.00</span></p>
-
-                                <p><span>Active Deposite</span><span>$0.00</span></p>
-                            </div>
-                            
                         </div>
                     </section>
                 </div>

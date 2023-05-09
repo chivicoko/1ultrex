@@ -68,7 +68,7 @@ const Settings = () => {
         <Sidebar />
         <div className='head'>
             <section className='heading' style={{marginTop: '25px'}}>
-                <h1>
+                <h1 style={{color: 'orange', fontSize: '40px'}}>
                     <FaTools /> Settings
                 </h1>
                 <p>Edit your account</p>

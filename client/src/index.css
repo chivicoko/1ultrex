@@ -263,8 +263,13 @@ h3 {
 
 .settings-container .head {
   width: 600px;
-  margin: 0;
+  margin: 30px 0 0;
   padding: 0;
+  font-size: 25px;
+}
+
+.settings-container .head section h1 {
+  font-size: 40px;
 }
 
 @keyframes spin {
@@ -395,6 +400,11 @@ h3 {
     width: 350px;
     margin: 0;
     padding: 0;
+  }
+  
+  .settings-container .head section h1 {
+    margin-top: 10px;
+    font-size: 30px;
   }
 
 

@@ -6,8 +6,8 @@ const UserStyle = styled.div`
     justify-content: space-between;
 
     section {
-        display: flex;
-        justify-content: space-between;    
+        // display: flex;
+        // justify-content: space-between;    
     }
         
     .container {
@@ -38,9 +38,8 @@ const UserStyle = styled.div`
     .userSection p {
         display: flex;
         justify-content: space-between;
-        margin: 25px;
-        padding-bottom: 10px;
-        width: 550px;
+        margin: 15px 50px;
+        font-size: 15px;
     }
 
     .userSection p div {

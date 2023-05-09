@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const SettingsStyle = styled.div`
-
+    
 `;
 
 const MobileSettingsStyle = styled.div`

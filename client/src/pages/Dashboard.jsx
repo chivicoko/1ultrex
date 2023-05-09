@@ -35,31 +35,33 @@ const Dashboard = () => {
   }
 
   return (
-    <>
-      <section>
-        <h1>Welcome, {user && user.fullName}</h1>
-        <p style={{color: 'orange'}}>This is your dashboard</p>
-      </section>
-      
+    <div className='settings-container'>
       <Sidebar/>
+      <div className='head' style={{color: 'white'}}>
+        <section>
+          <h1 style={{color: 'orange'}}>Welcome, {user && user.fullName}</h1>
+          <p>This is your dashboard</p>
+        </section>
+        
 
-      <section>
-        <div className='userContainer'>
-          <div className='userSection' style={{backgroundColor: 'grey', padding: '20px 15px', margin: '30px 5px', borderRadius: '15px'}}>
-            <h1 style={{textAlign: 'center', marginTop: '10px', marginBottom: '25px', color: 'orange'}}>Your Account</h1>
-            <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Username:</p><p>{user.username}</p></div>
-            <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Registration Date:</p><p>Apr-18-2023</p></div>
-            <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Last Access:</p><p>Apr-18-2023 04:26:20 PM </p></div>
-            <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Account Balance:</p><p>$0.00</p></div>
-            <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Earned Total:</p><p>$0.00</p></div>
-            <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Pending Withdrawal:</p><p>$0.00</p></div>
-            <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Withdrew Total:</p><p>$0.00</p></div>
-            <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Active Deposite:</p><p>$0.00</p></div>
-        </div>
+        <section>
+          <div className='userContainer'>
+            <div className='userSection' style={{backgroundColor: 'grey', padding: '25px', fontSize: '15px', margin: '30px 5px', borderRadius: '15px'}}>
+              {/* <h1 style={{textAlign: 'center', marginTop: '10px', marginBottom: '25px', color: 'orange'}}>Your Account</h1> */}
+              <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>Username:</p><p>{user.username}</p></div>
+              <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>Registration Date:</p><p>Apr-18-2023</p></div>
+              <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>Last Access:</p><p>Apr-18-2023 04:26:20 PM </p></div>
+              <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>Account Balance:</p><p>$0.00</p></div>
+              <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>Earned Total:</p><p>$0.00</p></div>
+              <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>Pending Withdrawal:</p><p>$0.00</p></div>
+              <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>Withdrew Total:</p><p>$0.00</p></div>
+              <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Active Deposite:</p><p>$0.00</p></div>
+          </div>
 
-        </div>
-      </section>
-    </>
+          </div>
+        </section>
+      </div>
+    </div>
   )
 }
 
