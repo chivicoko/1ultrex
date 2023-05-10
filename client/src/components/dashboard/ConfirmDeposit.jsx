@@ -142,7 +142,7 @@ const ConfirmDeposit = () => {
                                 <Link to={'/deposit'}><Button primary className='btn'>Cancel</Button></Link>
                             </div>
                             {/* <small>If you click 'save', the deposit will be saved. It will become active when the administrator checks statistics.</small> */}
-                            <small>Click 'save' to save deposit.</small>
+                            <small>Click 'save' to save deposit. You'll receive an email of confirmation soon.</small>
                         </div>
                     </section>
                 </div>
@@ -200,7 +200,7 @@ const ConfirmDeposit = () => {
                                 <Link to={'/deposit'}><Button primary className='btn'>Cancel</Button></Link>
                             </div>
                             {/* <small>If you click 'save', the deposit will be saved. It will become active when the administrator checks statistics.</small> */}
-                            <small>Click 'save' to save deposit.</small>
+                            <small>Click 'save' to save deposit. You'll receive an email of confirmation soon.</small>
                         </div>
                     </section>
                 </div>
