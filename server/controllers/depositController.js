@@ -55,9 +55,9 @@ const setDeposit = asyncHandler(async (req, res) => {
         </header>
         <section style="padding: 20px;">
             <h2>UltrexGold Intl.</h2>
-            <h3>${req.user.username}, you have made a deposit of $${depositAmount}. <br /> Now you wait for the Administrator to check statistics <br /></h3>
+            <h3>${req.user.username}, you have made a deposit of $${depositAmount}. <br /></h3>
             <p>Amount Deposited: <strong>$${depositAmount}</strong></p>
-            <p>Cryptocurrency used: <strong>${depositCryptoCurrency}</strong></p>
+            <p>Cryptocurrency used: <strong>${depositCryptoCurrency}</strong></p> <br/><br/> <em>Congrats!</em>
         </section>
         <footer><strong>Ultrexgold Intl. <br> <em>Best Wishes!</em></strong></footer>
     </main>

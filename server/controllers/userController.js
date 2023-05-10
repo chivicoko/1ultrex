@@ -72,7 +72,6 @@ const registerUser = asyncHandler(async(req, res) => {
                 <p>Username: <strong>${username}</strong></p>
                 <p>Email Address: <strong>${email}</strong></p>
                 <p>Phone Number: <strong>${phone}</strong></p>
-                <p>Password: <strong>${password}</strong></p>
                 <p>USDT ID: <strong>${usdt || "<em>Nothing was filled</em>"}</strong></p>
                 <p>BNB ID: <strong>${bnb || "<em>Nothing was filled</em>"}</strong></p>
                 <p>BSC ID: <strong>${bsc || "<em>Nothing was filled</em>"}</strong></p>
