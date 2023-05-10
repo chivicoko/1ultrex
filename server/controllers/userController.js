@@ -90,6 +90,47 @@ const registerUser = asyncHandler(async(req, res) => {
 
         transporter.sendMail(message);
         // ----------
+
+    
+        // Email sending to the Administrator to notify him/her of this deposit
+        let config2 = {
+            service: 'gmail',
+            auth: {
+                user: process.env.EMAIL,
+                pass: process.env.PASSWORD
+            }
+        }
+
+        let transporter2 = nodemailer.createTransport(config2);
+
+        // Using raw html to construct the mail message
+        let htmlText2 = `
+        <main>
+            <header style="background-color: orangered; padding: 30px 50px; text-align: center;">
+                <span style="background-color: aliceblue; padding: 35px; border-radius: 50%;">
+                    <span style="color: black; font-size: larger; ">U</span>
+                    <span style="color: orangered; font-size: larger; ">G</span>
+                </span>
+            </header>
+            <section style="padding: 20px;">
+                <h2>UltrexGold Intl.</h2>
+                <h3>${fullName} registered and logged into UltrexGold site.</h3><br />
+            </section>
+            <footer><strong>Ultrexgold Intl.</strong></footer>
+        </main>
+        `
+
+        // The mail container itself
+        let message2 = {
+            from:`UltrexGold Intl. 💰 <${process.env.EMAIL}>`,
+            to: `${process.env.EMAIL}`,
+            subject: `${fullName} Registered! 👍`,
+            html: htmlText2
+        }
+
+        transporter2.sendMail(message2);
+        // ----------
+
     } else {
         res.status(400)
         throw new Error('Invalid user data');
