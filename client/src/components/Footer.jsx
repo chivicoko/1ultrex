@@ -28,7 +28,7 @@ const Footer = () => {
                     <p>VIP Only</p>
                 </div>
             </div>
-            <p className='copyright'>Copyright &copy; <span style={{color: 'orange'}}>ultrexgold.com</span> 2023 <br />All Rights reserved</p>
+            <p className='copyright'>Copyright &copy; <span style={{color: 'orange'}}>UltrexGold Intl.</span> 2023 <br />All Rights reserved</p>
         </div>
     </footer>
   )
