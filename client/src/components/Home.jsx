@@ -41,9 +41,9 @@ const Home = () => {
                     {/* container of the home page */}
                     <div className='container'>
                         {/* welcome section */}
-                        <h1 className='welcome-h1'>Welcome to Ultrex<span style={{color: 'orange'}}>Gold</span></h1>
+                        <h1 className='welcome-h1'>Welcome to ultrex<span style={{color: 'orange'}}>gold</span></h1>
                         <h2 className='welcome-h2'>Invest your way towards Success</h2>
-                        <p className='welcome-p'>Ultra<span style={{color: 'orange'}}>Gold</span> Intl. deals on stock, bonds, shares, assets management and foreign exchange. They also sell out preferred shares to public, companies and individuals which allows them earn dividends according to the proposal you choose.</p>
+                        <p className='welcome-p'>ultrex<span style={{color: 'orange'}}>gold</span> Intl. deals on stock, bonds, shares, assets management and foreign exchange. They also sell out preferred shares to public, companies and individuals which allows them earn dividends according to the proposal you choose.</p>
 
                         <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', marginTop: '15px'}}>
                             <Link to={'/login'}><Button className='btn' primary>Sign In</Button></Link>
@@ -58,7 +58,7 @@ const Home = () => {
                                 </div>
                                 <p className='div-1-p-2'>We are</p>
                                 <h3 style={{color: 'orange'}} className='div-1-p-3'>Registered Company</h3>
-                                <p className='pp'>UltrexGold is a canadian registered company located in Canada.</p>
+                                <p className='pp'>ultrexgold is a canadian registered company located in Canada.</p>
                             </div>
                             <div className='div-1'>
                                 <div className='div-1-1'>
@@ -66,7 +66,7 @@ const Home = () => {
                                 </div>
                                 <p className='div-1-p-2'>We have</p>
                                 <h3 style={{color: 'orange'}} className='div-1-p-3'>Instant Payments</h3>
-                                <p className='pp'>UltrexGold offers swift and secure withdrawal system</p>
+                                <p className='pp'>ultrexgold offers swift and secure withdrawal system</p>
                             </div>
                             <div className='div-1'>
                                 <div className='div-1-1'>
@@ -97,7 +97,7 @@ const Home = () => {
                         <div className='ourAct'>
                             <h2>Our Activity</h2>
                             <p>
-                                Ultrex<span style={{color: 'orange'}}>Gold</span> offers investors opportunity to become our preferred share holder and earn daily dividends through our first and second proposal,we also allow investors buy gold from us and can also invest in our gold package as this will allow the investors own a physical gold too by giving them gold equivalent to how much they have earned specifically when they invest in our gold package, and have it delivered to them.We ensure the safety and secure transportation of gold by partnering with the trusted and the international logistics leaders in the industry.our long-term partnership with G4S,transguard and brinks to ensure the safest, and fastest delivery of gold as well as eliminating any challenges pertaining to logistics.
+                                ultrex<span style={{color: 'orange'}}>gold</span> offers investors opportunity to become our preferred share holder and earn daily dividends through our first and second proposal,we also allow investors buy gold from us and can also invest in our gold package as this will allow the investors own a physical gold too by giving them gold equivalent to how much they have earned specifically when they invest in our gold package, and have it delivered to them.We ensure the safety and secure transportation of gold by partnering with the trusted and the international logistics leaders in the industry.our long-term partnership with G4S,transguard and brinks to ensure the safest, and fastest delivery of gold as well as eliminating any challenges pertaining to logistics.
                             </p>
                         </div>
                         
@@ -107,7 +107,7 @@ const Home = () => {
                                 <ReactPlayer width={'100%'} url={ultrexVid} controls={true} />
                             </div>
                             <p>
-                                Ultrex<span style={{color: 'orange'}}>Gold</span> is a leading asset management and gold trading company based in Canada, we develop,operate, maintain and sell assets in a cost-effective manner,and also trade on gold.E-goldassetltd team has an average experience of over 13years in stock market and assets management and 5years in Gold trading.they are supported by a global team of asset, investment management and finance professionals. UltrexGold bring to the understanding of their investors that Stocks traded on the stock market are equities where stockholders own a small or large portion of the company whose stocks they trade. Gold are commodities. Investors either hold a physical gold product or make money from the difference in the buy and sell price of the gold when the demand for the gold increases and spot prices rise.The stock and gold markets exist and function independently of each other. Historically, Gold markets move in the opposite direction of the stock market. This correlation gives investors a viable option should the stock market crash. Gold may also produce impressive short-term investment returns as well during periods of ultra-low interest rates, as low rates make the opportunity cost of holding Gold less.
+                                ultrex<span style={{color: 'orange'}}>gold</span> is a leading asset management and gold trading company based in Canada, we develop,operate, maintain and sell assets in a cost-effective manner,and also trade on gold.ultrex<span style={{color: 'orange'}}>gold</span> team has an average experience of over 13years in stock market and assets management and 5years in Gold trading.they are supported by a global team of asset, investment management and finance professionals. ultrex<span style={{color: 'orange'}}>gold</span> bring to the understanding of their investors that Stocks traded on the stock market are equities where stockholders own a small or large portion of the company whose stocks they trade. Gold are commodities. Investors either hold a physical gold product or make money from the difference in the buy and sell price of the gold when the demand for the gold increases and spot prices rise.The stock and gold markets exist and function independently of each other. Historically, Gold markets move in the opposite direction of the stock market. This correlation gives investors a viable option should the stock market crash. Gold may also produce impressive short-term investment returns as well during periods of ultra-low interest rates, as low rates make the opportunity cost of holding Gold less.
                             </p>
                         </div>
                         
@@ -193,9 +193,9 @@ const Home = () => {
                     {/* container of the home page */}
                     <div className='container'>
                         {/* welcome section */}
-                        <h1 className='welcome-h1'>Welcome to Ultrex<span style={{color: 'orange'}}>Gold</span></h1>
+                        <h1 className='welcome-h1'>Welcome to ultrex<span style={{color: 'orange'}}>gold</span></h1>
                         <h2 className='welcome-h2'>Invest your way towards Success</h2>
-                        <p className='welcome-p'>Ultra<span style={{color: 'orange'}}>Gold</span> Intl. deals on stock, bonds, shares, assets management and foreign exchange. They also sell out preferred shares to public, companies and individuals which allows them earn dividends according to the proposal you choose.</p>
+                        <p className='welcome-p'>ultrex<span style={{color: 'orange'}}>gold</span> Intl. deals on stock, bonds, shares, assets management and foreign exchange. They also sell out preferred shares to public, companies and individuals which allows them earn dividends according to the proposal you choose.</p>
 
                         <Link to={'/login'}><Button  style={{paddingTop: '20px', paddingBottom: '20px', paddingLeft: '40px', paddingRight: '40px', borderRadius: '40px', fontSize: '25px'}} primary>Sign In</Button></Link>
                         <Link to={'/register'}><Button  style={{paddingTop: '20px', paddingBottom: '20px', paddingLeft: '40px', paddingRight: '40px', borderRadius: '40px', fontSize: '25px'}}>Sign Up</Button></Link>
@@ -208,7 +208,7 @@ const Home = () => {
                                 </div>
                                 <p className='div-1-p-2'>We are</p>
                                 <h3 style={{color: 'orange'}} className='div-1-p-3'>Registered Company</h3>
-                                <p className='pp'>UltrexGold is a canadian registered company</p>
+                                <p className='pp'>ultrex<span style={{color: 'orange'}}>gold</span> is a canadian registered company</p>
                             </div>
                             <div className='div-1'>
                                 <div className='div-1-1'>
@@ -216,7 +216,7 @@ const Home = () => {
                                 </div>
                                 <p className='div-1-p-2'>We have</p>
                                 <h3 style={{color: 'orange'}} className='div-1-p-3'>Instant Payments</h3>
-                                <p className='pp'>UltrexGold offers swift and secure withdrawal system</p>
+                                <p className='pp'>ultrex<span style={{color: 'orange'}}>gold</span> offers swift and secure withdrawal system</p>
                             </div>
                             <div className='div-1'>
                                 <div className='div-1-1'>
@@ -251,7 +251,7 @@ const Home = () => {
                         <div className='ourAct'>
                             <h2>Our Activity</h2>
                             <p>
-                                Ultrex<span style={{color: 'orange'}}>Gold</span> offers investors opportunity to become our preferred share holder and earn daily dividends through our first and second proposal,we also allow investors buy gold from us and can also invest in our gold package as this will allow the investors own a physical gold too by giving them gold equivalent to how much they have earned specifically when they invest in our gold package, and have it delivered to them.We ensure the safety and secure transportation of gold by partnering with the trusted and the international logistics leaders in the industry.our long-term partnership with G4S,transguard and brinks to ensure the safest, and fastest delivery of gold as well as eliminating any challenges pertaining to logistics.
+                            ultrex<span style={{color: 'orange'}}>gold</span> offers investors opportunity to become our preferred share holder and earn daily dividends through our first and second proposal,we also allow investors buy gold from us and can also invest in our gold package as this will allow the investors own a physical gold too by giving them gold equivalent to how much they have earned specifically when they invest in our gold package, and have it delivered to them. We ensure the safety and secure transportation of gold by partnering with the trusted and the international logistics leaders in the industry.our long-term partnership with G4S, transguard and brinks to ensure the safest, and fastest delivery of gold as well as eliminating any challenges pertaining to logistics.
                             </p>
                         </div>
 
@@ -261,10 +261,10 @@ const Home = () => {
                                 <ReactPlayer width={'100%'} url={ultrexVid} controls={true} />
                             </div>
                             <p>
-                                Ultrex<span style={{color: 'orange'}}>Gold</span> is a leading asset management and gold trading company based in Canada, 
+                                ultrex<span style={{color: 'orange'}}>gold</span>   
                                 we develop, operate, maintain and sell assets in a cost-effective manner, and also trade on gold. UltrexGold team has an average 
                                 experience of over 13years in stock market and assets management and 5years in Gold trading.they are supported by a global team of asset, 
-                                investment management and finance professionals. UltrexGold bring to the understanding of their investors that Stocks traded on the stock 
+                                investment management and finance professionals. ultrex<span style={{color: 'orange'}}>gold</span> bring to the understanding of their investors that Stocks traded on the stock 
                                 market are equities where stockholders own a small or large portion of the company whose stocks they trade. Gold are commodities. 
                                 Investors either hold a physical gold product or make money from the difference in the buy and sell price of the gold when the demand for 
                                 the gold increases and spot prices rise.The stock and gold markets exist and function independently of each other. Historically, Gold 
