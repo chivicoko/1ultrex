@@ -99,12 +99,12 @@ const Header = () => {
                         <option value="es">Espanol</option>
                     </select>
                     <li>
-                        <Link to='/login' style={{color: 'white', background: 'orange', borderRadius: '5px'}}>
+                        <Link to='/login' style={{color: 'white', background: 'orange', borderRadius: '3px', padding: '3px'}}>
                             {t('Login')}
                         </Link>
                     </li>
                     <li>
-                        <Link to='/register' style={{color: 'white', background: 'orange', borderRadius: '5px'}}>
+                        <Link to='/register' style={{color: 'white', background: 'orange', borderRadius: '3px', padding: '3px'}}>
                             {t('Register')}
                         </Link>
                     </li>
