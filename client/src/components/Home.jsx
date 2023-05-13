@@ -16,13 +16,17 @@ import { useTranslation } from 'react-i18next';
 import i18next from 'i18next'
 
 const Home = () => {
-    const { t } = useTranslation(["common"]);
+    const { i18n, t } = useTranslation(["common"]);
 
     useEffect(() => {
       if (localStorage.getItem("i18nextLng")?.length > 2) {
         i18next.changeLanguage('en');
       }
     }, [])
+    
+    const handleLanguageChange = (e) => {
+        i18n.changeLanguage(e.target.value);
+    };
 
     const [windowDimension, setWindowDimension] = useState(null);
 
@@ -48,6 +52,11 @@ const Home = () => {
         {isMobile ?
             (
                 <MobileHomeStyle>
+                    <select name="" id="" onChange={handleLanguageChange} value={localStorage.getItem("i18nextLng")} style={{height: '30px', width: '300px', padding: '0 5px'}}>
+                        <option value="en">English</option>
+                        <option value="fr">Francais</option>
+                        <option value="es">Espanol</option>
+                    </select>
                     {/* container of the home page */}
                     <div className='container'>
                         {/* welcome section */}
