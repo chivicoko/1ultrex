@@ -6,8 +6,18 @@ import { toast } from 'react-toastify';
 import { login, reset } from '../features/auth/authSlice';
 import Spinner from '../components/Spinner';
 
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next'
 
 const Login = () => {
+    const { t } = useTranslation(["common"]);
+
+    useEffect(() => {
+      if (localStorage.getItem("i18nextLng")?.length > 2) {
+        i18next.changeLanguage('en');
+      }
+    }, [])
+
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -56,24 +66,24 @@ const Login = () => {
     <>
         <section className='heading'>
             <h1>
-                <FaSignInAlt /> Sign in
+                <FaSignInAlt /> {t('Sign in')}
             </h1>
-            <p>Login and start setting deposits</p>
+            <p>{t('Login and start setting deposits')}</p>
         </section>
 
         <section className='form'>
             <form onSubmit={onSubmit}>
                 <div className="form-group">
-                    <input type="email" className="form-control" id='email' name='email' placeholder='Enter your email' onChange={onChange} />
+                    <input type="email" className="form-control" id='email' name='email' placeholder={t('Enter your email')} onChange={onChange} />
                 </div>
                 <div className="form-group">
-                    <input type="password" className="form-control" id='password' name='password' placeholder='Enter password' onChange={onChange} />
+                    <input type="password" className="form-control" id='password' name='password' placeholder={t('Enter password')} onChange={onChange} />
                 </div>
                 <div className="form-group">
-                    <button type='submit' className='btn btn-block'>Submit</button>
+                    <button type='submit' className='btn btn-block'>{t('Submit')}</button>
                 </div>
             </form>
-            <small>Not registered? <Link to={'/register'}><span style={{color: 'orange'}}><em>Sign Up</em></span></Link></small>
+            <small>{t('Not registered?')} <Link to={'/register'}><span style={{color: 'orange'}}><em>{t('Sign Up')}</em></span></Link></small>
         </section>
     </>
   )

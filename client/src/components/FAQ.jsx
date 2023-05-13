@@ -44,7 +44,7 @@ const FAQ = () => {
               <p>{t('UltrexGold is a leading assets management company that deals on stock,bonds,shares, assets management and foreign exchange. They also sell out preferred shares to public, companies and individuals which allows them earn daily dividends according to the proposal which you choose')}</p>
             </div>
             <div className='container-1'>
-              <h3>Can I buy Gold from UltrexGold?</h3>
+              <h3>{t('Can I buy Gold from UltrexGold?')}</h3>
               <p>{t('Yes you can choose from our gold options and click on the buy icon and we also provide our investors opportunity to own a physical gold by giving them gold equivalent to their earnings when they invest in our gold package and have it delivered to their doorstep on their request')}</p>
             </div>
             <div className='container-1'>
@@ -132,7 +132,7 @@ const FAQ = () => {
               <p>{t('UltrexGold is a leading assets management company that deals on stock,bonds,shares, assets management and foreign exchange. They also sell out preferred shares to public, companies and individuals which allows them earn daily dividends according to the proposal which you choose')}</p>
             </div>
             <div className='container-1'>
-              <h3>Can I buy Gold from UltrexGold?</h3>
+              <h3>{t('Can I buy Gold from UltrexGold?')}</h3>
               <p>{t('Yes you can choose from our gold options and click on the buy icon and we also provide our investors opportunity to own a physical gold by giving them gold equivalent to their earnings when they invest in our gold package and have it delivered to their doorstep on their request')}</p>
             </div>
             <div className='container-1'>

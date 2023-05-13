@@ -6,7 +6,18 @@ import { FaUser } from 'react-icons/fa';
 import { register, reset } from '../features/auth/authSlice';
 import Spinner from '../components/Spinner';
 
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next'
+
 const Register = () => {
+    const { t } = useTranslation(["common"]);
+
+    useEffect(() => {
+      if (localStorage.getItem("i18nextLng")?.length > 2) {
+        i18next.changeLanguage('en');
+      }
+    }, [])
+
     const [formData, setFormData] = useState({
         fullName: '',
         username: '',
@@ -66,45 +77,45 @@ const Register = () => {
     <>
         <section className='heading'>
             <h1>
-                <FaUser /> Register
+                <FaUser /> {t('Register')}
             </h1>
-            <p>Please create an account</p>
+            <p>{t('Please create an account')}</p>
         </section>
 
         <section className='form'>
             <form onSubmit={onSubmit}>
                 <div className="form-group">
-                    <input type="text" className="form-control" id='fullName' name='fullName' placeholder='Enter your full name' onChange={onChange} required/>
+                    <input type="text" className="form-control" id='fullName' name='fullName' placeholder={t('Enter your full name')} onChange={onChange} required/>
                 </div>
                 <div className="form-group">
-                    <input type="text" className="form-control" id='username' name='username' placeholder='Enter username' onChange={onChange} required/>
+                    <input type="text" className="form-control" id='username' name='username' placeholder={t('Enter username')} onChange={onChange} required/>
                 </div>
                 <div className="form-group">
-                    <input type="email" className="form-control" id='email' name='email' placeholder='Enter your email' onChange={onChange} required/>
+                    <input type="email" className="form-control" id='email' name='email' placeholder={t('Enter your email')} onChange={onChange} required/>
                 </div>
                 <div className="form-group">
                     <input type="text" className="form-control" id='phone' name='phone' placeholder='Enter your phone number' onChange={onChange} required/>
                 </div>
                 <div className="form-group">
-                    <input type="text" className="form-control" id='usdt' name='usdt' placeholder='USDT(TRC20) Account ID' onChange={onChange} required />
+                    <input type="text" className="form-control" id='usdt' name='usdt' placeholder={t('USDT(TRC20) Account ID')} onChange={onChange} required />
                 </div>
                 <div className="form-group">
-                    <input type="text" className="form-control" id='bnb' name='bnb' placeholder='BNB(Binance coin) BNB Account ID' onChange={onChange} required />
+                    <input type="text" className="form-control" id='bnb' name='bnb' placeholder={t('BNB(Binance coin) BNB Account ID')} onChange={onChange} required />
                 </div>
                 <div className="form-group">
-                    <input type="text" className="form-control" id='bsc' name='bsc' placeholder='BNB(Binance coin) BSC Account ID' onChange={onChange} required />
+                    <input type="text" className="form-control" id='bsc' name='bsc' placeholder={t('BNB(Binance coin) BSC Account ID')} onChange={onChange} required />
                 </div>
                 <div className="form-group">
-                    <input type="password" className="form-control" id='password' name='password' placeholder='Enter password' onChange={onChange} required/>
+                    <input type="password" className="form-control" id='password' name='password' placeholder={t('Enter password')} onChange={onChange} required/>
                 </div>
                 <div className="form-group">
-                    <input type="password" className="form-control" id='password2' name='password2' placeholder='Comfirm password' onChange={onChange} required />
+                    <input type="password" className="form-control" id='password2' name='password2' placeholder={t('Comfirm password')} onChange={onChange} required />
                 </div>
                 <div className="form-group">
-                    <button type='submit' className='btn btn-block'>Submit</button>
+                    <button type='submit' className='btn btn-block'>{t('Submit')}</button>
                 </div>
             </form>
-            <small>Signed Up? <Link to={'/login'}><span style={{color: 'orange'}}><em>Log in</em></span></Link></small>
+            <small>{t('Signed Up?')} <Link to={'/login'}><span style={{color: 'orange'}}><em>{t('Log in')}</em></span></Link></small>
         </section>
     </>
   )

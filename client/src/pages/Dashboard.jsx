@@ -5,7 +5,18 @@ import Spinner from '../components/Spinner';
 import { getDeposits, reset } from "../features/deposits/depositSlice";
 import Sidebar from "../components/dashboard/Sidebar";
 
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next'
+
 const Dashboard = () => {
+  const { t } = useTranslation(["common"]);
+
+  useEffect(() => {
+    if (localStorage.getItem("i18nextLng")?.length > 2) {
+      i18next.changeLanguage('en');
+    }
+  }, [])
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -39,7 +50,7 @@ const Dashboard = () => {
       <Sidebar/>
       <div className='head' style={{color: 'white'}}>
         <section>
-          <h1 style={{color: 'orange'}}>Welcome, {user && user.fullName}</h1>
+          <h1 style={{color: 'orange'}}>{t('Welcome')}, {user && user.fullName}</h1>
           <p>This is your dashboard</p>
         </section>
         

@@ -207,7 +207,7 @@ const Home = () => {
                         {/* welcome section */}
                         <h1 className='welcome-h1'>{t('Welcome')} to ultrex<span style={{color: 'orange'}}>gold</span></h1>
                         <h2 className='welcome-h2'>Invest your way towards Success</h2>
-                        <p className='welcome-p'>ultrex<span style={{color: 'orange'}}>gold</span> Intl. deals on stock, bonds, shares, assets management and foreign exchange. They also sell out preferred shares to public, companies and individuals which allows them earn dividends according to the proposal you choose.</p>
+                        <p className='welcome-p'>ultrex<span style={{color: 'orange'}}>gold</span> {t('International. deals on stock, bonds, shares, assets management and foreign exchange. They also sell out preferred shares to public, companies and individuals which allows them earn dividends according to the proposal you choose.')}</p>
 
                         <Link to={''}><Button  style={{paddingTop: '20px', paddingBottom: '20px', paddingLeft: '40px', paddingRight: '40px', borderRadius: '40px', fontSize: '25px'}} primary>{t('Sign In')}</Button></Link>
                         <Link to={''}><Button  style={{paddingTop: '20px', paddingBottom: '20px', paddingLeft: '40px', paddingRight: '40px', borderRadius: '40px', fontSize: '25px'}}>{t('Sign Up')}</Button></Link>
