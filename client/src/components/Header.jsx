@@ -66,7 +66,7 @@ const Header = () => {
                         <option value="es">Espanol</option>
                     </select>
                     <li>
-                        <button className='btn' onClick={onLogout} style={{color: 'white', borderBottom: '1px orange', borderTop: '1px orange solid'}}>
+                        <button className='btn' onClick={onLogout} style={{color: 'white', borderBottom: '1px orange solid', borderTop: '1px orange solid'}}>
                             {t('Logout')}
                         </button>
                     </li>
@@ -99,12 +99,12 @@ const Header = () => {
                         <option value="es">Espanol</option>
                     </select>
                     <li>
-                        <Link to='/login' style={{color: 'white', borderBottom: '1px orange', borderTop: '1px orange solid'}}>
+                        <Link to='/login' style={{color: 'white', borderBottom: '1px orange solid', borderTop: '1px orange solid'}}>
                             {t('Login')}
                         </Link>
                     </li>
                     <li>
-                        <Link to='/register' style={{color: 'white', borderBottom: '1px orange', borderTop: '1px orange solid'}}>
+                        <Link to='/register' style={{color: 'white', borderBottom: '1px orange solid', borderTop: '1px orange solid'}}>
                             {t('Register')}
                         </Link>
                     </li>
