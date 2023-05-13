@@ -9,9 +9,18 @@ import { useDispatch } from 'react-redux';
 import { createDeposit } from '../../features/deposits/depositSlice';
 // import axios from 'axios';
 
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next'
 
 const ConfirmDeposit = () => {
-    
+    const { t } = useTranslation(["common"]);
+
+    useEffect(() => {
+      if (localStorage.getItem("i18nextLng")?.length > 2) {
+        i18next.changeLanguage('en');
+      }
+    }, [])
+
     const [windowDimension, setWindowDimension] = useState(null);
 
     useEffect(() => {
@@ -97,52 +106,52 @@ const ConfirmDeposit = () => {
                 <div className='container'>
                     <section>
                         <div className='depositeContainer'>
-                            <h1>Please Confirm your deposit</h1>
-                            <p className='p'>Kindly copy the address below to make a deposit</p>
+                            <h1>{t('Please Confirm your deposit')}</h1>
+                            <p className='p'>{t('Kindly copy the address below to make a deposit')}</p>
                             <div className='userSection'>
                                 <div>
-                                    <p>Plan:</p>
+                                    <p>{t('Plan')}:</p>
                                     <p>{proposal}</p>
                                 </div> <hr />
                                 <div>
                                     <p>Profit:</p>
-                                    <p>3.00% daily for 5 days</p>
+                                    <p>3.00% {t('daily for 5 days')}</p>
                                 </div> <hr />
                                 <div>
-                                    <p>Principal Return:</p>
-                                    <p>Yes</p>
+                                    <p>{t('Principal Return')}:</p>
+                                    <p>{t('Yes')}</p>
                                 </div> <hr />
                                 <div>
-                                    <p>Principal Withdraw:</p>
-                                    <p>Not available</p>
+                                    <p>{t('Principal Withdraw')}:</p>
+                                    <p>{t('Not available')}</p>
                                 </div> <hr />
                                 <div>
-                                    <p>Credit Amount:</p>
+                                    <p>{t("Credit Amount")}:</p>
                                     <p>${location.state.amount}</p>
                                 </div> <hr />
                                 <div>
-                                    <p>Deposit Fee:</p>
+                                    <p>{t('Deposit Fee')}:</p>
                                     <p>0.00% + $0.00 (min. $0.00 max. $0.00)</p>
                                 </div> <hr />
                                 <div>
-                                    <p>Debit Amount:</p>
+                                    <p>{t('Debit Amount')}:</p>
                                     <p>${location.state.amount}</p>
                                 </div> <hr />
                                 <div>
-                                    <p>Debit Amount:</p>
+                                    <p>{t('Debit Amount')}:</p>
                                     <p>{location.state.amount}</p>
                                 </div>
                             </div>
                             <p style={{marginTop: '20px', marginBottom: '20px' , color: 'orange'}}>
-                                <span style={{color: 'white'}}>Address:</span> <br />
+                                <span style={{color: 'white'}}>{t('Address')}:</span> <br />
                                 <small style={{fontSize: '12px'}}>{location.state.currency}</small>
                             </p>
                             <div className='saveCancel'>
-                                <Link><Button className='btn' onClick={onClick}>Save</Button></Link>
-                                <Link to={'/deposit'}><Button primary className='btn'>Cancel</Button></Link>
+                                <Link><Button className='btn' onClick={onClick}>{t('Save')}</Button></Link>
+                                <Link to={'/deposit'}><Button primary className='btn'>{t('Cancel')}</Button></Link>
                             </div>
                             {/* <small>If you click 'save', the deposit will be saved. It will become active when the administrator checks statistics.</small> */}
-                            <small>Click 'save' to save deposit. You'll receive an email of confirmation soon.</small>
+                            <small>{t("Click 'save' to save deposit. You'll receive an email of confirmation soon.")}</small>
                         </div>
                     </section>
                 </div>
@@ -155,52 +164,52 @@ const ConfirmDeposit = () => {
                 <div className='container'>
                 <section>
                         <div className='depositeContainer'>
-                            <h1>Please Confirm your deposit</h1>
-                            <p className='p'>Kindly copy the address below to make a deposit</p>
+                            <h1>{t('Please Confirm your deposit')}</h1>
+                            <p className='p'>{t('Kindly copy the address below to make a deposit')}</p>
                             <div className='userSection'>
                                 <div>
-                                    <p>Plan:</p>
+                                    <p>{t('Plan')}:</p>
                                     <p>{proposal}</p>
                                 </div> <hr />
                                 <div>
-                                    <p>Profit:</p>
-                                    <p>3.00% daily for 5 days</p>
+                                    <p>{t('Profit')}:</p>
+                                    <p>3.00% {t('daily for 5 days')}</p>
                                 </div> <hr />
                                 <div>
-                                    <p>Principal Return:</p>
-                                    <p>Yes</p>
+                                    <p>{t('Principal Return')}:</p>
+                                    <p>{t('Yes')}</p>
                                 </div> <hr />
                                 <div>
-                                    <p>Principal Withdraw:</p>
-                                    <p>Not available</p>
+                                    <p>{t('Principal Withdraw')}:</p>
+                                    <p>{t('Not available')}</p>
                                 </div> <hr />
                                 <div>
-                                    <p>Credit Amount:</p>
+                                    <p>{t('Credit Amount')}:</p>
                                     <p>${location.state.amount}</p>
                                 </div> <hr />
                                 <div>
-                                    <p>Deposit Fee:</p>
+                                    <p>{t('Deposit Fee')}:</p>
                                     <p>0.00% + $0.00 (min. $0.00 max. $0.00)</p>
                                 </div> <hr />
                                 <div>
-                                    <p>Debit Amount:</p>
+                                    <p>{t('Debit Amount')}:</p>
                                     <p>${location.state.amount}</p>
                                 </div> <hr />
                                 <div>
-                                    <p>Debit Amount:</p>
+                                    <p>{t('Debit Amount')}:</p>
                                     <p>{location.state.amount}</p>
                                 </div>
                             </div>
                             <p style={{marginTop: '20px', marginBottom: '20px' , color: 'orange'}}>
-                                <span style={{color: 'white'}}>Address:</span> <br />
+                                <span style={{color: 'white'}}>{t('Address')}:</span> <br />
                                 <small style={{fontSize: '12px'}}>{location.state.currency}</small>
                             </p>
                             <div className='saveCancel'>
-                                <Link><Button className='btn' onClick={onClick}>Save</Button></Link>
-                                <Link to={'/deposit'}><Button primary className='btn'>Cancel</Button></Link>
+                                <Link><Button className='btn' onClick={onClick}>{t('Save')}</Button></Link>
+                                <Link to={'/deposit'}><Button primary className='btn'>{t('Cancel')}</Button></Link>
                             </div>
                             {/* <small>If you click 'save', the deposit will be saved. It will become active when the administrator checks statistics.</small> */}
-                            <small>Click 'save' to save deposit. You'll receive an email of confirmation soon.</small>
+                            <small>{t("Click 'save' to save deposit. You'll receive an email of confirmation soon.")}</small>
                         </div>
                     </section>
                 </div>

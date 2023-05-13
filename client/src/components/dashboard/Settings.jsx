@@ -9,6 +9,7 @@ import Sidebar from './Sidebar';
 
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next'
+
 import { useEffect } from 'react';
 
 const Settings = () => {
