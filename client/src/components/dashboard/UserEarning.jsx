@@ -3,7 +3,17 @@ import { Wrapper } from '../styles/HomeStyle';
 import Sidebar from './Sidebar';
 import { UserEarningStyle, MobileUserEarningStyle } from '../styles/UserEarningStyle';
 
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next'
+
 const UserEarning = () => {
+    const { t } = useTranslation(["common"]);
+
+    useEffect(() => {
+      if (localStorage.getItem("i18nextLng")?.length > 2) {
+        i18next.changeLanguage('en');
+      }
+    }, [])
     
     const [windowDimension, setWindowDimension] = useState(null);
 
@@ -32,63 +42,63 @@ const UserEarning = () => {
                 <div className='container'>
                     <section>
                         <div className='depositeContainer'>
-                            <h1>Request for Withdrawal</h1>
+                            <h1>{t('Request for Withdrawal')}</h1>
                             <div className='depo'>
                                 <div className='depositeContainer-item2-'>
-                                    <p>Account Balance $</p>
+                                    <p>{t('Account Balance $')}</p>
                                     <p>$0.00</p>
                                 </div>
                                 <div className='depositeContainer-item2-'>
-                                    <p>Pending Withdrawals</p>
+                                    <p>{t('Pending Withdrawals')}</p>
                                     <p>$0.00</p>
                                 </div>
                             </div>
                             
                             <div className='depo'>
                                 <div className='depositeContainer-item1'>
-                                    <p>Processing</p>
-                                    <p>Available</p>
-                                    <p>Pending</p>
-                                    <p>Account</p>
+                                    <p>{t('Processing')}</p>
+                                    <p>{t('Available')}</p>
+                                    <p>{t('Pending')}</p>
+                                    <p>{t('Account')}</p>
                                 </div>
                                 <div className='depositeContainer-item2'>
                                     <p>Bitcoin</p>
                                     <p>$0.00</p>
                                     <p>$0.00</p>
-                                    <p>Not set</p>
+                                    <p>{t('Not set')}</p>
                                 </div>
                                 <div className='depositeContainer-item2'>
                                     <p>Ethereum</p>
                                     <p>$0.00</p>
                                     <p>$0.00</p>
-                                    <p>Not set</p>
+                                    <p>{t('Not set')}</p>
                                 </div>
                                 <div className='depositeContainer-item2'>
                                     <p>TRON (TRX)</p>
                                     <p>$0.00</p>
                                     <p>$0.00</p>
-                                    <p>Not set</p>
+                                    <p>{t('Not set')}</p>
                                 </div>
                                 <div className='depositeContainer-item2'>
                                     <p>USDT (TRC20)</p>
                                     <p>$0.00</p>
                                     <p>$0.00</p>
-                                    <p>Not set</p>
+                                    <p>{t('Not set')}</p>
                                 </div>
                                 <div className='depositeContainer-item2'>
                                     <p>BNB (Binance coin) BNB</p>
                                     <p>$0.00</p>
                                     <p>$0.00</p>
-                                    <p>Not set</p>
+                                    <p>{t('Not set')}</p>
                                 </div>
                                 <div className='depositeContainer-item2'>
                                     <p>BNB (Binance coin) BSC</p>
                                     <p>$0.00</p>
                                     <p>$0.00</p>
-                                    <p>Not set</p>
+                                    <p>{t('Not set')}</p>
                                 </div>
                             </div>
-                            <p>You have no funds to withdraw.</p>
+                            <p>{t('You have no funds to withdraw.')}</p>
                             
                         </div>
                     </section>
@@ -102,60 +112,60 @@ const UserEarning = () => {
                 <div className='container'>
                     <section>
                         <div className='depositeContainer'>
-                            <h1>Request for Withdrawal</h1>
+                            <h1>{t('Request for Withdrawal')}</h1>
                             <div className='depo'>
                                 <div className='depositeContainer-item2-'>
-                                    <p>Balance $</p>
+                                    <p>{t('Balance $')}</p>
                                     <p>$0.00</p>
                                 </div>
                                 <div className='depositeContainer-item2-'>
-                                    <p>Pending Withdrawals</p>
+                                    <p>{t('Pending Withdrawals')}</p>
                                     <p>$0.00</p>
                                 </div>
                             </div>
                             
                             <div className='depo'>
                                 <div className='depositeContainer-item1'>
-                                    <p>Processing</p>
-                                    <p>Available</p>
-                                    <p>Pending</p>
-                                    <p>Account</p>
+                                    <p>{t('Processing')}</p>
+                                    <p>{t('Available')}</p>
+                                    <p>{t('Pending')}</p>
+                                    <p>{t('Account')}</p>
                                 </div>
                                 <div className='depositeContainer-item2'>
                                     <p>Bitcoin</p>
                                     <p>$0.00</p>
                                     <p>$0.00</p>
-                                    <p>Not set</p>
+                                    <p>{t('Not set')}</p>
                                 </div>
                                 <div className='depositeContainer-item2'>
                                     <p>Ethereum</p>
                                     <p>$0.00</p>
                                     <p>$0.00</p>
-                                    <p>Not set</p>
+                                    <p>{t('Not set')}</p>
                                 </div>
                                 <div className='depositeContainer-item2'>
                                     <p>TRON (TRX)</p>
                                     <p>$0.00</p>
                                     <p>$0.00</p>
-                                    <p>Not set</p>
+                                    <p>{t('Not set')}</p>
                                 </div>
                                 <div className='depositeContainer-item2'>
                                     <p>USDT (TRC20)</p>
                                     <p>$0.00</p>
                                     <p>$0.00</p>
-                                    <p>Not set</p>
+                                    <p>{t('Not set')}</p>
                                 </div>
                                 <div className='depositeContainer-item2'>
                                     <p>BNB (Binance coin) BNB</p>
                                     <p>$0.00</p>
                                     <p>$0.00</p>
-                                    <p>Not set</p>
+                                    <p>{t('Not set')}</p>
                                 </div>
                                 <div className='depositeContainer-item2'>
                                     <p>BNB (Binance coin) BSC</p>
                                     <p>$0.00</p>
                                     <p>$0.00</p>
-                                    <p>Not set</p>
+                                    <p>{t('Not set')}</p>
                                 </div>
                             </div>
                             

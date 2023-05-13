@@ -4,9 +4,18 @@ import { MobileSidebarStyle, SidebarStyle } from '../styles/SidebarStyle';
 import { Settings, User, Edit3, DollarSign, Database, Award, Tool } from "react-feather";
 import { Link } from 'react-router-dom';
 
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next'
 
 const Sidebar = () => {
-    
+    const { t } = useTranslation(["common"]);
+
+    useEffect(() => {
+      if (localStorage.getItem("i18nextLng")?.length > 2) {
+        i18next.changeLanguage('en');
+      }
+    }, [])
+
     const [windowDimension, setWindowDimension] = useState(null);
 
     useEffect(() => {
@@ -30,15 +39,15 @@ const Sidebar = () => {
             (
                 <MobileSidebarStyle>
                     <div className='container'>
-                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/user'}>Account</Link></div>
-                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/deposit'}>Invest Now</Link></div>
-                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={''}>My Investments</Link></div>
+                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/user'}>{t('Account')}</Link></div>
+                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/deposit'}>{t('Invest Now')}</Link></div>
+                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={''}>{t('My Investments')}</Link></div>
                         {/* <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/my-investment'}>My Investments</Link></div> */}
-                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/promo'}>Promo Tools</Link></div>
-                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/my-earning'}>Withdraw Earnings</Link></div>
-                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/referrals'}>My Referrals</Link></div>
-                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/settings'}>Settings</Link></div>
-                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'#'}>Logout</Link></div>
+                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/promo'}>{t('Promo Tools')}</Link></div>
+                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/my-earning'}>{t('Withdraw Earnings')}</Link></div>
+                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/referrals'}>{t('My Referrals')}</Link></div>
+                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/settings'}>{t('Settings')}</Link></div>
+                        <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'#'}>{t('Logout')}</Link></div>
                     </div>
                 </MobileSidebarStyle>
             )
@@ -51,7 +60,7 @@ const Sidebar = () => {
                                 <span className='icon'>
                                     <User size={16} />
                                 </span>
-                                &nbsp;&nbsp; ACCOUNT
+                                &nbsp;&nbsp; {t('ACCOUNT')}
                             </Link>
                         </div>
                         <div className='container1'>
@@ -59,7 +68,7 @@ const Sidebar = () => {
                                 <span className='icon'>
                                     <DollarSign size={16} />
                                 </span>
-                                &nbsp;&nbsp; INVEST NOW
+                                &nbsp;&nbsp; {t('INVEST NOW')}
                             </Link>
                         </div>
                         <div className='container1'>
@@ -67,7 +76,7 @@ const Sidebar = () => {
                                 <span className='icon'>
                                     <Database size={16} />
                                 </span>
-                                &nbsp;&nbsp; MY INVESTMENTS
+                                &nbsp;&nbsp; {t('MY INVESTMENTS')}
                             </Link>
                         </div>
                         {/* <div className='container1'>
@@ -83,7 +92,7 @@ const Sidebar = () => {
                                 <span className='icon'>
                                     <Tool size={16} />
                                 </span>
-                                &nbsp;&nbsp; PROMO TOOLS
+                                &nbsp;&nbsp; {t('PROMO TOOLS')}
                             </Link>
                         </div>
                         <div className='container1'>
@@ -92,7 +101,7 @@ const Sidebar = () => {
                                 <span className='icon'>
                                     <Award size={16} />
                                 </span>
-                                &nbsp;&nbsp; WITHDRAW EARNINGS
+                                &nbsp;&nbsp; {t('WITHDRAW EARNINGS')}
                             </Link>
                             </p>
                         </div>
@@ -101,7 +110,7 @@ const Sidebar = () => {
                                 <span className='icon'>
                                     <Edit3 size={16} />
                                 </span>
-                                &nbsp;&nbsp; MY REFERRALS
+                                &nbsp;&nbsp; {t('MY REFERRALS')}
                             </Link>
                         </div>
                         <div className='container1'>
@@ -109,7 +118,7 @@ const Sidebar = () => {
                                 <span className='icon'>
                                     <Settings size={16} />
                                 </span>
-                                &nbsp;&nbsp; SETTINGS
+                                &nbsp;&nbsp; {t('SETTINGS')}
                             </Link>
                         </div>
                     </div>

@@ -3,7 +3,17 @@ import { Wrapper } from '../styles/HomeStyle';
 import Sidebar from './Sidebar';
 import { PromoStyle, MobilePromoStyle } from '../styles/PromoStyle';
 
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next'
+
 const Promo = () => {
+    const { t } = useTranslation(["common"]);
+
+    useEffect(() => {
+      if (localStorage.getItem("i18nextLng")?.length > 2) {
+        i18next.changeLanguage('en');
+      }
+    }, [])
     
     const [windowDimension, setWindowDimension] = useState(null);
 
@@ -32,8 +42,8 @@ const Promo = () => {
                 <div className='container'>
                     <section>
                         <div className='depositeContainer'>
-                            <h1>Referral Links</h1>
-                            <p className='p'>The best internet investment</p>
+                            <h1>{t('Referral Links')}</h1>
+                            <p className='p'>{t('The best internet investment')}</p>
                             <div className='userSection'>
                                 <div><p style={{marginLeft: '20px'}}>https://ultrexgoldintl.com/?ref=Happiness</p></div>
                             </div>
@@ -49,8 +59,8 @@ const Promo = () => {
                 <div className='container'>
                     <section>
                         <div className='depositeContainer'>
-                            <h1>Referral Links</h1>
-                            <p className='p'>The best internet investment</p>
+                            <h1>{t('Referral Links')}</h1>
+                            <p className='p'>{t('The best internet investment')}</p>
                             <div className='userSection'>
                                 <div><p style={{marginLeft: '20px'}}>https://ultrexgoldintl.com/?ref=Happiness</p></div>
                             </div>

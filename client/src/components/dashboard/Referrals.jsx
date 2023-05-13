@@ -3,8 +3,17 @@ import { Wrapper } from '../styles/HomeStyle';
 import { ReferralStyle, MobileReferralStyle } from '../styles/ReferralStyle';
 import Sidebar from './Sidebar';
 
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next'
 
 const Referrals = () => {
+    const { t } = useTranslation(["common"]);
+
+    useEffect(() => {
+      if (localStorage.getItem("i18nextLng")?.length > 2) {
+        i18next.changeLanguage('en');
+      }
+    }, [])
     
     const [windowDimension, setWindowDimension] = useState(null);
 
@@ -33,19 +42,19 @@ const Referrals = () => {
                 <div className='container'>
                     <section>
                         <div className='depositeContainer'>
-                            <h1>Your Referrals</h1>
-                            <p className='p'>Your upline is <span style={{color: 'orange'}}>Larson</span></p>
+                            <h1>{t('Your Referrals')}</h1>
+                            <p className='p'>{t('Your upline is')} <span style={{color: 'orange'}}>Larson</span></p>
                             <div className='userSection'>
                                 <div>
-                                    <p style={{marginLeft: '20px', marginRight: '125px'}}>Referrals:</p>
+                                    <p style={{marginLeft: '20px', marginRight: '125px'}}>{t('Referrals:')}</p>
                                     <p style={{marginLeft: '20px'}}>$0.00</p>
                                 </div> <hr />
                                 <div>
-                                    <p style={{marginLeft: '20px', marginRight: '90px'}}>Active referrals:</p>
+                                    <p style={{marginLeft: '20px', marginRight: '90px'}}>{t('Active referrals:')}</p>
                                     <p style={{marginLeft: '20px'}}>$0.00</p>
                                 </div> <hr />
                                 <div>
-                                    <p style={{marginLeft: '20px', marginRight: '30px'}}>Total referral commission:</p>
+                                    <p style={{marginLeft: '20px', marginRight: '30px'}}>{t('Total referral commission:')}</p>
                                     <p style={{marginLeft: '20px'}}>$0.00</p>
                                 </div>
                             </div>
@@ -59,21 +68,21 @@ const Referrals = () => {
             <ReferralStyle>
                 <Sidebar/>
                 <div className='container'>
-                    <h1>Your Referrals</h1>
+                    <h1>{t('Your Referrals')}</h1>
                     <section>
                         <div className='depositeContainer'>
-                            <p className='p'>Your upline is <span style={{color: 'orange'}}>Larson</span></p>
+                            <p className='p'>{t('Your upline is')} <span style={{color: 'orange'}}>Larson</span></p>
                             <div className='userSection'>
                                 <div>
-                                    <p style={{marginLeft: '20px', marginRight: '125px'}}>Referrals:</p>
+                                    <p style={{marginLeft: '20px', marginRight: '125px'}}>{t('Referrals')} : </p>
                                     <p style={{marginLeft: '20px'}}>$0.00</p>
                                 </div> <hr />
                                 <div>
-                                    <p style={{marginLeft: '20px', marginRight: '90px'}}>Active referrals:</p>
+                                    <p style={{marginLeft: '20px', marginRight: '90px'}}>{t('Active referrals:')}</p>
                                     <p style={{marginLeft: '20px'}}>$0.00</p>
                                 </div> <hr />
                                 <div>
-                                    <p style={{marginLeft: '20px', marginRight: '30px'}}>Total referral commission:</p>
+                                    <p style={{marginLeft: '20px', marginRight: '30px'}}>{t('Total referral commission:')}</p>
                                     <p style={{marginLeft: '20px'}}>$0.00</p>
                                 </div>
                             </div>
