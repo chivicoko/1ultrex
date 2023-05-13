@@ -18,6 +18,10 @@ const FAQStyle = styled.div`
         color: orange;
     }
 
+    .general-container h3 {
+        color: orange;
+    }
+
     .general-container .container-1 {
         border: 1px solid orange;
         border-radius: 10px;

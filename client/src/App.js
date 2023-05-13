@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -23,12 +24,12 @@ import EditProfile from "./components/dashboard/EditProfile";
 import DepositForm from "./components/DepositForm";
 
 function App() {
-  // axios.defaults.baseURL = 'http://localhost:5000';
+  axios.defaults.baseURL = 'http://localhost:5000';
   axios.defaults.withCredentials = true;
 
   return (
-    <>
-    <Router>
+    <Suspense fallback={null}>
+      <Router>
         <div className="container">
           <Header />
           <Routes>
@@ -54,7 +55,7 @@ function App() {
       </Router>
       <ToastContainer />
       <Footer />
-    </>
+    </Suspense>
   );
 }
 
