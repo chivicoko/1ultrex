@@ -61,6 +61,11 @@ const Header = () => {
                             {t('Contact')}
                         </Link>
                     </li>
+                    <select className='select-lng' name="" id="" onChange={handleLanguageChange} value={localStorage.getItem("i18nextLng")} style={{height: '30px', width: '130px', background: '#222', border: '1px orange solid', color: 'white', padding: '0 5px', marginLeft: '35px'}}>
+                        <option value="en">English</option>
+                        <option value="fr">Francais</option>
+                        <option value="es">Espanol</option>
+                    </select>
                     <li>
                         <button className='btn' onClick={onLogout}>
                             <FaSignOutAlt /> {t('Logout')}
@@ -102,11 +107,6 @@ const Header = () => {
                 </>
             )}
         </ul>
-                    <select name="" id="" onChange={handleLanguageChange} value={localStorage.getItem("i18nextLng")}>
-                        <option value="en">English</option>
-                        <option value="fr">Francais</option>
-                        <option value="es">Espanol</option>
-                    </select>
     </header>
   )
 }

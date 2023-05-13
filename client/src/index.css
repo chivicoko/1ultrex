@@ -302,7 +302,7 @@ h3 {
   
   .header {
     border-bottom: 1px solid whitesmoke;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .header ul li {
@@ -310,6 +310,10 @@ h3 {
     margin-left: 10.5px;
     font-size: 11px;
     color: white;
+  }
+  
+  .header ul .select-lng {
+    display: none;
   }
 
   .header .logo span {

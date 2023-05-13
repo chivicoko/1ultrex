@@ -46,9 +46,9 @@ const Dashboard = () => {
   }
 
   return (
-    <div className='settings-container'>
+    <div className='settings-container' style={{marginTop: '0'}}>
       <Sidebar/>
-      <div className='head' style={{color: 'white'}}>
+      <div className='head' style={{color: 'white', marginTop: '40px'}}>
         <section>
           <h1 style={{color: 'orange'}}>{t('Welcome')}, {user && user.fullName}</h1>
           <p>{t('This is your dashboard')}</p>

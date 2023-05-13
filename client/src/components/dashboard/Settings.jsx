@@ -77,10 +77,10 @@ const Settings = () => {
     // }
 
   return (
-    <div className='settings-container'>
+    <div className='settings-container' style={{marginTop: '0'}}>
         <Sidebar />
         <div className='head'>
-            <section className='heading' style={{marginTop: '25px'}}>
+            <section className='heading' style={{marginTop: '40px', marginBottom: '0'}}>
                 <h1 style={{color: 'orange', fontSize: '40px'}}>
                     <FaTools /> {t('Settings')}
                 </h1>
