@@ -42,21 +42,21 @@ const Sidebar = () => {
         {isMobile ?
             (
                 <MobileSidebarStyle>
-                        <select name="" id="" onChange={handleLanguageChange} value={localStorage.getItem("i18nextLng")} style={{height: '30px', width: '310px', padding: '0 5px'}}>
+                        <select name="" id="" onChange={handleLanguageChange} value={localStorage.getItem("i18nextLng")} style={{height: '30px', width: '300px', padding: '0 5px'}}>
                             <option value="en">English</option>
                             <option value="fr">Francais</option>
                             <option value="es">Espanol</option>
                         </select>
                     <div className='container'>
-                        <div className='container1'><Link style={{fontSize: '10px', height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/user'}>{t('Account')}</Link></div>
-                        <div className='container1'><Link style={{fontSize: '10px', height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/deposit'}>{t('Invest Now')}</Link></div>
-                        <div className='container1'><Link style={{fontSize: '10px', height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={''}>{t('My Investments')}</Link></div>
+                        <div className='container1'><Link style={{fontSize: '10px', height: '50px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/user'}>{t('Account')}</Link></div>
+                        <div className='container1'><Link style={{fontSize: '10px', height: '50px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/deposit'}>{t('Invest Now')}</Link></div>
+                        <div className='container1'><Link style={{fontSize: '10px', height: '50px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={''}>{t('My Investments')}</Link></div>
                         {/* <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/my-investment'}>My Investments</Link></div> */}
-                        <div className='container1'><Link style={{fontSize: '10px', height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/promo'}>{t('Promo Tools')}</Link></div>
-                        <div className='container1'><Link style={{fontSize: '10px', height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/my-earning'}>{t('Withdraw Earnings')}</Link></div>
-                        <div className='container1'><Link style={{fontSize: '10px', height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/referrals'}>{t('My Referrals')}</Link></div>
-                        <div className='container1'><Link style={{fontSize: '10px', height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/settings'}>{t('Settings')}</Link></div>
-                        <div className='container1'><Link style={{fontSize: '10px', height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={''}>{t('Logout')}</Link></div>
+                        <div className='container1'><Link style={{fontSize: '10px', height: '50px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/promo'}>{t('Promo Tools')}</Link></div>
+                        <div className='container1'><Link style={{fontSize: '10px', height: '50px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/my-earning'}>{t('Withdraw Earnings')}</Link></div>
+                        <div className='container1'><Link style={{fontSize: '10px', height: '50px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/referrals'}>{t('My Referrals')}</Link></div>
+                        <div className='container1'><Link style={{fontSize: '10px', height: '50px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/settings'}>{t('Settings')}</Link></div>
+                        <div className='container1'><Link style={{fontSize: '10px', height: '50px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={''}>{t('Logout')}</Link></div>
                     </div>
                 </MobileSidebarStyle>
             )
