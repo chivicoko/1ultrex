@@ -203,7 +203,7 @@ const MobileHomeStyle = styled.main`
     color: white;
     
     .container {
-        margin: 80px 0;
+        margin: 50px 0;
     }
 
     .container p {
