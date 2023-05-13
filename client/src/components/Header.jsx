@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { FaSignInAlt, FaSignOutAlt, FaUser} from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout, reset } from '../features/auth/authSlice';
@@ -68,7 +67,7 @@ const Header = () => {
                     </select>
                     <li>
                         <button className='btn' onClick={onLogout}>
-                            <FaSignOutAlt /> {t('Logout')}
+                            {t('Logout')}
                         </button>
                     </li>
                 </>
@@ -96,12 +95,12 @@ const Header = () => {
                     </li>
                     <li>
                         <Link to='/login' style={{color: 'white'}}>
-                            <FaSignInAlt /> {t('Login')}
+                            {t('Login')}
                         </Link>
                     </li>
                     <li>
                         <Link to='/register' style={{color: 'white'}}>
-                            <FaUser /> {t('Register')}
+                            {t('Register')}
                         </Link>
                     </li>
                 </>
