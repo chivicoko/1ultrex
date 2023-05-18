@@ -29,7 +29,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api/deposits', depositRoutes);
 app.use('/api/users', userRoutes);
 
-
 // -----------------------
 /*
  This part is for deployment (in this case using Heroku)

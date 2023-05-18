@@ -7,9 +7,9 @@ import { login, reset } from '../features/auth/authSlice';
 import Spinner from '../components/Spinner';
 
 import { useTranslation } from 'react-i18next';
-import i18next from 'i18next'
+import i18next from 'i18next';
 
-const Login = () => {
+const Login = () => {    
     const { t } = useTranslation(["common"]);
 
     useEffect(() => {

@@ -22,9 +22,10 @@ import ConfirmDeposit from "./components/dashboard/ConfirmDeposit";
 import User from "./components/dashboard/User";
 import EditProfile from "./components/dashboard/EditProfile";
 import DepositForm from "./components/DepositForm";
+import UserDeposits from "./pages/UserDeposits";
 
 function App() {
-  // axios.defaults.baseURL = 'http://localhost:5000';
+  axios.defaults.baseURL = 'http://localhost:5000';
   axios.defaults.withCredentials = true;
 
   return (
@@ -50,6 +51,7 @@ function App() {
             <Route exact path='/my-earning' element={ <UserEarning/>}> {UserEarning} </Route>
             <Route exact path='/confirm-deposit' element={ <ConfirmDeposit/>}> {ConfirmDeposit} </Route>
             <Route exact path='/deposit-form' element={ <DepositForm/>}> {DepositForm} </Route>
+            <Route exact path='/userDeposits' element={ <UserDeposits/>}> {UserDeposits} </Route>
           </Routes>
         </div>
       </Router>

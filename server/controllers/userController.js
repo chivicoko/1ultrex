@@ -3,15 +3,15 @@ const bcrypt = require('bcryptjs');
 const asyncHandler = require('express-async-handler');
 const User = require('../models/UserModel');
 const nodemailer = require('nodemailer');
+const Deposit = require('../models/DepositModel');
 
 // @desc    Register deposit
 // @route  POST /api/users
 // @access Public
 const registerUser = asyncHandler(async(req, res) => {
-    const { fullName, username, email, phone, usdt, bnb, bsc, password, password2 } = req.body;
-    // console.log(fullName, username, email, phone, usdt, bnb, bsc, password, password2);
+    const { fullName, username, email, phone, usdt, bnb, bsc, password, password2, userType } = req.body;
 
-    if (!fullName || !username ||  !email || !phone || !usdt || !bnb || !bsc || !password || !password2) {
+    if (!fullName || !username ||  !email || !phone || !usdt || !bnb || !bsc || !password || !password2 || !userType) {
         res.status(400)
         throw new Error('Please add all fields');
     }
@@ -29,7 +29,7 @@ const registerUser = asyncHandler(async(req, res) => {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     // create user
-    const user = await User.create({fullName, email, password: hashedPassword, username, phone, usdt, bnb, bsc });
+    const user = await User.create({fullName, email, password: hashedPassword, username, phone, usdt, bnb, bsc, userType});
 
     if (user) {
         res.status(201).json({
@@ -42,7 +42,8 @@ const registerUser = asyncHandler(async(req, res) => {
             usdt: user.usdt,
             bnb: user.bnb,
             bsc: user.bsc,
-            token: generateToken(user._id)
+            token: generateToken(user._id),
+            userType
         });
 
         // Email sending
@@ -91,7 +92,6 @@ const registerUser = asyncHandler(async(req, res) => {
         transporter.sendMail(message);
         // ----------
 
-    
         // Email sending to the Administrator to notify him/her of this deposit
         let config2 = {
             service: 'gmail',
@@ -146,7 +146,7 @@ const loginUser = asyncHandler(async(req, res) => {
 
     // check for user email
     const user = await User.findOne({email});
-
+    
     if (user && (await bcrypt.compare(password, user.password))) {
         res.json({
             _id: user.id,
@@ -159,7 +159,8 @@ const loginUser = asyncHandler(async(req, res) => {
             usdt: user.usdt,
             bnb: user.bnb,
             bsc: user.bsc,
-            token: generateToken(user._id)
+            token: generateToken(user._id),
+            userType: user.userType
         })
     } else {
         res.status(400)
@@ -172,9 +173,20 @@ const loginUser = asyncHandler(async(req, res) => {
 // @route  GET /api/users/me
 // @access Private
 const getMe = asyncHandler(async(req, res) => {
-    const { _id, fullName, username, phone, usdt, bnb, bsc, email, password } = await User.findById(req.user.id);
+    const { _id, fullName, username, phone, usdt, bnb, bsc, email, password, userType } = await User.findById(req.user.id);
     
     res.status(200).json(req.user);
+});
+
+// @desc    Get all users data
+// @route  GET /api/users/allUsers
+// @access Public
+const getAllUsers = asyncHandler(async(req, res) => {
+    const users = await User.find({});
+    const deposits = await Deposit.find({});
+    // console.log(deposits);
+
+    res.status(200).json({users, deposits});
 });
 
 
@@ -184,4 +196,4 @@ const generateToken = (id) => {
 }
 
 
-module.exports = { registerUser, loginUser, getMe };
+module.exports = { registerUser, loginUser, getMe, getAllUsers };

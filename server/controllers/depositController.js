@@ -28,7 +28,6 @@ const setDeposit = asyncHandler(async (req, res) => {
     const deposit = await Deposit.create({
         depositeAmount: depositAmount,
         cryptoCurrency: depositCryptoCurrency,
-        pending: true,
         user: req.user.id
     });
 

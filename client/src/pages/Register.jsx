@@ -10,6 +10,8 @@ import { useTranslation } from 'react-i18next';
 import i18next from 'i18next'
 
 const Register = () => {
+    const [userType, setUserType] = useState('');
+    const [secretKey, setSecretKey] = useState('');
     const { t } = useTranslation(["common"]);
 
     useEffect(() => {
@@ -59,13 +61,18 @@ const Register = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        
-        if (password !== password2) {
-            toast.error('Passwords do not match');
+        if (userType === 'Admin' && secretKey !== 'UltrexGold1234') {
+            alert('Invalid Admin');
         } else {
-            const userData = { fullName, username, email, phone, usdt, bnb, bsc, password, password2 }
+    
+            if (password !== password2) {
+                toast.error('Passwords do not match');
+            } else {
+                const userData = { fullName, username, email, phone, usdt, bnb, bsc, password, password2, userType }
+    
+                dispatch(register(userData));
+            }
 
-            dispatch(register(userData));
         }
     }
 
@@ -84,6 +91,17 @@ const Register = () => {
 
         <section className='form'>
             <form onSubmit={onSubmit}>
+                <div>
+                    Register as: 
+                    <input type="radio" name="userType"value="User" onChange={(e) => setUserType(e.target.value)} /> User
+                    <input type="radio" name="userType"value="Admin" onChange={(e) => setUserType(e.target.value)} /> Admin
+                </div>
+                {userType === 'Admin' ? 
+                    <div className="form-group">
+                        {/* <label htmlFor="secretKey">Secret Key</label> */}
+                        <input type="text" className="form-control" id='secretKey' name='secretKey' placeholder={t('Enter admin secret key')} onChange={(e) => setSecretKey(e.target.value)} required/>
+                    </div>
+                : null}
                 <div className="form-group">
                     <input type="text" className="form-control" id='fullName' name='fullName' placeholder={t('Enter your full name')} onChange={onChange} required/>
                 </div>

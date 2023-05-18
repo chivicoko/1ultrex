@@ -10,7 +10,8 @@ const userSchema = new mongoose.Schema(
         password: {type: String, required: [true, "can't be blank"]},
         usdt: String,
         bnb: String,
-        bsc: String
+        bsc: String,
+        userType: String
     },
     { timestamps: true }
 )
