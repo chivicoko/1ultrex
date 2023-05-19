@@ -30,6 +30,12 @@ const UserDeposits = ({userData}) => {
                             <div key={userDeposit._id} style={{border: '1px solid orange', borderRadius: '10px', marginBottom: '10px'}}>
                                 <div style={{marginBottom: '15px'}}>
                                     <div style={{display: 'flex', justifyContent: 'space-between', margin: '10px', fontSize: '15px'}}>
+                                        <small style={{color: 'orange'}}>User</small>
+                                        <small>{userDeposit.user}</small>
+                                    </div>
+                                </div>
+                                <div style={{marginBottom: '15px'}}>
+                                    <div style={{display: 'flex', justifyContent: 'space-between', margin: '10px', fontSize: '15px'}}>
                                         <small style={{color: 'orange'}}>Crypto Currency</small>
                                         <small>{userDeposit.cryptoCurrency}</small>
                                     </div>
@@ -46,8 +52,6 @@ const UserDeposits = ({userData}) => {
                                         <small>{new Date(userDeposit.createdAt).toLocaleString('en-US')}</small>
                                     </div>
                                 </div>
-                                {/* <hr /> */}
-                                
                             </div>
                         )
                     })

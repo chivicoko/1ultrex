@@ -25,7 +25,7 @@ const Dashboard = () => {
 
   const { user } = useSelector((state) => state.auth);
 
-  const { deposits, isLoading, isError, message } = useSelector((state) => state.deposits);
+  const { isLoading, isError, message } = useSelector((state) => state.deposits);
 
   useEffect(() => {
     if (isError) {

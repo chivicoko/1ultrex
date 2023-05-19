@@ -184,9 +184,25 @@ const getMe = asyncHandler(async(req, res) => {
 const getAllUsers = asyncHandler(async(req, res) => {
     const users = await User.find({});
     const deposits = await Deposit.find({});
-    // console.log(deposits);
-
+    
     res.status(200).json({users, deposits});
+});
+
+ 
+const findUserDeposits = asyncHandler(async(req, res) => {
+    const {userId} = req.body;
+    const deposits = await Deposit.findById({user: userId});
+    alert(deposits);
+
+    res.status(200).json({ status: 'ok', data: 'Deleted' });
+});
+
+ 
+const deleteUser = asyncHandler(async(req, res) => {
+    const {userId} = req.body;
+    await User.deleteOne({_id: userId});
+
+    res.status(200).json({ status: 'ok', data: 'Deleted' });
 });
 
 
@@ -196,4 +212,4 @@ const generateToken = (id) => {
 }
 
 
-module.exports = { registerUser, loginUser, getMe, getAllUsers };
+module.exports = { registerUser, loginUser, getMe, getAllUsers, deleteUser, findUserDeposits };

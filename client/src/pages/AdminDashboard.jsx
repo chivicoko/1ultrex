@@ -1,8 +1,24 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import { FaTrashAlt } from "react-icons/fa";
+// import Button from '../components/styles/Button';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { deleteDeposit, getDeposits } from '../../features/deposits/depositSlice';
+// import { deleteUser } from '../../../server/controllers/userController';
+
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next'
 
 const AdminDashboard = ({userData}) => {
+    const { t } = useTranslation(["common"]);
+
+    useEffect(() => {
+      if (localStorage.getItem("i18nextLng")?.length > 2) {
+        i18next.changeLanguage('en');
+      }
+    }, [])
+
     const [users, setUsers] = useState([])
     const [display, setDisplay] = useState('')
 
@@ -22,6 +38,29 @@ const AdminDashboard = ({userData}) => {
 
         getUsers();
     }, []);
+
+    const deleteUser = (id, name) => {
+        if (window.confirm(`Are you sure you want to delete ${name} ?`)) {
+            // const {data} = await axios.get(`http://localhost:5000/api/users/deleteUser/${id}`);
+            fetch(`http://localhost:5000/api/users/deleteUser`, {
+                method: "POST",
+                crossDomain: true,
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                },
+                body: JSON.stringify({
+                    userId: id,
+                })
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                // alert(data.data);
+                getUsers();
+            });
+        }
+    }
 
   return (
     <div style={{color: 'white'}}>
@@ -57,6 +96,8 @@ const AdminDashboard = ({userData}) => {
                                         <small>Username</small>
                                         <small>{user.username}</small>
                                     </div>
+                                    <button style={{backgroundColor: 'red'}} className='btn' onClick={() => deleteUser(user._id, user.username)}><FaTrashAlt/>Delete User</button>
+                                    {/* <Button style={{padding: '10px 20px', fontSize: '12px', margin: '0', color: 'red', letterSpacing: '4px', backgroundColor: 'orange', border: '1px solid orange', marginTop: '10px', marginBottom: '0'}} onClick={() => dispatch(deleteDeposit(deposit._id))}>{t('Delete')}</Button> */}
                                 </div>
                             </div>
                         )
