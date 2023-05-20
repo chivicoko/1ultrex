@@ -1,40 +1,23 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-const UserDeposits = ({userData}) => {
-    // const [users, setUsers] = useState([])
-    const [userDeposits, setUserDeposits] = useState([]);
-
-    const getUsers = async () => {
-        const {data} = await axios.get("http://localhost:5000/api/users/allUsers");
-        const deposits = data.deposits;
-        setUserDeposits(deposits);
-    }
-    
-    useEffect(() => {
-        getUsers();
-    }, []);
+const SingleUserDeposits = ({userData}) => {
+    const location = useLocation();
 
   return (
     <div style={{color: 'white'}}>
         <h2 style={{marginBottom: '5px'}}>Admin Dashboard</h2>
         <div>
             <div style={{textAlign: 'center', marginBottom: '30px'}}>
-                <h3 style={{color: 'orange'}}>List of User Deposits</h3>
+                <h3 style={{color: 'orange'}}>List of {location.state.userInfo.user.username}'s Deposits</h3>
             </div>
-            {userDeposits !== [] ?
+            {location.state.userInfo.deposits !== null ?
                 <div>
                     {
-                        userDeposits.map((userDeposit) => {
+                        location.state.userInfo.deposits.map((userDeposit) => {
                             return (
                                 <div key={userDeposit._id} style={{border: '1px solid orange', borderRadius: '10px', marginBottom: '10px'}}>
-                                    <div style={{marginBottom: '15px'}}>
-                                        <div style={{display: 'flex', justifyContent: 'space-between', margin: '10px', fontSize: '15px'}}>
-                                            <small style={{color: 'orange'}}>User</small>
-                                            <small>{userDeposit.user}</small>
-                                        </div>
-                                    </div>
                                     <div style={{marginBottom: '15px'}}>
                                         <div style={{display: 'flex', justifyContent: 'space-between', margin: '10px', fontSize: '15px'}}>
                                             <small style={{color: 'orange'}}>Crypto Currency</small>
@@ -70,4 +53,4 @@ const UserDeposits = ({userData}) => {
   )
 }
 
-export default UserDeposits;
+export default SingleUserDeposits;

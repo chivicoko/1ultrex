@@ -8,6 +8,6 @@ router.post('/login', loginUser);
 router.get('/me', protect, getMe);
 router.get('/allUsers', getAllUsers);
 router.post('/deleteUser', deleteUser);
-router.get('/findUserDeposits', findUserDeposits);
+router.get('/findUserDeposits/:id', findUserDeposits);
 
 module.exports = router;

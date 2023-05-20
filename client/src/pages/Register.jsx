@@ -86,15 +86,17 @@ const Register = () => {
             <h1>
                 <FaUser /> {t('Register')}
             </h1>
-            <p>{t('Please create an account')}</p>
+            <p style={{marginBottom: '0'}}>{t('Please create an account')}</p>
         </section>
 
         <section className='form'>
             <form onSubmit={onSubmit}>
-                <div>
-                    Register as: 
-                    <input type="radio" name="userType"value="User" onChange={(e) => setUserType(e.target.value)} /> User
-                    <input type="radio" name="userType"value="Admin" onChange={(e) => setUserType(e.target.value)} /> Admin
+                <div style={{display: 'flex', justifyContent: 'space-between', margin: '10px 0', color: 'orange', border: '1px solid orange', borderRadius: '7px', padding: '5px 15px'}}>
+                    <span style={{color: 'white'}}>Register as </span>
+                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                        <span><input type="radio" name="userType"value="User" onChange={(e) => setUserType(e.target.value)} /> User</span> &nbsp;&nbsp;&nbsp;
+                        <span><input type="radio" name="userType"value="Admin" onChange={(e) => setUserType(e.target.value)} /> Admin</span>
+                    </div>
                 </div>
                 {userType === 'Admin' ? 
                     <div className="form-group">

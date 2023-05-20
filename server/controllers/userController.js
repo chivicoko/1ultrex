@@ -190,17 +190,17 @@ const getAllUsers = asyncHandler(async(req, res) => {
 
  
 const findUserDeposits = asyncHandler(async(req, res) => {
-    const {userId} = req.body;
-    const deposits = await Deposit.findById({user: userId});
-    alert(deposits);
+    const user = await User.findById(req.params.id);
+    const deposits = await Deposit.find({user: user._id });
 
-    res.status(200).json({ status: 'ok', data: 'Deleted' });
+    res.status(200).json({user, deposits});
 });
 
  
 const deleteUser = asyncHandler(async(req, res) => {
     const {userId} = req.body;
     await User.deleteOne({_id: userId});
+    await Deposit.deleteMany({user: userId});
 
     res.status(200).json({ status: 'ok', data: 'Deleted' });
 });

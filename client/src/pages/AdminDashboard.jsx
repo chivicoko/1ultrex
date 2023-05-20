@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaTrashAlt } from "react-icons/fa";
 // import Button from '../components/styles/Button';
 // import { useDispatch, useSelector } from 'react-redux';
@@ -19,8 +19,8 @@ const AdminDashboard = ({userData}) => {
       }
     }, [])
 
-    const [users, setUsers] = useState([])
-    const [display, setDisplay] = useState('')
+    const [users, setUsers] = useState([]);
+    const [display, setDisplay] = useState('');
 
     const getUsers = async () => {
         const {data} = await axios.get("http://localhost:5000/api/users/allUsers");
@@ -39,9 +39,19 @@ const AdminDashboard = ({userData}) => {
         getUsers();
     }, []);
 
+    const navigate = useNavigate();
+    const findUserDeposits = async (id, info) => {
+        const {data} = await axios.get(`http://localhost:5000/api/users/findUserDeposits/${id}`);
+
+        navigate('/single-user-deposits', {
+            state: {
+                userInfo: data
+            }
+        })
+    }
+
     const deleteUser = (id, name) => {
         if (window.confirm(`Are you sure you want to delete ${name} ?`)) {
-            // const {data} = await axios.get(`http://localhost:5000/api/users/deleteUser/${id}`);
             fetch(`http://localhost:5000/api/users/deleteUser`, {
                 method: "POST",
                 crossDomain: true,
@@ -74,12 +84,14 @@ const AdminDashboard = ({userData}) => {
                     users.map(user => {
                         return (
                             <div key={user._id}>
-                                <div style={{display: 'flex', justifyContent: 'space-between', margin: '5px 10px', color: 'orange'}}>
-                                    <p>{user.fullName}</p>
-                                    <p>{user.userType}</p>
-                                </div>
+                                <Link>
+                                    <div style={{display: 'flex', justifyContent: 'space-between', margin: '5px 10px', color: 'orange'}} onClick={() => findUserDeposits(user._id)}>
+                                        <p>{user.fullName}</p>
+                                        <p>{user.userType}</p>
+                                    </div>
+                                </Link>
                                 <hr />
-                                <div style={{display: display, marginBottom: '25px'}}>
+                                <div style={{display: display, marginBottom: '25px', borderBottom: '1px solid orange', paddingBottom: '10px'}}>
                                     <div style={{display: 'flex' || display, justifyContent: 'space-between', margin: '10px', fontSize: '15px'}} onClick={displayDetails}>
                                         <small>Date Registered</small>
                                         <small>{new Date(user.createdAt).toLocaleString('en-US')}</small>
@@ -105,7 +117,7 @@ const AdminDashboard = ({userData}) => {
                 }
             </div>
             
-            <Link to={'/userDeposits'} style={{color: 'orange', marginTop: '20px', textDecoration: 'underline'}}>View All Deposits</Link>
+            <Link to={'/user-deposits'} style={{color: 'orange', marginTop: '20px', textDecoration: 'underline'}}>View All Deposits</Link>
         </div>
     </div>
   )
