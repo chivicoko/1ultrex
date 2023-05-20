@@ -12,7 +12,6 @@ const createDeposit = async (depositData, token) => {
 
     const response = await axios.post(API_URL, depositData, config);
 
-    console.log(response.data);
     return response.data;
 }
 

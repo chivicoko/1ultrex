@@ -51,11 +51,6 @@ const Deposit = () => {
         })
     }
 
-    // console.log(amount, currency);
-
-    // const [depositeAmount, setDepositeAmount] = useState('');
-    // const [cryptoCurrency, setCryptoCurrency] = useState('');
-
     const dispatch = useDispatch();
 
     const onSubmit = (e) => {
@@ -63,8 +58,6 @@ const Deposit = () => {
         
         dispatch(createDeposit({amount, currency}));
         setAmount('');
-        
-        // dispatch(createDeposit({currency}));
         setCurrency('');
     }
 
@@ -76,7 +69,6 @@ const Deposit = () => {
                     <Sidebar/>
                 <div className='container'>
                     <section>
-                            {/* <small>{location.state.saveDeposit ? location.state.saveDeposit : location.state.cancelDeposit}</small> */}
                         <div className='depositeContainer'>
                             <div>
                                 <h1>{t('Make A Deposit')}</h1>

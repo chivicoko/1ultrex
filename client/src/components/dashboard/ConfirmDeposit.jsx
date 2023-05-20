@@ -7,7 +7,6 @@ import Button from '../styles/Button';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { createDeposit } from '../../features/deposits/depositSlice';
-// import axios from 'axios';
 
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next'
@@ -46,7 +45,6 @@ const ConfirmDeposit = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch()
     const location = useLocation();
-    // console.log(location);
 
     useEffect(() => {
         setDepositAmount(location.state.amount);
@@ -73,8 +71,7 @@ const ConfirmDeposit = () => {
             break;
         }
     }, [depositAmount, depositCurrency, depositCryptoCurrency, location.state.amount, location.state.currency, navigate]);
-    // console.log(depositCryptoCurrency);
-    
+
     const proposal = location.state.amount >= 100.00 && location.state.amount <= 999.00 ? 'First Proposal'
         : location.state.amount >= 1000.00 && location.state.amount <= 9999.00 ? 'Second Proposal'
         : location.state.amount >= 10000.00 && location.state.amount < 20000.00 ? 'Gold Package'
@@ -146,12 +143,11 @@ const ConfirmDeposit = () => {
                                 <span style={{color: 'white'}}>{t('Address')}:</span> <br />
                                 <small style={{fontSize: '12px'}}>{location.state.currency}</small>
                             </p>
+                            <small>{t("Click 'save' to save deposit. You'll receive an email of confirmation soon.")}</small>
                             <div className='saveCancel'>
                                 <Link><Button className='btn' onClick={onClick}>{t('Save')}</Button></Link>
                                 <Link to={'/deposit'}><Button primary className='btn'>{t('Cancel')}</Button></Link>
                             </div>
-                            {/* <small>If you click 'save', the deposit will be saved. It will become active when the administrator checks statistics.</small> */}
-                            <small>{t("Click 'save' to save deposit. You'll receive an email of confirmation soon.")}</small>
                         </div>
                     </section>
                 </div>
@@ -204,12 +200,11 @@ const ConfirmDeposit = () => {
                                 <span style={{color: 'white'}}>{t('Address')}:</span> <br />
                                 <small style={{fontSize: '12px'}}>{location.state.currency}</small>
                             </p>
+                            <small>{t("Click 'save' to save deposit. You'll receive an email of confirmation soon.")}</small>
                             <div className='saveCancel'>
                                 <Link><Button className='btn' onClick={onClick}>{t('Save')}</Button></Link>
                                 <Link to={'/deposit'}><Button primary className='btn'>{t('Cancel')}</Button></Link>
                             </div>
-                            {/* <small>If you click 'save', the deposit will be saved. It will become active when the administrator checks statistics.</small> */}
-                            <small>{t("Click 'save' to save deposit. You'll receive an email of confirmation soon.")}</small>
                         </div>
                     </section>
                 </div>

@@ -17,7 +17,6 @@ const initialState = {
 export const createDeposit = createAsyncThunk('deposits/create', async (depositData, thunkAPI) => {
     try {
         const token = thunkAPI.getState().auth.user.token;
-        // console.log(token);
         return await depositService.createDeposit(depositData, token);
     } catch (error) {
         const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();

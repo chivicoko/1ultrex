@@ -18,7 +18,6 @@ const getDeposits = asyncHandler(async (req, res) => {
 // @access Private
 const setDeposit = asyncHandler(async (req, res) => {
     const { depositAmount, depositCryptoCurrency } = req.body;
-    // console.log(depositAmount, depositCryptoCurrency);
     
     if (!depositAmount || !depositCryptoCurrency) {
         res.status(400)
