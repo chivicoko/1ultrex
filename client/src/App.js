@@ -52,7 +52,7 @@ function App() {
             <Route exact path='/my-earning' element={ <UserEarning/>}> {UserEarning} </Route>
             <Route exact path='/confirm-deposit' element={ <ConfirmDeposit/>}> {ConfirmDeposit} </Route>
             <Route exact path='/deposit-form' element={ <DepositForm/>}> {DepositForm} </Route>
-            <Route exact path='/user-deposits' element={ <UserDeposits/>}> {UserDeposits} </Route>
+            <Route exact path='/users-deposits' element={ <UserDeposits/>}> {UserDeposits} </Route>
             <Route exact path='/single-user-deposits' element={ <SingleUserDeposits/>}> {SingleUserDeposits} </Route>
           </Routes>
         </div>

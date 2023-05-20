@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 const UserDeposits = ({userData}) => {
-    // const [users, setUsers] = useState([])
     const [userDeposits, setUserDeposits] = useState([]);
 
     const getUsers = async () => {
@@ -28,13 +27,7 @@ const UserDeposits = ({userData}) => {
                     {
                         userDeposits.map((userDeposit) => {
                             return (
-                                <div key={userDeposit._id} style={{border: '1px solid orange', borderRadius: '10px', marginBottom: '10px'}}>
-                                    <div style={{marginBottom: '15px'}}>
-                                        <div style={{display: 'flex', justifyContent: 'space-between', margin: '10px', fontSize: '15px'}}>
-                                            <small style={{color: 'orange'}}>User</small>
-                                            <small>{userDeposit.user}</small>
-                                        </div>
-                                    </div>
+                                <div key={userDeposit._id} style={{border: '1px solid orange', borderRadius: '10px', marginBottom: '20px'}}>
                                     <div style={{marginBottom: '15px'}}>
                                         <div style={{display: 'flex', justifyContent: 'space-between', margin: '10px', fontSize: '15px'}}>
                                             <small style={{color: 'orange'}}>Crypto Currency</small>

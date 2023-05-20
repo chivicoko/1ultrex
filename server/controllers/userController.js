@@ -188,7 +188,9 @@ const getAllUsers = asyncHandler(async(req, res) => {
     res.status(200).json({users, deposits});
 });
 
- 
+// @desc    Get single user's deposit data
+// @route  GET /api/users/findUserDeposits/id
+// @access Public
 const findUserDeposits = asyncHandler(async(req, res) => {
     const user = await User.findById(req.params.id);
     const deposits = await Deposit.find({user: user._id });

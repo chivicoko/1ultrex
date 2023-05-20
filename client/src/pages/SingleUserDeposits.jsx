@@ -1,8 +1,6 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 
-const SingleUserDeposits = ({userData}) => {
+const SingleUserDeposits = () => {
     const location = useLocation();
 
   return (
@@ -10,7 +8,7 @@ const SingleUserDeposits = ({userData}) => {
         <h2 style={{marginBottom: '5px'}}>Admin Dashboard</h2>
         <div>
             <div style={{textAlign: 'center', marginBottom: '30px'}}>
-                <h3 style={{color: 'orange'}}>List of {location.state.userInfo.user.username}'s Deposits</h3>
+                <h3 style={{color: 'orange'}}>{location.state.userInfo.user.username}'s Deposits</h3>
             </div>
             {location.state.userInfo.deposits !== null ?
                 <div>
