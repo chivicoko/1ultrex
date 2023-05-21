@@ -27,7 +27,7 @@ const MobileSidebarStyle = styled.aside`
 
     .container {
         display: grid;
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto;
         grid-column-gap: 5px;
         width: 90vw;
         padding: 0 2px;
@@ -38,10 +38,11 @@ const MobileSidebarStyle = styled.aside`
         background-color: orange;
         border: 1px solid rgb(36, 35, 35);
         border-radius: 4px;
-        margin: 3px 0;
-        padding: 3px;
+        // margin: 3px 0;
+        // padding: 3px;
         text-align: center;
-        font-size: 12px;
+        font-size: 13px;
+        // text-decoration: underline;
         display: table;
     }
 `;

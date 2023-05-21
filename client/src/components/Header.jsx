@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout, reset } from '../features/auth/authSlice';
 
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next'
+import Nav from './Nav';
 
 const Header = () => {
+    const [sideBarVisible, setSideBarVisible] = useState(false);
     const { i18n, t } = useTranslation(["common"]);
 
     useEffect(() => {
@@ -30,37 +32,19 @@ const Header = () => {
     }
 
   return (
-    
       <header className='header'>
-        <div className='logo'>
-            <Link to='/' className='uG' style={{color: 'white'}}><h5> <span>U</span><span style={{color: 'orange'}}>G</span></h5></Link>
-            <Link to='/' className='ultrexGold'> <span style={{color: 'white'}}>Ultrex</span> <span style={{color: 'orange'}}>Gold</span> </Link>
+        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            <Nav visible={sideBarVisible} show={setSideBarVisible} />
+            <div className='logo'>
+                <Link to='/' className='uG' style={{color: 'white'}}><h5><span>U</span><span style={{color: 'orange'}}>G</span></h5></Link>
+                <Link to='/' className='ultrexGold'><span style={{color: 'white'}}>Ultrex</span><span style={{color: 'orange'}}>Gold</span></Link>
+            </div>
         </div>
         <ul style={{color: 'white'}}>
             {user
             ? (
                 <>
-                    <li>
-                        <Link to='/' style={{color: 'white'}}>
-                            {t('Home')}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to='/about-us' style={{color: 'white'}}>
-                            {t('About')}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to='/faqs' style={{color: 'white'}}>
-                            {t('FAQ')}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to='/contact-us' style={{color: 'white'}}>
-                            {t('Contact')}
-                        </Link>
-                    </li>
-                    <select className='select-lng' name="" id="" onChange={handleLanguageChange} value={localStorage.getItem("i18nextLng")} style={{height: '30px', width: '130px', background: '#222', border: '1px orange solid', color: 'white', padding: '0 5px', marginLeft: '35px'}}>
+                    <select className='select-lng' name="" id="" onChange={handleLanguageChange} value={localStorage.getItem("i18nextLng")} style={{height: '30px', width: '110px', background: '#222', border: '1px orange solid', color: 'white', padding: '0 5px'}}>
                         <option value="en">English</option>
                         <option value="fr">Francais</option>
                         <option value="es">Espanol</option>
@@ -73,27 +57,7 @@ const Header = () => {
                 </>
             ) : (
                 <>
-                    <li>
-                        <Link to='/' style={{color: 'white'}}>
-                            {t('Home')}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to='/about-us' style={{color: 'white'}}>
-                            {t('About')}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to='/faqs' style={{color: 'white'}}>
-                            {t('FAQ')}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to='/contact-us' style={{color: 'white'}}>
-                            {t('Contact')}
-                        </Link>
-                    </li>
-                    <select className='select-lng' name="" id="" onChange={handleLanguageChange} value={localStorage.getItem("i18nextLng")} style={{height: '30px', width: '130px', background: '#222', border: '1px orange solid', color: 'white', padding: '0 5px', marginLeft: '35px'}}>
+                    <select className='select-lng' name="" id="" onChange={handleLanguageChange} value={localStorage.getItem("i18nextLng")} style={{height: '30px', width: '100px', background: '#222', border: '1px orange solid', color: 'white', padding: '0 5px', marginLeft: '35px'}}>
                         <option value="en">English</option>
                         <option value="fr">Francais</option>
                         <option value="es">Espanol</option>

@@ -83,7 +83,7 @@ const Register = () => {
   return (
     <>
         <section className='heading'>
-            <h1>
+            <h1 style={{color: 'orange'}}>
                 <FaUser /> {t('Register')}
             </h1>
             <p style={{marginBottom: '0'}}>{t('Please create an account')}</p>

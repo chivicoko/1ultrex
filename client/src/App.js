@@ -24,6 +24,7 @@ import EditProfile from "./components/dashboard/EditProfile";
 import DepositForm from "./components/DepositForm";
 import UserDeposits from "./pages/UserDeposits";
 import SingleUserDeposits from "./pages/SingleUserDeposits";
+import Bar from "./components/Bar";
 
 function App() {
   axios.defaults.baseURL = 'http://localhost:5000';
@@ -54,6 +55,7 @@ function App() {
             <Route exact path='/deposit-form' element={ <DepositForm/>}> {DepositForm} </Route>
             <Route exact path='/users-deposits' element={ <UserDeposits/>}> {UserDeposits} </Route>
             <Route exact path='/single-user-deposits' element={ <SingleUserDeposits/>}> {SingleUserDeposits} </Route>
+            <Route exact path='/bars' element={ <Bar/>}> {Bar} </Route>
           </Routes>
         </div>
       </Router>
