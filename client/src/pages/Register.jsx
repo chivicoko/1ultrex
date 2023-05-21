@@ -61,7 +61,8 @@ const Register = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        if (userType === 'Admin' && secretKey !== 'UltrexGold1234') {
+        // if (userType === 'Admin' && secretKey !== 'UltrexGold1234') {
+        if (userType === 'Admin' && secretKey !== '0a2b58f8be0fe32b369fb39f74e31fd58c70e79de4a') {
             alert('Invalid Admin');
         } else {
     
