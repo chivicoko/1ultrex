@@ -35,7 +35,8 @@ const Nav = ({visible, show}) => {
                 <NavLink className="nav-link" to="/my-earning"> <span>{t('Withdraw Earnings')}</span></NavLink>
                 <NavLink className="nav-link" to="/referrals"> <span>{t('My Referrals')}</span></NavLink> */}
                 <hr />
-                <NavLink className="nav-link" to="/settings"><span>Settings</span></NavLink>
+                <NavLink className="nav-link" to=""><span>&copy; UltrexGoldIntl</span></NavLink>
+                {/* <NavLink className="nav-link" to="/settings"><span>Settings</span></NavLink> */}
             </div>
         </nav>
     </div>
