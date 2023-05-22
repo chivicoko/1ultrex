@@ -30,8 +30,8 @@ const AboutStyle = styled.div`
 
     .about p {
         font-size: 18px;
-        word-spacing: 5px;
-        letter-spacing: 1px;
+        // word-spacing: 5px;
+        // letter-spacing: 1px;
         line-spacing: 10px;
     }
     
@@ -63,8 +63,8 @@ const MobileAboutStyle = styled.div`
         margin: 10px 0 0 0;
         padding-top: 10px;
         font-size: 15px;
-        word-spacing: 5px;
-        letter-spacing: 1px;
+        // word-spacing: 5px;
+        // letter-spacing: 1px;
         line-spacing: 10px;
         color: white;
         text-align: start;
