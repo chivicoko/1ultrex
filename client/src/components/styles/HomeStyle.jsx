@@ -89,8 +89,8 @@ const HomeStyle = styled.main`
         margin: 10px 0 0 0;
         padding-bottom: 40px;
         font-size: 18px;
-        word-spacing: 5px;
-        letter-spacing: 1px;
+        // word-spacing: 5px;
+        // letter-spacing: 1px;
         line-spacing: 10px;
     }
     
@@ -114,8 +114,8 @@ const HomeStyle = styled.main`
 
     .about p {
         font-size: 18px;
-        word-spacing: 5px;
-        letter-spacing: 1px;
+        // word-spacing: 5px;
+        // letter-spacing: 1px;
         line-spacing: 10px;
     }
     
@@ -161,7 +161,7 @@ const HomeStyle = styled.main`
     .col h2, .col p, .col h4 {
         text-align: start;
         margin-left: 35px;
-        color: rgb(36, 35, 35);
+        color: white;
     }
 
     .col p {
@@ -261,7 +261,7 @@ const MobileHomeStyle = styled.main`
     .ourAct {
         margin-top: 140px;
         text-align: center;
-        margin: 150px 5px;
+        margin: 150px 5px 80px;
     }
     
     .ourAct h2 {
@@ -274,9 +274,9 @@ const MobileHomeStyle = styled.main`
     .ourAct p {
         margin: 10px 0 0 0;
         font-size: 15px;
-        word-spacing: 5px;
-        letter-spacing: 1px;
-        line-spacing: 10px;
+        // word-spacing: 5px;
+        // letter-spacing: 1px;
+        // line-spacing: 10px;
         text-align: start;
     }
       
@@ -300,9 +300,9 @@ const MobileHomeStyle = styled.main`
         margin: 10px 0 0 0;
         padding-bottom: 10px;
         font-size: 15px;
-        word-spacing: 5px;
-        letter-spacing: 1px;
-        line-spacing: 10px;
+        // word-spacing: 5px;
+        // letter-spacing: 1px;
+        // line-spacing: 10px;
         text-align: start;
     }
     
@@ -330,12 +330,18 @@ const MobileHomeStyle = styled.main`
         padding-top: 10px;
     }
 
-    .col {
-        width: 100%;
-        height: 320px;
-        background-color: orange;
-        border-radius: 15px;
-    }
+    // .col {
+    //     width: 100%;
+    //     height: 320px;
+    //     background-color: orange;
+        
+    //     // background: url(../src/assets/black.jpg);
+    //     // background-position: center center;
+    //     // background-size: cover;
+    //     // background-repeat: no-repeat;
+
+    //     border-radius: 15px;
+    // }
     
     .plans p {
         margin: 10px 0 0 0;
@@ -347,7 +353,8 @@ const MobileHomeStyle = styled.main`
     .col h2, .col p, .col h4 {
         text-align: start;
         margin-left: 35px;
-        color: rgb(36, 35, 35);
+        // color: rgb(36, 35, 35);
+        color: white;
     }
 
     .col p {
@@ -361,8 +368,8 @@ const MobileHomeStyle = styled.main`
     }
 
     .planBtn {
-        word-spacing: 10px;
-        letter-spacing: 4px;
+        // word-spacing: 10px;
+        // letter-spacing: 4px;
         font-weight: 400;
         margin-top: 50px;
     }
@@ -378,7 +385,7 @@ const MobileHomeStyle = styled.main`
         color: orange;
         font-weight: 400;
         padding-bottom: 20px;
-        margin-top: 50px;
+        // margin-top: 50px;
     }
 
     .coin-section .coin-div {
