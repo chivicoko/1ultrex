@@ -48,7 +48,10 @@ const registerUser = asyncHandler(async(req, res) => {
 
         // Email sending
         let config = {
-            service: 'gmail',
+            // service: 'gmail',
+            host: 'smtp.sendgrid.net',
+            port: 465,
+            secure: true,
             auth: {
                 user: process.env.EMAIL,
                 pass: process.env.PASSWORD
