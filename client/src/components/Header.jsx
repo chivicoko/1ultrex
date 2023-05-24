@@ -44,12 +44,12 @@ const Header = () => {
             <li className="desk-nav"><Link style={{color: 'white'}} to="/"> <span>{t('Home')}</span></Link></li>
             <li className="desk-nav"><Link style={{color: 'white'}} to="/about-us"> <span>{t('About')}</span></Link></li>
             <li className="desk-nav"><Link style={{color: 'white'}} to="/faqs"> <span>{t('FAQ')}</span></Link></li>
-            <li className="desk-nav" style={{marginRight: '30px'}}><Link style={{color: 'white'}} to="/contact-us"> <span>{t('Contact')}</span></Link></li>
+            <li className="desk-nav"><Link style={{color: 'white'}} to="/contact-us"> <span>{t('Contact')}</span></Link></li>
 
             {user
             ? (
                 <>
-                    <select className='select-lng' name="" id="" onChange={handleLanguageChange} value={localStorage.getItem("i18nextLng")} style={{height: '30px', width: '110px', background: '#222', border: '1px orange solid', color: 'white', padding: '0 5px'}}>
+                    <select className='select-lng' name="" id="" onChange={handleLanguageChange} value={localStorage.getItem("i18nextLng")} style={{height: '30px', width: '110px', background: '#222', border: '1px orange solid', color: 'white', padding: '0 5px', marginLeft: '20px'}}>
                         <option value="en">English</option>
                         <option value="fr">Francais</option>
                         <option value="es">Espanol</option>
