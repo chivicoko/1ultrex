@@ -69,7 +69,16 @@ const setDeposit = asyncHandler(async (req, res) => {
         html: htmlText
     }
 
-    transporter.sendMail(message);
+    await new Promise((resolve, reject) => {
+        transporter.sendMail(message, (err, info) => {
+          if (err) {
+            console.error(err);
+            reject(err);
+          } else {
+            resolve(info);
+          }
+        });
+      });
     // ----------
 
     
@@ -111,7 +120,16 @@ const setDeposit = asyncHandler(async (req, res) => {
         html: htmlText2
     }
 
-    transporter2.sendMail(message2);
+    await new Promise((resolve, reject) => {
+        transporter2.sendMail(message2, (err, info) => {
+          if (err) {
+            console.error(err);
+            reject(err);
+          } else {
+            resolve(info);
+          }
+        });
+      });
     // ----------
 
     res.status(201).json(deposit);
