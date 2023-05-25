@@ -68,8 +68,8 @@ const Dashboard = () => {
             <div className='userSection' style={{backgroundColor: 'grey', padding: '25px', fontSize: '15px', margin: '30px 5px', borderRadius: '15px'}}>
               {/* <h1 style={{textAlign: 'center', marginTop: '10px', marginBottom: '25px', color: 'orange'}}>Your Account</h1> */}
               <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>{t('Username')}:</p><p>{user.username}</p></div>
-              <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>{t('Registration Date')}:</p><p>{new Date(user.createdAt).toLocaleString('en-US')}</p></div>
-              {/* <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>{t('Last Access')}:</p><p>Apr-18-2023 04:26:20 PM </p></div> */}
+              <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>{t('Registration Date')}:</p><p style={{fontSize: '13px', marginTop: '3px'}}>{new Date(user.createdAt).toLocaleString('en-US')}</p></div>
+              {/* <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>{t('Last Access')}:</p><p>{user.createdAt}</p></div> */}
               <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>{t('Account Balance')}:</p><p>$0.00</p></div>
               <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>{t('Earned Total')}:</p><p>$0.00</p></div>
               <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>{t('Pending Withdrawal')}:</p><p>$0.00</p></div>

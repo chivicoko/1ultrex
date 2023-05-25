@@ -43,7 +43,8 @@ const registerUser = asyncHandler(async(req, res) => {
             bnb: user.bnb,
             bsc: user.bsc,
             token: generateToken(user._id),
-            userType
+            userType,
+            createdAt: user.createdAt
         });
 
         // Email sending
@@ -178,7 +179,8 @@ const loginUser = asyncHandler(async(req, res) => {
             bnb: user.bnb,
             bsc: user.bsc,
             token: generateToken(user._id),
-            userType: user.userType
+            userType: user.userType,
+            createdAt: user.createdAt
         })
     } else {
         res.status(400)
@@ -191,7 +193,7 @@ const loginUser = asyncHandler(async(req, res) => {
 // @route  GET /api/users/me
 // @access Private
 const getMe = asyncHandler(async(req, res) => {
-    const { _id, fullName, username, phone, usdt, bnb, bsc, email, password, userType } = await User.findById(req.user.id);
+    const { _id, fullName, username, phone, usdt, bnb, bsc, email, password, userType, createdAt } = await User.findById(req.user.id);
     
     res.status(200).json(req.user);
 });
