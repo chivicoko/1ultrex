@@ -45,15 +45,15 @@ const Referrals = () => {
                             <h1>{t('Your Referrals')}</h1>
                             <p className='p'>{t('Your upline is')} <span style={{color: 'orange'}}>Larson</span></p>
                             <div className='userSection'>
-                                <div>
-                                    <p style={{marginLeft: '20px', marginRight: '125px'}}>{t('Referrals:')}</p>
+                                <div style={{fontSize: '13px'}}>
+                                    <p style={{marginLeft: '20px', marginRight: '125px'}}>{t('Referrals')}: </p>
                                     <p style={{marginLeft: '20px'}}>$0.00</p>
                                 </div> <hr />
-                                <div>
+                                <div style={{fontSize: '13px'}}>
                                     <p style={{marginLeft: '20px', marginRight: '90px'}}>{t('Active referrals:')}</p>
                                     <p style={{marginLeft: '20px'}}>$0.00</p>
                                 </div> <hr />
-                                <div>
+                                <div style={{fontSize: '13px'}}>
                                     <p style={{marginLeft: '20px', marginRight: '30px'}}>{t('Total referral commission:')}</p>
                                     <p style={{marginLeft: '20px'}}>$0.00</p>
                                 </div>
