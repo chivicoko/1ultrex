@@ -13,6 +13,10 @@ import { useTranslation } from 'react-i18next';
 import i18next from 'i18next'
 
 const Deposit = () => {
+    const [depositUpdate, setDepositUpdate] = useState(0.00);
+    // const [total, setTotal] = useState(0.00);
+
+    // for translations
     const { t } = useTranslation(["common"]);
 
     useEffect(() => {
@@ -48,11 +52,17 @@ const Deposit = () => {
 
    const { user } = useSelector((state) => state.auth);
 //    console.log(user);
+
    const {deposits, isLoading, isError, message} = useSelector((state) => state.deposits);
 //    console.log(deposits);
-//    console.log(deposits[0].user);
 
-   useEffect(() => {
+//  for (let deposit = 0; deposit < deposits.length; deposit++) {
+//      const element = deposits[deposit];
+//      console.log(element.depositeAmount);
+// }
+
+useEffect(() => {
+
         if (isError) {
             console.log(message);
         }
@@ -66,7 +76,7 @@ const Deposit = () => {
         return () => {
             dispatch(reset);
         }
-    }, [user, navigate, isError, message, dispatch])
+    }, [user, navigate, isError, message, dispatch]);
 
     if (isLoading) {
         return <Spinner />
@@ -88,8 +98,7 @@ const Deposit = () => {
                                             <h1 style={{textAlign: 'center', marginTop: '20px'}}>Your Account</h1>
                                             <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Username:</p><p>{user.username}</p></div>
                                             <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Registration Date:</p><p>{new Date(user.createdAt).toLocaleString('en-US')}</p></div>
-                                            <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Last Access:</p><p>Apr-18-2023 04:26:20 PM </p></div>
-                                            <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Account Balance:</p><p>$0.00</p></div>
+                                            <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Account Balance:</p><p>${depositUpdate}</p></div>
                                             <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Earned Total:</p><p>$0.00</p></div>
                                             <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Pending Withdrawal:</p><p>$0.00</p></div>
                                             <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>Withdrew Total:</p><p>$0.00</p></div>
@@ -143,8 +152,7 @@ const Deposit = () => {
                                         <div className='userSection' >
                                             <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>{t('Username')}:</p><p>{user.username}</p></div>
                                             <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>{t('Registration Date')}:</p><p>{new Date(user.createdAt).toLocaleString('en-US')}</p></div>
-                                            {/* <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>{t('Last Access')}:</p><p>Apr-18-2023 04:26:20 PM </p></div> */}
-                                            <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>{t('Account Balance')}:</p><p>$0.00</p></div>
+                                            <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>{t('Account Balance')}:</p><p>${depositUpdate}</p></div>
                                             <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>{t('Earned Total')}:</p><p>$0.00</p></div>
                                             <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>{t('Pending Withdrawal')}:</p><p>$0.00</p></div>
                                             <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}><p>{t('Withdrew Total')}:</p><p>$0.00</p></div>
@@ -169,7 +177,7 @@ const Deposit = () => {
                                                         <div style={{margin: '0 35px 15px', display: 'flex', justifyContent: "space-between", alignItems: "start", fontSize: '12px'}}>
                                                             <p style={{fontWeight: 'bold', color: 'black'}}>{t('Transaction Status')} : </p><p style={{color: 'white'}}>{deposit.pending === 'pending' ? 'Pending' : 'Invested'}</p>
                                                         </div>
-                                                        <Button style={{padding: '10px 20px', fontSize: '12px', margin: '0', color: 'red', letterSpacing: '4px', backgroundColor: 'orange', border: '1px solid orange', marginTop: '10px', marginBottom: '0'}} onClick={() => dispatch(deleteDeposit(deposit._id))}>{t('Delete')}</Button>
+                                                        <Button style={{padding: '10px 20px', fontSize: '12px', margin: '0', color: 'white', letterSpacing: '4px', backgroundColor: 'orange', border: '1px solid orange', marginTop: '10px', marginBottom: '0'}} onClick={() => dispatch(deleteDeposit(deposit._id))}>{t('Delete')}</Button>
                                                     </div>
                                                     <hr />
                                                 </div>
