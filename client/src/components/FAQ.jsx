@@ -105,7 +105,7 @@ const FAQ = () => {
             </div>
             <div className='container-1'>
               <h3>{t('Is it possible to Loose money to UltexGold?')}</h3>
-              <p>{t('One of the best parts of investing with e_goldassetsltd is that we provide a guaranteed and stable return to ensure our investors do not loose money')}</p>
+              <p>{t('One of the best parts of investing with ultrexgold is that we provide a guaranteed and stable return to ensure our investors do not loose money')}</p>
             </div>
             <div className='container-1'>
               <h3>{t('What is the minimum amount to deposit?')}</h3>
@@ -153,7 +153,7 @@ const FAQ = () => {
             </div>
             <div className='container-1'>
               <h3>{t('What payment system does the Company use?')}</h3>
-              <p>{t('We make use of perfect money,etherium and Bitcoin as a mode of payment')}</p>
+              <p>{t('We make use of perfect money, etherium and Bitcoin as a mode of payment')}</p>
             </div>
             <div className='container-1'>
               <h3>{t('Can I make Deposit Through one payment system and Withdraw from another one?')}</h3>
@@ -165,7 +165,7 @@ const FAQ = () => {
             </div>
             <div className='container-1'>
               <h3>{t('How long does it take for my 1st deposit to be added to my account?')}</h3>
-              <p>{t('All deposits are added to your account automatically, except for Bitcoin which is added after 3 confirmations.if your deposit has not been added please contact our support agents with your deposit details such as date, amount and batch#.')}</p>
+              <p>{t('All deposits are added to your account automatically, except for Bitcoin which is added after 3 confirmations. If your deposit has not been added please contact our support agents with your deposit details such as date, amount and batch.')}</p>
             </div>
             <div className='container-1'>
               <h3>{t('When will I see my after making a deposit?')}</h3>
@@ -193,7 +193,7 @@ const FAQ = () => {
             </div>
             <div className='container-1'>
               <h3>{t('Is it possible to Loose money to UltexGold?')}</h3>
-              <p>{t('One of the best parts of investing with e_goldassetsltd is that we provide a guaranteed and stable return to ensure our investors do not loose money')}</p>
+              <p>{t('One of the best parts of investing with ultrexgold is that we provide a guaranteed and stable return to ensure our investors do not loose money')}</p>
             </div>
             <div className='container-1'>
               <h3>{t('What is the minimum amount to deposit?')}</h3>
@@ -201,7 +201,7 @@ const FAQ = () => {
             </div>
             <div className='container-1'>
               <h3>{t('How do I get my gold delivered to me when I buy?')}</h3>
-              <p>{t('We ensure the safety and secure transportation of gold by partnering with the trusted,and the international logistics leaders in the industry.our long-term partnership with G4S,transguard and brinks to ensure the safest,and fastest delivery of gold as well as eliminating any challenges pertaining to logistics')}</p>
+              <p>{t('We ensure the safety and secure transportation of gold by partnering with the trusted, and the international logistics leaders in the industry.our long-term partnership with G4S, transguard and brinks to ensure the safest, and fastest delivery of gold as well as eliminating any challenges pertaining to logistics')}</p>
             </div>
             <div className='container-1'>
               <h3>{t('What if I do not see answers to my Question?')}</h3>
