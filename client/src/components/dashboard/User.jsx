@@ -87,9 +87,9 @@ const Deposit = () => {
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Registration Date:</p><p>{new Date(user.createdAt).toLocaleString("en-US")}</p></div>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Account Balance:</p><p>${sum}</p></div>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Earned Total:</p><p>$0.00</p></div>
-                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Pending Withdrawal:</p><p>$0.00</p></div>
+                        {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Pending Withdrawal:</p><p>$0.00</p></div> */}
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Withdrew Total:</p><p>$0.00</p></div>
-                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Active Deposite:</p><p>$0.00</p></div>
+                        {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Active Deposite:</p><p>$0.00</p></div> */}
                       </div>
 
                       <h1 style={{ textAlign: "center", marginTop: "70px" }}>Your Deposits</h1>
@@ -141,9 +141,9 @@ const Deposit = () => {
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Registration Date")}:</p><p>{new Date(user.createdAt).toLocaleString("en-US")}</p></div>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Account Balance")}:</p><p>${sum}</p></div>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Earned Total")}:</p><p>$0.00</p></div>
-                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Pending Withdrawal")}:</p><p>$0.00</p></div>
+                        {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Pending Withdrawal")}:</p><p>$0.00</p></div> */}
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Withdrew Total")}:</p><p>$0.00</p></div>
-                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Active Deposite")}:</p><p>$0.00</p></div>
+                        {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Active Deposite")}:</p><p>$0.00</p></div> */}
                       </div>
 
                       <h1 style={{ textAlign: "center", marginTop: "70px" }}>{t("Your Deposits")}</h1>
