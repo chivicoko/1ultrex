@@ -19,7 +19,7 @@ const AboutStyle = styled.div`
 
     .about h2 {
         font-size: 40px;
-        text-align: start;
+        text-align: justify;
         color: orange;
         font-weight: 400;
     }
@@ -63,11 +63,11 @@ const MobileAboutStyle = styled.div`
         margin: 10px 0 0 0;
         padding-top: 10px;
         font-size: 15px;
-        // word-spacing: 5px;
+        word-spacing: 1px;
         // letter-spacing: 1px;
         line-spacing: 10px;
         color: white;
-        text-align: start;
+        text-align: justify;
     }
 
 `;

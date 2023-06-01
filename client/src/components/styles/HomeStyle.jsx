@@ -72,7 +72,7 @@ const HomeStyle = styled.main`
     
     .ourAct {
         margin-top: 140px;
-        text-align: start;
+        text-align: justify;
         margin: 150px 0px;
     }
     
@@ -96,7 +96,7 @@ const HomeStyle = styled.main`
     
     .about {
         margin-bottom: 40px;
-        text-align: start;
+        text-align: justify;
     }
 
     .about h2 {
@@ -141,7 +141,7 @@ const HomeStyle = styled.main`
 
     .plans p {
         margin: 10px 0 0 0;
-        text-align: start;
+        text-align: justify;
         padding-bottom: 40px;
         padding-top: 20px;
     }
@@ -159,7 +159,7 @@ const HomeStyle = styled.main`
     }
 
     .col h2, .col p, .col h4 {
-        text-align: start;
+        text-align: justify;
         margin-left: 35px;
         color: white;
     }
@@ -277,7 +277,7 @@ const MobileHomeStyle = styled.main`
         // word-spacing: 5px;
         // letter-spacing: 1px;
         // line-spacing: 10px;
-        text-align: start;
+        text-align: justify;
     }
       
     .about {
@@ -303,7 +303,7 @@ const MobileHomeStyle = styled.main`
         // word-spacing: 5px;
         // letter-spacing: 1px;
         // line-spacing: 10px;
-        text-align: start;
+        text-align: justify;
     }
     
     .plans {
@@ -345,13 +345,13 @@ const MobileHomeStyle = styled.main`
     
     .plans p {
         margin: 10px 0 0 0;
-        text-align: start;
+        text-align: justify;
         padding-top: 20px;
         padding-bottom: 10px;
     }
 
     .col h2, .col p, .col h4 {
-        text-align: start;
+        text-align: justify;
         margin-left: 35px;
         // color: rgb(36, 35, 35);
         color: white;

@@ -36,6 +36,7 @@ const FAQStyle = styled.div`
 
     .general-container .container-1 p {
         // display: none;
+        // text-align: justify;
     }
 
 `;
@@ -69,6 +70,7 @@ const MobileFAQStyle = styled.div`
 
     .general-container .container-1 p {
         // display: none;
+        // text-align: justify;
     }
 `;
 
