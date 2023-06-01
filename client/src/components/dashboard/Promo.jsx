@@ -5,6 +5,8 @@ import { PromoStyle, MobilePromoStyle } from '../styles/PromoStyle';
 
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next'
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Promo = () => {
     const { t } = useTranslation(["common"]);
@@ -15,6 +17,13 @@ const Promo = () => {
       }
     }, [])
     
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const { user } = useSelector((state) => state.auth);
+
+    const { deposits, isLoading, isError, message } = useSelector((state) => state.deposits);
+
     const [windowDimension, setWindowDimension] = useState(null);
 
     useEffect(() => {

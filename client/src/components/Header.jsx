@@ -34,7 +34,7 @@ const Header = () => {
   return (
       <header className='header'>
         <div style={{display: 'flex', justifyContent: 'space-between'}}>
-            <Nav visible={sideBarVisible} show={setSideBarVisible} />
+            {/* <Nav visible={sideBarVisible} show={setSideBarVisible} /> */}
             <div className='logo'>
                 <Link to='/' className='uG' style={{color: 'white'}}><h5><span>U</span><span style={{color: 'orange'}}>G</span></h5></Link>
                 <Link to='/' className='ultrexGold'><span style={{color: 'white'}}>Ultrex</span><span style={{color: 'orange'}}>Gold</span></Link>
@@ -49,11 +49,12 @@ const Header = () => {
             {user
             ? (
                 <>
-                    <select className='select-lng' name="" id="" onChange={handleLanguageChange} value={localStorage.getItem("i18nextLng")} style={{height: '30px', width: '110px', background: '#222', border: '1px orange solid', color: 'white', padding: '0 5px', marginLeft: '20px'}}>
+                    {/* <select className='select-lng' name="" id="" onChange={handleLanguageChange} value={localStorage.getItem("i18nextLng")} style={{height: '30px', width: '110px', background: '#222', border: '1px orange solid', color: 'white', padding: '0 5px', marginLeft: '20px'}}>
                         <option value="en">English</option>
                         <option value="fr">Francais</option>
                         <option value="es">Espanol</option>
-                    </select>
+                    </select> */}
+                    
                     <li>
                         <button className='btn' onClick={onLogout} style={{color: 'white', borderBottom: '1px orange solid', borderTop: '1px orange solid'}}>
                             {t('Logout')}
@@ -62,11 +63,11 @@ const Header = () => {
                 </>
             ) : (
                 <>
-                    <select className='select-lng' name="" id="" onChange={handleLanguageChange} value={localStorage.getItem("i18nextLng")} style={{height: '30px', width: '100px', background: '#222', border: '1px orange solid', color: 'white', padding: '0 5px', marginLeft: '35px'}}>
+                    {/* <select className='select-lng' name="" id="" onChange={handleLanguageChange} value={localStorage.getItem("i18nextLng")} style={{height: '30px', width: '100px', background: '#222', border: '1px orange solid', color: 'white', padding: '0 5px', marginLeft: '35px'}}>
                         <option value="en">English</option>
                         <option value="fr">Francais</option>
                         <option value="es">Espanol</option>
-                    </select>
+                    </select> */}
                     <li>
                         <Link to='/login' style={{color: 'white', borderBottom: '1px orange solid', borderTop: '1px orange solid'}}>
                             {t('Login')}

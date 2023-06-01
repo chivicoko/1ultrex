@@ -56,7 +56,7 @@ const Dashboard = () => {
     
     <div className='settings-container' style={{marginTop: '0'}}>
       <Sidebar/>
-      <div className='head' style={{color: 'white', marginTop: '40px'}}>
+      <div className='mobile-head' style={{color: 'white', marginTop: '40px'}}>
         <section>
           <h1 style={{color: 'orange'}}>{t('Welcome')}, {user && user.fullName}</h1>
           <p>{t('This is your dashboard')}</p>
@@ -76,6 +76,31 @@ const Dashboard = () => {
           </div>
             
             <h3 style={{marginBottom: '0'}}>Use the navigation bars above to navigate through your dashboard</h3>
+
+          </div>
+        </section>
+      </div>
+
+      <div className='desktop-head' style={{color: 'white', marginTop: '150px'}}>
+        <section>
+          <h1 style={{color: 'orange'}}>{t('Welcome')}, {user && user.fullName}</h1>
+          <p>{t('This is your dashboard')}</p>
+        </section>
+        
+
+        <section>
+          <div className='userContainer'>
+            <div className='userSection' style={{backgroundColor: 'grey', padding: '25px', fontSize: '15px', margin: '70px 5px', borderRadius: '15px'}}>
+              {/* <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>{t('Username')}:</p><p>{user.username}</p></div>
+              <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>{t('Registration Date')}:</p><p style={{fontSize: '13px', marginTop: '3px'}}>{new Date(user.createdAt).toLocaleString('en-US')}</p></div>
+              <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>{t('Account Balance')}:</p><p>$0.00</p></div>
+              <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>{t('Earned Total')}:</p><p>$0.00</p></div>
+              <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>{t('Pending Withdrawal')}:</p><p>$0.00</p></div>
+              <div style={{marginBottom: '20px', display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>{t('Withdrew Total')}:</p><p>$0.00</p></div>
+              <div style={{display: 'flex', justifyContent: "space-between", alignItems: "start"}}><p>{t('Active Deposite')}:</p><p>$0.00</p></div> */}
+          </div>
+            
+            <h3 style={{marginBottom: '0'}}>Use the navigation bars by the left to navigate through your dashboard</h3>
 
           </div>
         </section>

@@ -322,6 +322,10 @@ margin-top: 50px;
 border-radius: 20px;
 }
 
+.mobile-head {
+  display: none;
+}
+
 
 @keyframes spin {
   0% {
@@ -571,8 +575,16 @@ border-radius: 20px;
     margin-top: 50px;
   }
 
-  .desk-nav {
+  /* .desk-nav {
     display: none;
+  } */
+
+  .desktop-head {
+    display: none;
+  }
+
+  .mobile-head {
+    display: block;
   }
 
 }

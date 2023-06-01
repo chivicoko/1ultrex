@@ -27,7 +27,7 @@ import SingleUserDeposits from "./pages/SingleUserDeposits";
 import Bar from "./components/Bar";
 
 function App() {
-  // axios.defaults.baseURL = 'http://localhost:5000';
+  axios.defaults.baseURL = 'http://localhost:5000';
   axios.defaults.withCredentials = true;
 
   return (
