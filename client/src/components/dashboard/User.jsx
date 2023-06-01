@@ -52,7 +52,26 @@ const Deposit = () => {
   
   const sum = deposits.reduce((total, current) => total + current.depositeAmount, 0);
 
+  // const [singleDepositPercent, setSingleDepositPercent] = useState(0.00);
+
+  // const getSingleDepositPercent = () => {
+  //   let depositPercent;
+  //   deposits.forEach(element => {
+  //     depositPercent = element.depositeAmount === 100 ? 0.03 :
+  //                     element.depositeAmount === 1000 ? 0.05 :
+  //                     element.depositeAmount === 10000 ? 0.07 :
+  //                     element.depositeAmount === 20000 ? 0.10 : 0;  
+  
+  //       // console.log(depositPercent);
+  //     }
+  //     );    
+  //     setSingleDepositPercent(depositPercent);
+  //     console.log(singleDepositPercent);
+  // }
+  
   useEffect(() => {
+    // getSingleDepositPercent();
+
     if (isError) {
       console.log(message);
     }
@@ -86,10 +105,10 @@ const Deposit = () => {
                       <div className="userSection"><h1 style={{ textAlign: "center", marginTop: "20px" }}>Your Account</h1>
                       <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Username:</p><p>{user.username}</p></div>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Registration Date:</p><p>{new Date(user.createdAt).toLocaleString("en-US")}</p></div>
-                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Account Balance:</p><p>${sum}</p></div>
-                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Earned Total:</p><p>$0.00</p></div>
+                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Account Balance:</p><p>$ {sum}</p></div>
+                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Earned Total:</p><p>$ 0.00</p></div>
                         {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Pending Withdrawal:</p><p>$0.00</p></div> */}
-                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Withdrew Total:</p><p>$0.00</p></div>
+                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Withdrew Total:</p><p>$ 0.00</p></div>
                         {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Active Deposite:</p><p>$0.00</p></div> */}
                       </div>
 
