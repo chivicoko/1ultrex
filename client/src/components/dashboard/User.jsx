@@ -49,6 +49,7 @@ const Deposit = () => {
 
   const { user } = useSelector((state) => state.auth);
   const { deposits, isLoading, isError, message } = useSelector((state) => state.deposits);
+  
   const sum = deposits.reduce((total, current) => total + current.depositeAmount, 0);
 
   useEffect(() => {

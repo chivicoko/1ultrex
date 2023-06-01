@@ -5,8 +5,7 @@ import { PromoStyle, MobilePromoStyle } from '../styles/PromoStyle';
 
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next'
-import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Promo = () => {
     const { t } = useTranslation(["common"]);
@@ -17,20 +16,19 @@ const Promo = () => {
       }
     }, [])
     
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-
     const { user } = useSelector((state) => state.auth);
-
-    const { deposits, isLoading, isError, message } = useSelector((state) => state.deposits);
-
+    
+    const [currentUser, setCurrentUser] = useState();
+    
     const [windowDimension, setWindowDimension] = useState(null);
-
+    
     useEffect(() => {
         setWindowDimension(window.innerWidth);
     }, []);
 
     useEffect(() => {
+        setCurrentUser(user.username);
+
         function handleResize() {
         setWindowDimension(window.innerWidth);
         }
@@ -54,7 +52,7 @@ const Promo = () => {
                             <h1>{t('Referral Links')}</h1>
                             <p className='p'>{t('The best internet investment')}</p>
                             <div className='userSection'>
-                                <div><p style={{marginLeft: '20px'}}>https://ultrexgoldintl.com/?ref=Happiness</p></div>
+                                <div><p style={{marginLeft: '20px'}}>https://ultrexgoldintl.com/?ref={currentUser}</p></div>
                             </div>
                         </div>
                     </section>
