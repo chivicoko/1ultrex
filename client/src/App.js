@@ -5,8 +5,8 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -43,19 +43,62 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route exact path='/deposit' element={ <Deposit/>}> {Deposit} </Route>
-            <Route exact path='/promo' element={ <Promo/>}> {Promo} </Route>
-            <Route exact path='/settings' element={ <Settings/>}> {Settings} </Route>
-            <Route exact path='/edit-profile' element={ <EditProfile/>}> {EditProfile} </Route>
-            <Route exact path='/referrals' element={ <Referrals/>}> {Referrals} </Route>
-            <Route exact path='/user' element={ <User/>}> {User} </Route>
-            <Route exact path='/my-investment' element={ <UserInvestment/>}> {UserInvestment} </Route>
-            <Route exact path='/my-earning' element={ <UserEarning/>}> {UserEarning} </Route>
-            <Route exact path='/confirm-deposit' element={ <ConfirmDeposit/>}> {ConfirmDeposit} </Route>
-            <Route exact path='/deposit-form' element={ <DepositForm/>}> {DepositForm} </Route>
-            <Route exact path='/users-deposits' element={ <UserDeposits/>}> {UserDeposits} </Route>
-            <Route exact path='/single-user-deposits' element={ <SingleUserDeposits/>}> {SingleUserDeposits} </Route>
-            <Route exact path='/bars' element={ <Bar/>}> {Bar} </Route>
+            <Route exact path="/deposit" element={<Deposit />}>
+              {" "}
+              {Deposit}{" "}
+            </Route>
+            <Route exact path="/promo" element={<Promo />}>
+              {" "}
+              {Promo}{" "}
+            </Route>
+            <Route exact path="/settings" element={<Settings />}>
+              {" "}
+              {Settings}{" "}
+            </Route>
+            <Route exact path="/edit-profile" element={<EditProfile />}>
+              {" "}
+              {EditProfile}{" "}
+            </Route>
+            <Route exact path="/referrals" element={<Referrals />}>
+              {" "}
+              {Referrals}{" "}
+            </Route>
+            <Route exact path="/user" element={<User />}>
+              {" "}
+              {User}{" "}
+            </Route>
+            <Route exact path="/my-investment" element={<UserInvestment />}>
+              {" "}
+              {UserInvestment}{" "}
+            </Route>
+            <Route exact path="/my-earning" element={<UserEarning />}>
+              {" "}
+              {UserEarning}{" "}
+            </Route>
+            <Route exact path="/confirm-deposit" element={<ConfirmDeposit />}>
+              {" "}
+              {ConfirmDeposit}{" "}
+            </Route>
+            <Route exact path="/deposit-form" element={<DepositForm />}>
+              {" "}
+              {DepositForm}{" "}
+            </Route>
+            <Route exact path="/users-deposits" element={<UserDeposits />}>
+              {" "}
+              {UserDeposits}{" "}
+            </Route>
+            <Route
+              exact
+              path="/single-user-deposits"
+              element={<SingleUserDeposits />}
+            >
+              {" "}
+              {SingleUserDeposits}{" "}
+            </Route>
+            <Route exact path="/bars" element={<Bar />}>
+              {" "}
+              {Bar}{" "}
+            </Route>
           </Routes>
         </div>
       </Router>
