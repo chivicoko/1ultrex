@@ -402,4 +402,5 @@ const MobileHomeStyle = styled.main`
 
 `;
 
+
 export { HomeStyle, MobileHomeStyle, Wrapper };

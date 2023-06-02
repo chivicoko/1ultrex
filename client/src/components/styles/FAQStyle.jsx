@@ -70,4 +70,5 @@ const MobileFAQStyle = styled.div`
   }
 `;
 
+
 export { FAQStyle, MobileFAQStyle };

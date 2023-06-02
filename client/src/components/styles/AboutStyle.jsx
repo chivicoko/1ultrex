@@ -69,7 +69,7 @@ const MobileAboutStyle = styled.div`
         color: white;
         text-align: start;
     }
-
 `;
+
 
 export {AboutStyle, MobileAboutStyle };
