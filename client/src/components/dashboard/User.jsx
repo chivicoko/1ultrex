@@ -46,14 +46,12 @@ const Deposit = () => {
   // Bringing in the user and user's deposits
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const { user } = useSelector((state) => state.auth);
   const { deposits, isLoading, isError, message } = useSelector((state) => state.deposits);
   
   const sum = deposits.reduce((total, current) => total + current.depositeAmount, 0);
 
   // const [singleDepositPercent, setSingleDepositPercent] = useState(0.00);
-
   // const getSingleDepositPercent = () => {
   //   let depositPercent;
   //   deposits.forEach(element => {
