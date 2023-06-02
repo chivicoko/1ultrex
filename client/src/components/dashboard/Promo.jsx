@@ -6,6 +6,7 @@ import { PromoStyle, MobilePromoStyle } from "../styles/PromoStyle";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Promo = () => {
   const { t } = useTranslation(["common"]);
