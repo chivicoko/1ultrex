@@ -36,7 +36,7 @@ const Promo = () => {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [user.username]);
 
   const isMobile = windowDimension <= 640;
 

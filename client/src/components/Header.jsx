@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout, reset } from '../features/auth/authSlice';
 
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next'
-import Nav from './Nav';
+// import Nav from './Nav';
 
 const Header = () => {
-    const [sideBarVisible, setSideBarVisible] = useState(false);
-    const { i18n, t } = useTranslation(["common"]);
+    // const [sideBarVisible, setSideBarVisible] = useState(false);
+    // const { i18n, t } = useTranslation(["common"]);
+    const { t } = useTranslation(["common"]);
 
     useEffect(() => {
       if (localStorage.getItem("i18nextLng")?.length > 2) {
@@ -17,9 +19,9 @@ const Header = () => {
       }
     }, [])
 
-    const handleLanguageChange = (e) => {
-        i18n.changeLanguage(e.target.value);
-    };
+    // const handleLanguageChange = (e) => {
+    //     i18n.changeLanguage(e.target.value);
+    // };
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
