@@ -50,27 +50,22 @@ const MobileAboutStyle = styled.div`
         font-size: 40px;
         text-align: center;
         color: orange;
-        margin: 20px 0;
         font-weight: 400;
-        z-index: 10;
     }
 
     .about .video {
         padding: 0;
-        margin-top: 20px;
+        margin: 0;
     }
 
     .about p {
         margin: 10px 0 0 0;
         padding-top: 10px;
         font-size: 15px;
-        word-spacing: 1px;
-        // letter-spacing: 1px;
-        line-spacing: 10px;
         color: white;
         text-align: start;
     }
-`;
 
+`;
 
 export {AboutStyle, MobileAboutStyle };
