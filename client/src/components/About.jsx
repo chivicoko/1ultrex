@@ -60,7 +60,7 @@ const About = () => {
                     <h2>{t('About Us')}</h2>
             <div className='about'>
                     <div className='video'>
-                        <ReactPlayer width={'100%'} url={ultrexVid} controls={true} />
+                        <ReactPlayer width={'100%'} height={''} url={ultrexVid} controls={true} />
                     </div>
                     <p>
                     ultrex<span style={{color: 'orange'}}>gold</span> {t('is a leading asset management and gold trading company based in Canada, we develop, operate, maintain and sell assets in a cost-effective manner, and also trade on gold.')} ultrex<span style={{color: 'orange'}}>gold</span> {t('team has an average experience of over 13years in stock market and assets management and 5years in Gold trading. They are supported by a global team of asset, investment management and finance professionals.')} ultrex<span style={{color: 'orange'}}>gold</span> {t('bring to the understanding of their investors that Stocks traded on the stock market are equities where stockholders own a small or large portion of the company whose stocks they trade. Gold are commodities. Investors either hold a physical gold product or make money from the difference in the buy and sell price of the gold when the demand for the gold increases and spot prices rise. The stock and gold markets exist and function independently of each other. Historically, Gold markets move in the opposite direction of the stock market. This correlation gives investors a viable option should the stock market crash. Gold may also produce impressive short-term investment returns as well during periods of ultra-low interest rates, as low rates make the opportunity cost of holding Gold less.')}
