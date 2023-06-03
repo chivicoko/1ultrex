@@ -118,7 +118,7 @@ const Home = () => {
                         <div className='fixedImage'></div>
 
                         <div className='about'>
-                            <h2>{t('About Us')}</h2>
+                            <h2 style={{marginBottom: '30px'}}>{t('About Us')}</h2>
                             <div className='video'>
                                 <ReactPlayer width={'100%'} height={''} url={ultrexVid} controls={true} />
                             </div>
