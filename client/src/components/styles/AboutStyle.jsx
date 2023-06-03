@@ -50,13 +50,14 @@ const MobileAboutStyle = styled.div`
         font-size: 40px;
         text-align: center;
         color: orange;
-        // margin-top: 45px;
+        margin: 20px 0;
         font-weight: 400;
+        z-index: 10;
     }
 
     .about .video {
         padding: 0;
-        margin: 0;
+        margin-top: 20px;
     }
 
     .about p {

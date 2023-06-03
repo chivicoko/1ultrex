@@ -51,24 +51,60 @@ const Deposit = () => {
   
   const sum = deposits.reduce((total, current) => total + current.depositeAmount, 0);
 
-  // const [singleDepositPercent, setSingleDepositPercent] = useState(0.00);
-  // const getSingleDepositPercent = () => {
-  //   let depositPercent;
-  //   deposits.forEach(element => {
-  //     depositPercent = element.depositeAmount === 100 ? 0.03 :
-  //                     element.depositeAmount === 1000 ? 0.05 :
-  //                     element.depositeAmount === 10000 ? 0.07 :
-  //                     element.depositeAmount === 20000 ? 0.10 : 0;  
+  let totalDepoEarnings = 0;
+  let depoEarnings = deposits.reduce((total, current) => 
+    total + current.depositeAmount >= 100 ? totalDepoEarnings + 0.03 :
+    current.depositeAmount >= 1000 ? totalDepoEarnings + 0.05 :
+    current.depositeAmount >= 10000 ? totalDepoEarnings + 0.07 :
+    current.depositeAmount >= 20000 ? totalDepoEarnings + 0.10 : totalDepoEarnings + 0.00
+  , 0.00);
+    
+    setInterval(() => {
+      depoEarnings += depoEarnings;
+      // console.log(depoEarnings);
+    }, 10000);
+
+  // const [earnings, setEarnings] = useState(0.03 + 0.10);
   
-  //       // console.log(depositPercent);
+    // ------
+  //   const [totalEarnings, setTotalEarnings] = useState(0);
+  // useEffect(() => {
+  //   const calculateEarnings = async () => {
+  //     let sum = 0;
+  //     for (const deposit of deposits) {
+  //       const { depositAmount, earningAmount } = deposit;
+
+  //       sum += earningAmount;
+  //       setTotalEarnings(sum);
   //     }
-  //     );    
-  //     setSingleDepositPercent(depositPercent);
-  //     console.log(singleDepositPercent);
-  // }
-  
+  //   };
+
+  //   calculateEarnings();
+  // }, [deposits]);
+  // console.log(totalEarnings);
+    // ------
+
   useEffect(() => {
-    // getSingleDepositPercent();
+    // setInterval(() => {
+    //   let depositPercent = earnings;
+    //   deposits.forEach((singleDeposit, index) => {
+    //     if (singleDeposit.depositeAmount >= 100) {
+    //       depositPercent = depositPercent + 0.03;
+    //     } else if (singleDeposit.depositeAmount >= 1000) {
+    //       depositPercent = depositPercent + 0.05;
+    //     } else if (singleDeposit.depositeAmount >= 10000) {
+    //       depositPercent = depositPercent + 0.07;
+    //     } else if (singleDeposit.depositeAmount >= 20000) {
+    //       depositPercent = depositPercent + 0.10;
+    //     } else {
+    //       depositPercent = depositPercent + 0.00;
+    //     }
+    //   });
+  
+    //   setEarnings(depositPercent);
+    // }, 10000);
+    // // 86400000
+    // // console.log(earnings);
 
     if (isError) {
       console.log(message);
@@ -104,7 +140,7 @@ const Deposit = () => {
                       <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Username:</p><p>{user.username}</p></div>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Registration Date:</p><p>{new Date(user.createdAt).toLocaleString("en-US")}</p></div>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Account Balance:</p><p>$ {sum}</p></div>
-                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Earned Total:</p><p>$ 0.00</p></div>
+                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Earned Total:</p><p>$ {depoEarnings}</p></div>
                         {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Pending Withdrawal:</p><p>$0.00</p></div> */}
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Withdrew Total:</p><p>$ 0.00</p></div>
                         {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Active Deposite:</p><p>$0.00</p></div> */}
