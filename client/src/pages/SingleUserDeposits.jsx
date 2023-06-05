@@ -1,8 +1,18 @@
+import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const SingleUserDeposits = () => {
     const location = useLocation();
 
+    const findUserDeposits = async (id) => {
+        fetch(`http://localhost:5000/api/deposits/getUserDeposits/${id}`)
+        .then((response) => console.log(response));
+    }
+
+    useEffect(() => {
+        findUserDeposits();
+    },[]);
+    
   return (
     <div style={{color: 'white'}}>
         <h2 style={{marginBottom: '5px'}}>Admin Dashboard</h2>
@@ -32,6 +42,14 @@ const SingleUserDeposits = () => {
                                         <div style={{display: 'flex', justifyContent: 'space-between', margin: '10px', fontSize: '15px'}}>
                                             <small style={{color: 'orange'}}>Date Deposited</small>
                                             <small>{new Date(userDeposit.createdAt).toLocaleString('en-US')}</small>
+                                        </div>
+                                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                                            {userDeposit.status === 'Confirmed' ? 
+                                                <input className='btn' style={{marginLeft: '10px'}} type="submit" value={"Confirmed"} disabled/>
+                                                : 
+                                                <input className='btn' style={{marginLeft: '10px'}} onClick={() => findUserDeposits(userDeposit._id)} type="submit" value={"Confirm"} />
+                                            }
+                                            <p style={{marginRight: '10px'}}> <em><small>{userDeposit.status}</small></em></p>
                                         </div>
                                     </div>
                                 </div>

@@ -9,9 +9,23 @@ const nodemailer = require('nodemailer');
 // @access Private
 const getDeposits = asyncHandler(async (req, res) => {
     const deposits = await Deposit.find({ user: req.user.id });
+    // console.log(deposits);
 
     res.status(200).json(deposits);
 })
+
+// @desc    Get deposit
+// @route  GET /api/deposits/{id}
+// @access Private
+const getUserDeposits = asyncHandler(async (req, res) => {
+    const depositId = req.params.id;
+    console.log(depositId);
+
+    const deposit = await Deposit.findByIdAndUpdate(depositId, {status: Confirmed});
+
+    res.status(200).json(deposit);
+});
+// getUserDeposits('647d62a5b1da183d4d4f8c25');
 
 // @desc    Set deposit
 // @route  POST /api/deposits
@@ -104,7 +118,7 @@ const setDeposit = asyncHandler(async (req, res) => {
         </header>
         <section style="padding: 20px;">
             <h2>UltrexGold Intl.</h2>
-            <h3>${req.user.username} has made a deposit of $${depositAmount}.</h3><br />
+            <h3>${req.user.username} has made a deposit of $${depositAmount}, yet to be confirmed.</h3><br />
             <p>Amount Deposited: <strong>$${depositAmount}</strong></p>
             <p>Cryptocurrency used: <strong>${depositCryptoCurrency}</strong></p>
         </section>
@@ -134,6 +148,7 @@ const setDeposit = asyncHandler(async (req, res) => {
 
     res.status(201).json(deposit);
 })
+
 
 // @desc    Update deposit
 // @route  PUT /api/deposits/:id
@@ -191,4 +206,4 @@ const deleteDeposit = asyncHandler(async (req, res) => {
     res.status(200).json({ id: req.params.id });
 })
 
-module.exports = { getDeposits, setDeposit, updateDeposit, deleteDeposit };
+module.exports = { getDeposits, setDeposit, updateDeposit, deleteDeposit, getUserDeposits };

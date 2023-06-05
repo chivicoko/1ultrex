@@ -9,7 +9,8 @@ const depositSchema = mongoose.Schema(
         },
         // text: { type: String, require: true },
         depositeAmount: {type: Number},
-        cryptoCurrency: {type: String, required: true}
+        cryptoCurrency: {type: String, required: true},
+        status: {type: "String", default: 'Unconfirmed'}
     },
     { timestamps: true }
 )

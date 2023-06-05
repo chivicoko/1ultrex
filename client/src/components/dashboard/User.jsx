@@ -46,6 +46,7 @@ const Deposit = () => {
   // Bringing in the user and user's deposits
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  
   const { user } = useSelector((state) => state.auth);
   const { deposits, isLoading, isError, message } = useSelector((state) => state.deposits);
   
@@ -53,10 +54,10 @@ const Deposit = () => {
 
   let totalDepoEarnings = 0;
   let depoEarnings = deposits.reduce((total, current) => 
-    total + current.depositeAmount >= 100 ? totalDepoEarnings + 0.03 :
+    total + (current.depositeAmount >= 100 ? totalDepoEarnings + 0.03 :
     current.depositeAmount >= 1000 ? totalDepoEarnings + 0.05 :
     current.depositeAmount >= 10000 ? totalDepoEarnings + 0.07 :
-    current.depositeAmount >= 20000 ? totalDepoEarnings + 0.10 : totalDepoEarnings + 0.00
+    current.depositeAmount >= 20000 ? totalDepoEarnings + 0.10 : totalDepoEarnings + 0.00)
   , 0.00);
     
     setInterval(() => {
@@ -165,7 +166,7 @@ const Deposit = () => {
                               </div>
                               <div style={{marginBottom: "15px", display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}>
                                 <p style={{ fontWeight: "bold", color: "black" }}>Transaction Status :{" "}</p>
-                                <p style={{ color: "white" }}>{deposit.pending === "pending" ? "Pending" : "Invested"}</p>
+                                <p style={{ color: "white" }}>{deposit.status === "Confirmed" ? deposit.status : "Pending"}</p>
                               </div>
                               <Button style={{padding: "10px 20px", fontSize: "12px", margin: "0", color: "white", backgroundColor: "#444", border: "1px solid #444", marginTop: "10px", marginBottom: "0"}}onClick={() => dispatch(deleteDeposit(deposit._id))}>Delete</Button>
                             </div>

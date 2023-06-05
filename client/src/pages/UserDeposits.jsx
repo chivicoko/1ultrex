@@ -10,7 +10,7 @@ const UserDeposits = ({userData}) => {
         const deposits = data.deposits;
         setUserDeposits(deposits);
     }
-    
+
     useEffect(() => {
         getUsers();
     }, []);

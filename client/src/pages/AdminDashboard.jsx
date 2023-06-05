@@ -10,7 +10,6 @@ const AdminDashboard = () => {
     const getUsers = async () => {
         const {data} = await axios.get("http://localhost:5000/api/users/allUsers");
         setUsers(data.users);
-
     }
 
     const displayDetails = () => {
@@ -18,7 +17,6 @@ const AdminDashboard = () => {
     }
 
     useEffect(() => {
-
         getUsers();
     }, []);
 

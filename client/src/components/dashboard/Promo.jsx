@@ -52,11 +52,12 @@ const Promo = () => {
                 <p className="p">{t("The best internet investment")}</p>
                 <div className="userSection">
                   <div>
-                    <p style={{ marginLeft: "20px" }}>
+                    <p style={{ margin: "10px" }}>
                       <Link>
-                        {"https://ultrexgold.herokuapp.com/"}
-                        https://ultrexgoldintl.com/?ref=
-                        {currentUser}
+                        <small>
+                          {"https://ultrexgold.herokuapp.com/"}
+                          {currentUser}
+                        </small>
                       </Link>
                     </p>
                   </div>
@@ -77,7 +78,6 @@ const Promo = () => {
                   <div>
                     <Link>
                       {"https://ultrexgold.herokuapp.com/"}
-                      https://ultrexgoldintl.com/?ref=
                       {currentUser}
                     </Link>
                   </div>
