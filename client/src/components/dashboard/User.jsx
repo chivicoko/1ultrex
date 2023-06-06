@@ -52,45 +52,46 @@ const Deposit = () => {
   
   const sum = deposits.reduce((total, current) => total + current.depositeAmount, 0);
 
-  // let totalDepoEarnings = 0;
-  // let depoEarnings = deposits.reduce((totalEarnings, currentDeposit) => {
-  //   return(
+  // const [totalEarnings, setTotalEarnings] = useState(localStorage.getItem('depoEarn') || 0.00);
+  const [earnings, setEarnings] = useState(0.00);
+  // const [initialEarnings, setInitialEarnings] = useState(0.00);
 
-  //     totalEarnings + (currentDeposit.depositeAmount >= 100 && currentDeposit.depositeAmount >= 999  ? totalDepoEarnings + 0.03 :
-  //       currentDeposit.depositeAmount >= 1000 && currentDeposit.depositeAmount <= 9999 ? totalDepoEarnings + 0.05 :
-  //       currentDeposit.depositeAmount >= 10000 && currentDeposit.depositeAmount >= 19999  ? totalDepoEarnings + 0.07 :
-  //       currentDeposit.depositeAmount >= 20000 ? totalDepoEarnings + 0.10 : totalDepoEarnings + 0.00);
-        
-  //       totalEarnings += depoEarnings;
-  //     )
-  //   }
-  // , 0.00);
-    
-    setInterval(() => {
-      // console.log(depoEarnings);
-    }, 10000);
-    
-  const [earnings, setEarnings] = useState(0.03 + 0.10);
     const accum = (accumulator = 0.00) => {
       for (let i = 0; i < deposits.length; i++) {
         const deposit = deposits[i];
 
-        if ((deposit.depositeAmount >= 100) && (deposit.depositeAmount <= 999)) {
-            setEarnings(accumulator += ((3.00*deposit.depositeAmount)/100));
-          } else if ((deposit.depositeAmount >= 1000) && (deposit.depositeAmount <= 9999)) {
-            setEarnings(accumulator += ((5.00*deposit.depositeAmount)/100));
-          } else if ((deposit.depositeAmount >= 10000) && (deposit.depositeAmount <= 19999)) {
-            setEarnings(accumulator += ((7.00*deposit.depositeAmount)/100));
-          } else if ((deposit.depositeAmount >= 20000)) {
-            setEarnings(accumulator += ((10.00*deposit.depositeAmount)/100));
-          }
-
-          console.log('deposit - ', deposit.depositeAmount);
-          console.log('accumulator - ',accumulator);
+        if (deposit.status === 'Confirmed') {
+          if ((deposit.depositeAmount >= 100) && (deposit.depositeAmount <= 999)) {
+              setEarnings(accumulator += ((3.00*deposit.depositeAmount)/100));
+            } else if ((deposit.depositeAmount >= 1000) && (deposit.depositeAmount <= 9999)) {
+              setEarnings(accumulator += ((5.00*deposit.depositeAmount)/100));
+            } else if ((deposit.depositeAmount >= 10000) && (deposit.depositeAmount <= 19999)) {
+              setEarnings(accumulator += ((7.00*deposit.depositeAmount)/100));
+            } else if ((deposit.depositeAmount >= 20000)) {
+              setEarnings(accumulator += ((10.00*deposit.depositeAmount)/100));
+              // setInitialEarnings(accumulator);
+            }
+            localStorage.setItem('depoEarn', earnings);
+  
+            // console.log('deposit - ', deposit.depositeAmount);
+            // console.log('accumulator - ',accumulator);
+            // console.log('earnings - ',earnings);
+        }
       }
-
-      // console.log(earnings);
     }
+
+  useEffect(() => {
+    // Start the interval when the component mounts
+    const interval = setInterval(() => {
+      // setTotalEarnings(earnings + earnings);
+    }, 20000);
+
+    // Clean up the interval when the component unmounts
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
 
   useEffect(() => {
     accum();
@@ -129,7 +130,7 @@ const Deposit = () => {
                       <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Username:</p><p>{user.username}</p></div>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Registration Date:</p><p>{new Date(user.createdAt).toLocaleString("en-US")}</p></div>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Account Balance:</p><p>$ {sum}</p></div>
-                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Earned Total:</p><p>$ {'0.00'}</p></div>
+                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Earned Total:</p><p>$ {earnings}</p></div>
                         {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Pending Withdrawal:</p><p>$0.00</p></div> */}
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Withdrew Total:</p><p>$ 0.00</p></div>
                         {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Active Deposite:</p><p>$0.00</p></div> */}
