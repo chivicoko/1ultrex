@@ -1,12 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const SingleUserDeposits = () => {
     const location = useLocation();
+    const [confirmed, setConfirmed] = useState(false);
 
     const findUserDeposits = async (id) => {
         fetch(`http://localhost:5000/api/deposits/getUserDeposits/${id}`)
-        .then((response) => console.log(response));
+        .then((response) => setConfirmed(true));
     }
 
     useEffect(() => {
@@ -44,12 +45,17 @@ const SingleUserDeposits = () => {
                                             <small>{new Date(userDeposit.createdAt).toLocaleString('en-US')}</small>
                                         </div>
                                         <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                                            {userDeposit.status === 'Confirmed' ? 
-                                                <input className='btn' style={{marginLeft: '10px'}} type="submit" value={"Confirmed"} disabled/>
+                                            {userDeposit.status === "Confirmed" ? 
+                                                <>
+                                                    <span style={{marginLeft: '12px'}}>...</span>
+                                                    <p style={{marginRight: '10px'}}> <em><small>{"Confirmed"}</small></em></p>
+                                                </>
                                                 : 
-                                                <input className='btn' style={{marginLeft: '10px'}} onClick={() => findUserDeposits(userDeposit._id)} type="submit" value={"Confirm"} />
+                                                <>
+                                                    <input className='btn' style={{marginLeft: '10px'}} onClick={() => findUserDeposits(userDeposit._id)} type="submit" value={"Confirm"} />
+                                                    <p style={{marginRight: '10px'}}> <em><small>{userDeposit.status}</small></em></p>
+                                                </>
                                             }
-                                            <p style={{marginRight: '10px'}}> <em><small>{userDeposit.status}</small></em></p>
                                         </div>
                                     </div>
                                 </div>

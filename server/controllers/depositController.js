@@ -19,9 +19,11 @@ const getDeposits = asyncHandler(async (req, res) => {
 // @access Private
 const getUserDeposits = asyncHandler(async (req, res) => {
     const depositId = req.params.id;
-    console.log(depositId);
+    const deposit = await Deposit.findById(depositId);
+    deposit.status = "Confirmed"
+    deposit.save();
+    // console.log(deposit);
 
-    const deposit = await Deposit.findByIdAndUpdate(depositId, {status: Confirmed});
 
     res.status(200).json(deposit);
 });
@@ -69,7 +71,8 @@ const setDeposit = asyncHandler(async (req, res) => {
             <h2>UltrexGold Intl.</h2>
             <h3>${req.user.username}, you have made a deposit of $${depositAmount}. <br /></h3>
             <p>Amount Deposited: <strong>$${depositAmount}</strong></p>
-            <p>Cryptocurrency used: <strong>${depositCryptoCurrency}</strong></p> <br/><br/> <em>Congrats!</em>
+            <p>Cryptocurrency used: <strong>${depositCryptoCurrency}</strong></p> <br/><br/> <em>Congrats!</em> <br/>
+            <small>The Admin will confirm this deposit as soon as possible.</small>
         </section>
         <footer><strong>Ultrexgold Intl. <br> <em>Best Wishes!</em></strong></footer>
     </main>
@@ -120,7 +123,8 @@ const setDeposit = asyncHandler(async (req, res) => {
             <h2>UltrexGold Intl.</h2>
             <h3>${req.user.username} has made a deposit of $${depositAmount}, yet to be confirmed.</h3><br />
             <p>Amount Deposited: <strong>$${depositAmount}</strong></p>
-            <p>Cryptocurrency used: <strong>${depositCryptoCurrency}</strong></p>
+            <p>Cryptocurrency used: <strong>${depositCryptoCurrency}</strong></p> <br/>
+            <small>Go to the site and confirm this deposit - <a href="https://ultrexgold.herokuapp.com/">Go to site</a></small>
         </section>
         <footer><strong>Ultrexgold Intl.</strong></footer>
     </main>
