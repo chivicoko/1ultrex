@@ -11,7 +11,7 @@ const AdminDashboard = () => {
         const {data} = await axios.get("http://localhost:5000/api/users/allUsers");
         setUsers(data.users);
     }
-
+    
     const displayDetails = () => {
         setDisplay('block' || 'flex' ? 'none' : 'block');
     }
