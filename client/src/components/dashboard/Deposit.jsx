@@ -151,7 +151,7 @@ const Deposit = () => {
                             
                             <div className='depo'>
                                 <div className='depositeContainer-item1-' >
-                                    <p>{t('Amount to Spent')}</p>
+                                    <p style={{fontSize: '14px', paddingTop: '3.5px'}}>{t('Amount to Spend')}</p>
                                     <input type="number" name='amount' style={{height: '30px', width: '105px'}} defaultValue={amount} onChange={(e) => setMainAmount(e.target.value)}/>
                                 </div>
                                 

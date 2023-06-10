@@ -50,12 +50,14 @@ const Deposit = () => {
   const { user } = useSelector((state) => state.auth);
   const { deposits, isLoading, isError, message } = useSelector((state) => state.deposits);
   
-  const sum = deposits.reduce((total, current) => total + current.depositeAmount, 0);
+  const sum = deposits.reduce((total, current) => current.status === 'Confirmed' ? total + current.depositeAmount : total + 0.00, 0);
+  // console.log(sum)
 
-  // const [totalEarnings, setTotalEarnings] = useState(localStorage.getItem('depoEarn') || 0.00);
+  const [totalEarnings, setTotalEarnings] = useState(JSON.parse(localStorage.getItem('depoEarn')) || 0.00);
   const [earnings, setEarnings] = useState(0.00);
   // const [initialEarnings, setInitialEarnings] = useState(0.00);
 
+  useEffect(() => {
     const accum = (accumulator = 0.00) => {
       for (let i = 0; i < deposits.length; i++) {
         const deposit = deposits[i];
@@ -71,31 +73,33 @@ const Deposit = () => {
               setEarnings(accumulator += ((10.00*deposit.depositeAmount)/100));
               // setInitialEarnings(accumulator);
             }
-            localStorage.setItem('depoEarn', earnings);
+            localStorage.setItem('depoEarn', JSON.stringify(accumulator));
   
-            // console.log('deposit - ', deposit.depositeAmount);
             // console.log('accumulator - ',accumulator);
             // console.log('earnings - ',earnings);
         }
       }
     }
 
-  useEffect(() => {
-    // Start the interval when the component mounts
-    const interval = setInterval(() => {
-      // setTotalEarnings(earnings + earnings);
-    }, 20000);
-
-    // Clean up the interval when the component unmounts
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
-
-  useEffect(() => {
     accum();
 
+  }, [earnings, deposits]);
+
+  // useEffect(() => {
+  //         // Start the interval when the component mounts
+  //         const interval = setInterval(() => {
+  //           let initialE = earnings;
+  //           earnings += initialE;
+  //           // console.log(earnings);
+  //         }, 7000);
+
+  //         // Clean up the interval when the component unmounts
+  //         return () => {
+  //           clearInterval(interval);
+  //         };
+  // }, []);
+
+  useEffect(() => {
     if (isError) {
       console.log(message);
     }
@@ -129,8 +133,8 @@ const Deposit = () => {
                       <div className="userSection"><h1 style={{ textAlign: "center", marginTop: "20px" }}>Your Account</h1>
                       <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Username:</p><p>{user.username}</p></div>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Registration Date:</p><p>{new Date(user.createdAt).toLocaleString("en-US")}</p></div>
-                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Account Balance:</p><p>$ {sum}</p></div>
-                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Earned Total:</p><p>$ {earnings}</p></div>
+                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Account Balance:</p><p>$ {sum || "0.00"}</p></div>
+                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Earned Total:</p><p>$ {earnings || "0.00"}</p></div>
                         {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Pending Withdrawal:</p><p>$0.00</p></div> */}
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Withdrew Total:</p><p>$ 0.00</p></div>
                         {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Active Deposite:</p><p>$0.00</p></div> */}
@@ -183,8 +187,8 @@ const Deposit = () => {
                       <div className="userSection">
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Username")}:</p><p>{user.username}</p></div>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Registration Date")}:</p><p>{new Date(user.createdAt).toLocaleString("en-US")}</p></div>
-                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Account Balance")}:</p><p>${sum}</p></div>
-                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Earned Total")}:</p><p>$0.00</p></div>
+                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Account Balance")}:</p><p>${sum || "0.00"}</p></div>
+                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Earned Total")}:</p><p>$ {earnings || "0.00"}</p></div>
                         {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Pending Withdrawal")}:</p><p>$0.00</p></div> */}
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Withdrew Total")}:</p><p>$0.00</p></div>
                         {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Active Deposite")}:</p><p>$0.00</p></div> */}
