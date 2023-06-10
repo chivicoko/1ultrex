@@ -72,6 +72,8 @@ const ConfirmDeposit = () => {
         }
     }, [depositAmount, depositCurrency, depositCryptoCurrency, location.state.amount, location.state.currency, navigate]);
 
+    // console.log(location.state.amount);
+    
     const proposal = location.state.amount >= 100.00 && location.state.amount <= 999.00 ? 'First Proposal'
         : location.state.amount >= 1000.00 && location.state.amount <= 9999.00 ? 'Second Proposal'
         : location.state.amount >= 10000.00 && location.state.amount < 20000.00 ? 'Gold Package'

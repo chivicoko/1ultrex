@@ -52,7 +52,7 @@ const Deposit = () => {
     }
 
     const dispatch = useDispatch();
-
+    
     const onSubmit = (e) => {
         e.preventDefault();
         
@@ -150,14 +150,14 @@ const Deposit = () => {
                             </div>
                             
                             <div className='depo'>
-                                <div className='depositeContainer-item1-' >
-                                    <p style={{fontSize: '14px', paddingTop: '3.5px'}}>{t('Amount to Spend')}</p>
-                                    <input type="number" name='amount' style={{height: '30px', width: '105px'}} defaultValue={amount} onChange={(e) => setMainAmount(e.target.value)}/>
-                                </div>
-                                
-                                <h3 style={{texAlign: 'start', marginTop: '25px'}}>{t('Spend Funds From:')}</h3>
+                                <form className='currencies' style={{borderTop: "none"}} onSubmit={onSubmit}>
+                                    <div className='depositeContainer-item1-' >
+                                        <p style={{fontSize: '14px', paddingTop: '3.5px'}}>{t('Amount to Spend')}</p>
+                                        <input type="number" name='amount' style={{height: '30px', width: '105px'}} defaultValue={amount} onChange={(e) => setAmount(e.target.value)} />
+                                    </div>
+                                    
+                                    <h3 style={{texAlign: 'start', marginTop: '25px', borderTop: "1px solid orange", borderBottom: "1px solid orange"}}>{t('Spend Funds From:')}</h3>
 
-                                <form className='currencies' onSubmit={onSubmit}>
                                     <p className='currency'>
                                         <input type="radio" id="Bitcoin" name="currency" value="Bitcoin" onClick={(() => setCurrency('bc1q3xa4cst9w27f0we4lqsgy957t254fz8tckcrxh'))} />
                                         <label htmlFor='Bitcoin'>Bitcoin</label><br/>
