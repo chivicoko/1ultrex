@@ -51,6 +51,7 @@ const Deposit = () => {
   const { deposits, isLoading, isError, message } = useSelector((state) => state.deposits);
   
   const sum = deposits.reduce((total, current) => current.status === 'Confirmed' ? total + current.depositeAmount : total + 0.00, 0);
+  const totalSum = deposits.reduce((total, current) => total + current.depositeAmount, 0);
   // console.log(sum)
 
   const [totalEarnings, setTotalEarnings] = useState(JSON.parse(localStorage.getItem('depoEarn')) || 0.00);
@@ -131,9 +132,11 @@ const Deposit = () => {
                   {deposits.length > 0 ? (
                     <>
                       <div className="userSection"><h1 style={{ textAlign: "center", marginTop: "20px" }}>Your Account</h1>
-                      <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Username:</p><p>{user.username}</p></div>
+                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Username:</p><p>{user.username}</p></div>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Registration Date:</p><p>{new Date(user.createdAt).toLocaleString("en-US")}</p></div>
-                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Account Balance:</p><p>$ {sum || "0.00"}</p></div>
+                        <hr />
+                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Total Deposit:</p><p>$ {totalSum || "0.00"}</p></div>
+                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Active Deposit:</p><p>$ {sum || "0.00"}</p></div>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Earned Total:</p><p>$ {earnings || "0.00"}</p></div>
                         {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Pending Withdrawal:</p><p>$0.00</p></div> */}
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>Withdrew Total:</p><p>$ 0.00</p></div>
@@ -161,7 +164,7 @@ const Deposit = () => {
                                 <p style={{ fontWeight: "bold", color: "black" }}>Transaction Status :{" "}</p>
                                 <p style={{ color: "white" }}>{deposit.status === "Confirmed" ? deposit.status : "Pending"}</p>
                               </div>
-                              <Button style={{padding: "10px 20px", fontSize: "12px", margin: "0", color: "white", backgroundColor: "#444", border: "1px solid #444", marginTop: "10px", marginBottom: "0"}}onClick={() => dispatch(deleteDeposit(deposit._id))}>Delete</Button>
+                              <Button style={{padding: "10px 20px", fontSize: "12px", margin: "0", color: "white", backgroundColor: "orange", border: "1px solid orange", marginTop: "10px", marginBottom: "0"}}onClick={() => dispatch(deleteDeposit(deposit._id))}>Delete</Button>
                             </div>
                             <hr />
                           </div>
@@ -187,7 +190,9 @@ const Deposit = () => {
                       <div className="userSection">
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Username")}:</p><p>{user.username}</p></div>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Registration Date")}:</p><p>{new Date(user.createdAt).toLocaleString("en-US")}</p></div>
-                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Account Balance")}:</p><p>${sum || "0.00"}</p></div>
+                        <hr />
+                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Total Deposit")}:</p><p>${totalSum || "0.00"}</p></div>
+                        <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Active Deposit")}:</p><p>$ {sum || "0.00"}</p></div>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Earned Total")}:</p><p>$ {earnings || "0.00"}</p></div>
                         {/* <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Pending Withdrawal")}:</p><p>$0.00</p></div> */}
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "start", fontSize: "12px"}}><p>{t("Withdrew Total")}:</p><p>$0.00</p></div>
