@@ -16,7 +16,7 @@ const app = express();
 const cors = require('cors');
 const corsOptions ={
     // origin:["http://localhost:3000", "https://ultrexgold.onrender.com"],
-    origin:["http://localhost:3000", "https://ultrexgold.herokuapp.com"],
+    origin:["http://localhost:3000", "https://ultrexgold.herokuapp.com", "http://localhost:5000/"],
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }

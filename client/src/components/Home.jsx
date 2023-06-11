@@ -41,26 +41,27 @@ const Home = () => {
 
     const isMobile = windowDimension <= 640;
 
-    // date - days of the week ------------
-    const weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    // // date - days of the week ------------
+    // const weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-    const today = new Date();
-    let day = weekdays[today.getDay()];
-    for (let aDay = 0; aDay < weekdays.length; aDay++) {
-        const singleDay = weekdays[aDay];
-        if (singleDay !== 'Saturday' && singleDay !== 'Sunday') {
-            console.log(singleDay);
-        } else {
-            console.log(`This is weekend!!! --(${singleDay})`);
-        }
-    }
-    // -------------------
+    // const today = new Date();
+    // let day = weekdays[today.getDay()];
+    // for (let aDay = 0; aDay < weekdays.length; aDay++) {
+    //     const singleDay = weekdays[aDay];
+    //     if (singleDay !== 'Saturday' && singleDay !== 'Sunday') {
+    //         // console.log(singleDay);
+    //     } else {
+    //         // console.log(`This is weekend!!! --(${singleDay})`);
+    //     }
+    // }
+    // // -------------------
 
   return (
     <Wrapper>
         {isMobile ?
             (
-                <MobileHomeStyle>{day} <br/>
+                <MobileHomeStyle>
+                    {/* {day} <br/> */}
                     <marquee behavior="" direction="" width='200px'>UltrexGold International</marquee>
                     <div className='container'>
                         {/* welcome section */}
