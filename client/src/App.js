@@ -16,7 +16,6 @@ import Deposit from "./components/dashboard/Deposit";
 import Settings from "./components/dashboard/Settings";
 import Referrals from "./components/dashboard/Referrals";
 import Promo from "./components/dashboard/Promo";
-import UserEarning from "./components/dashboard/UserEarning";
 import UserInvestment from "./components/dashboard/UserInvestment";
 import ConfirmDeposit from "./components/dashboard/ConfirmDeposit";
 import User from "./components/dashboard/User";
@@ -25,6 +24,7 @@ import DepositForm from "./components/DepositForm";
 import UserDeposits from "./pages/UserDeposits";
 import SingleUserDeposits from "./pages/SingleUserDeposits";
 import Bar from "./components/Bar";
+import Withdraw from "./components/dashboard/Withdraw";
 
 function App() {
   // axios.defaults.baseURL = 'http://localhost:5000';
@@ -71,9 +71,9 @@ function App() {
               {" "}
               {UserInvestment}{" "}
             </Route>
-            <Route exact path="/my-earning" element={<UserEarning />}>
+            <Route exact path="/withdraw" element={<Withdraw />}>
               {" "}
-              {UserEarning}{" "}
+              {Withdraw}{" "}
             </Route>
             <Route exact path="/confirm-deposit" element={<ConfirmDeposit />}>
               {" "}

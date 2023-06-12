@@ -49,7 +49,7 @@ const Sidebar = () => {
                         {/* <div className='container1'><Link style={{fontSize: '10px', height: '50px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={''}>{t('My Investments')}</Link></div> */}
                         {/* <div className='container1'><Link style={{height: '40px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={'/my-investment'}>My Investments</Link></div> */}
                         <div className='container1'><Link style={{fontSize: '10px', height: '25px', display: 'table-cell', verticalAlign: 'middle'}} to={'/promo'}>{t('Promo Tools')}</Link></div>
-                        <div className='container1'><Link style={{fontSize: '10px', height: '25px', display: 'table-cell', verticalAlign: 'middle'}} to={'/my-earning'}>{t('Withdraw Earnings')}</Link></div>
+                        <div className='container1'><Link style={{fontSize: '10px', height: '25px', display: 'table-cell', verticalAlign: 'middle'}} to={'/withdraw'}>{t('Withdraw Earnings')}</Link></div>
                         <div className='container1'><Link style={{fontSize: '10px', height: '25px', display: 'table-cell', verticalAlign: 'middle'}} to={'/referrals'}>{t('My Referrals')}</Link></div>
                         <div className='container1'><Link style={{fontSize: '10px', height: '25px', display: 'table-cell', verticalAlign: 'middle'}} to={'/settings'}>{t('Settings')}</Link></div>
                         {/* <div className='container1'><Link style={{fontSize: '10px', height: '50px', textDecoration: 'none', color: 'black', display: 'table-cell', verticalAlign: 'middle'}} to={''}>{t('Logout')}</Link></div> */}
@@ -102,7 +102,7 @@ const Sidebar = () => {
                         </div>
                         <div className='container1'>
                             <p className='pa'>
-                            <Link style={{textDecoration: 'none', color: 'black'}} to={'/my-earning'}>
+                            <Link style={{textDecoration: 'none', color: 'black'}} to={'/withdraw'}>
                                 <span className='icon'>
                                     <Award size={16} />
                                 </span>
